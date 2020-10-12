@@ -24,7 +24,7 @@ namespace CMPG223_POS
 
         private void timerLoader_Tick(object sender, EventArgs e)
         {
-            progressLoader.Width += 3;
+            progressLoader.Width += 600;
             if(progressLoader.Width >= 600)
             {
                 MainForm main = new MainForm();
@@ -34,6 +34,11 @@ namespace CMPG223_POS
                 timerLoader.Stop();
                 this.Hide();
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

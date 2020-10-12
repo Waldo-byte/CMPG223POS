@@ -38,41 +38,47 @@
             // timerLoader
             // 
             this.timerLoader.Enabled = true;
-            this.timerLoader.Interval = 15;
+            this.timerLoader.Interval = 1;
             this.timerLoader.Tick += new System.EventHandler(this.timerLoader_Tick);
             // 
             // progressBar
             // 
             this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.progressBar.Location = new System.Drawing.Point(0, 335);
+            this.progressBar.Location = new System.Drawing.Point(0, 292);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(600, 15);
+            this.progressBar.Size = new System.Drawing.Size(600, 8);
             this.progressBar.TabIndex = 0;
             // 
             // progressLoader
             // 
             this.progressLoader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.progressLoader.Location = new System.Drawing.Point(0, 335);
+            this.progressLoader.Location = new System.Drawing.Point(0, 292);
             this.progressLoader.Name = "progressLoader";
-            this.progressLoader.Size = new System.Drawing.Size(60, 15);
+            this.progressLoader.Size = new System.Drawing.Size(60, 8);
             this.progressLoader.TabIndex = 1;
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(556, 12);
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(2)))), ((int)(((byte)(15)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnClose.Location = new System.Drawing.Point(552, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.Size = new System.Drawing.Size(48, 35);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.ClientSize = new System.Drawing.Size(600, 300);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.progressLoader);
             this.Controls.Add(this.progressBar);

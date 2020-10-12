@@ -8,35 +8,35 @@ namespace CMPG223_POS
 {
     class funcClass
     {
-        public String addItem(String item)
-        {
+        //public String addItem(String item)
+        //{
              
-        }
+        //}
 
-        public void deleteItem(String item)
-        {
+        //public void deleteItem(String item)
+        //{
 
-        }
+        //}
 
-        public String placeOrder(String[] orders, int tableNum)
-        {
+        //public String placeOrder(String[] orders, int tableNum)
+        //{
 
-        }
+        //}
 
-        public void addStock(String item)
-        {
+        //public void addStock(String item)
+        //{
 
-        }
+        //}
 
-        public void removeStock(String item)
-        {
+        //public void removeStock(String item)
+        //{
 
-        }
+        //}
 
-        public void buyStock(Stock[] buyStock)
-        {
+        //public void buyStock(Stock[] buyStock)
+        //{
 
-        }
+        //}
 
         public void payBill(int tableNum)
         {
