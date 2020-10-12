@@ -21,5 +21,17 @@ namespace CMPG223_POS
         {
             //Checking Push 
         }
+
+        private void timerLoader_Tick(object sender, EventArgs e)
+        {
+            progressLoader.Width += 3;
+            if(progressLoader.Width >= 600)
+            {
+                MainForm main = new MainForm();
+                main.Show();
+                timerLoader.Stop();
+                this.Hide();
+            }
+        }
     }
 }
