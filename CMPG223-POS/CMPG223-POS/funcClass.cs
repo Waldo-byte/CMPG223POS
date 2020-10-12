@@ -23,6 +23,11 @@ namespace CMPG223_POS
 
         }
 
+        public String updateOrder(String[] orders, int tableNum)
+        {
+
+        }
+
         public void addStock(String item)
         {
 
@@ -33,7 +38,7 @@ namespace CMPG223_POS
 
         }
 
-        public void buyStock(Stock[] buyStock)
+        public void buyStock(String[] buyStock, int[] stockAmmount)
         {
 
         }
@@ -43,7 +48,7 @@ namespace CMPG223_POS
 
         }
 
-        public void clockIn(int waiaterID)
+        public void clockIn(int waiaterID, String waiterPass)
         {
 
         }
