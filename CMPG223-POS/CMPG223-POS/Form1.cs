@@ -28,7 +28,9 @@ namespace CMPG223_POS
             if(progressLoader.Width >= 600)
             {
                 MainForm main = new MainForm();
+                LoginForm log = new LoginForm();
                 main.Show();
+                log.Show();
                 timerLoader.Stop();
                 this.Hide();
             }

@@ -32,6 +32,7 @@
             this.timerLoader = new System.Windows.Forms.Timer(this.components);
             this.progressBar = new System.Windows.Forms.Panel();
             this.progressLoader = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerLoader
@@ -56,16 +57,28 @@
             this.progressLoader.Size = new System.Drawing.Size(60, 15);
             this.progressLoader.TabIndex = 1;
             // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(556, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(600, 350);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.progressLoader);
             this.Controls.Add(this.progressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -77,6 +90,7 @@
         private System.Windows.Forms.Timer timerLoader;
         private System.Windows.Forms.Panel progressBar;
         private System.Windows.Forms.Panel progressLoader;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

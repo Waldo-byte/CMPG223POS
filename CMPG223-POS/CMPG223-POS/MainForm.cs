@@ -16,5 +16,11 @@ namespace CMPG223_POS
         {
             InitializeComponent();
         }
+
+        //Exit Sequence
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
