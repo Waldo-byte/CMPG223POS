@@ -23,6 +23,11 @@ namespace CMPG223_POS
 
         }
 
+        public String updateOrder(String[] orders, int tableNum)
+        {
+
+        }
+
         public void addStock(String item)
         {
 
