@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +23,8 @@ namespace CMPG223_POS
 
         //}
 
-        //public void addStock(String item)
-        //{
+        public void addStock(String item)
+        {
 
         //}
 
@@ -33,8 +33,8 @@ namespace CMPG223_POS
 
         //}
 
-        //public void buyStock(Stock[] buyStock)
-        //{
+        public void buyStock(Stock[] buyStock)
+        {
 
         //}
 
@@ -43,7 +43,7 @@ namespace CMPG223_POS
 
         }
 
-        public void clockIn(int waiaterID)
+        public void clockIn(int waiaterID, String waiterPass)
         {
 
         }
@@ -57,4 +57,4 @@ namespace CMPG223_POS
 
 
     }
-}
+}*/
