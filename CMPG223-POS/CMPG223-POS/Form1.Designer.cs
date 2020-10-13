@@ -54,7 +54,7 @@
             this.progressLoader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.progressLoader.Location = new System.Drawing.Point(0, 292);
             this.progressLoader.Name = "progressLoader";
-            this.progressLoader.Size = new System.Drawing.Size(60, 8);
+            this.progressLoader.Size = new System.Drawing.Size(3, 8);
             this.progressLoader.TabIndex = 1;
             // 
             // btnClose
