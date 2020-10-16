@@ -77,6 +77,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
             this.txtPassword.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(81, 38);
             this.txtPassword.Name = "txtPassword";
@@ -88,6 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(434, 111);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
