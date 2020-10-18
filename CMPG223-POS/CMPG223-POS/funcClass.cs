@@ -27,11 +27,12 @@ namespace CMPG223_POS
 
         }
 
-        public String placeOrder(String[] orders, int tableNum)
+        public decimal placeOrder(String[] orders, int tableNum)
         {
             conn.Open();
             string ammount;
             int amm;
+            decimal price;
             for(int i = 0; i < orders.Length; i++)
             {
                 String sqlGet = "SELECT Bought_Inv FROM Menu_Item WHERE Inventory_ID = '" + orders[i] + "'";
@@ -60,6 +61,8 @@ namespace CMPG223_POS
                 adap.SelectCommand = comm;
                 adap.Fill(ds);
             }
+
+            return price;  // price moet nog bereken word
         }
 
         public void addStock(String item)
