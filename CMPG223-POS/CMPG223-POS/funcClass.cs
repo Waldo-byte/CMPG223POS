@@ -30,16 +30,35 @@ namespace CMPG223_POS
         public String placeOrder(String[] orders, int tableNum)
         {
             conn.Open();
-            int ammount;
+            string ammount;
+            int amm;
             for(int i = 0; i < orders.Length; i++)
             {
                 String sqlGet = "SELECT Bought_Inv FROM Menu_Item WHERE Inventory_ID = '" + orders[i] + "'";
+                
                 comm = new SqlCommand(sqlGet, conn);
+                SqlDataReader reader = comm.ExecuteReader();
+                if(reader.Read())
+                {
+                    ammount = (string)reader[0];
+                }
+                else
+                {
+                    ammount = (string)reader[0];
+                }
+                int.TryParse(ammount, out amm);
                 adap = new SqlDataAdapter();
                 ds = new DataSet();
                 adap.SelectCommand = comm;
                 adap.Fill(ds);
-                //String sqlSet = "UPDATE Menu_Item SET Bought_Inv = '" + ds.
+
+
+                String sqlSet = "UPDATE Menu_Item SET Bought_Inv = '" + (amm - 1) + "'" + " WHERE Inventory_ID = '" + orders[i] + "'";
+                comm = new SqlCommand(sqlSet, conn);
+                adap = new SqlDataAdapter();
+                ds = new DataSet();
+                adap.SelectCommand = comm;
+                adap.Fill(ds);
             }
         }
 
