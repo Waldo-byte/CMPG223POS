@@ -41,6 +41,7 @@
             this.fileToolStripMenuItem,
             this.windowsToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mainMenuStrip.MdiWindowListItem = this.windowsToolStripMenuItem;
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Size = new System.Drawing.Size(800, 24);
             this.mainMenuStrip.TabIndex = 0;
@@ -59,6 +60,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // windowsToolStripMenuItem
             // 

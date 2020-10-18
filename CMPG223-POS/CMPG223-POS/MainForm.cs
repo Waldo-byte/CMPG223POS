@@ -26,6 +26,26 @@ namespace CMPG223_POS
         private void MainForm_Load(object sender, EventArgs e)
         {
             mainMenuStrip.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
+
+            LoginForm log = new LoginForm();
+            SignUp sign = new SignUp();
+            Orders ord = new Orders();
+
+            ord.MdiParent = this;
+            log.MdiParent = this;
+            sign.MdiParent = this;
+
+            log.Show();
+            sign.Show();
+            ord.Show();
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is MdiClient)
+                {
+                    ctrl.BackColor = Color.FromArgb(255, 255, 255);
+                }
+            }
         }
 
         //GUI
@@ -114,6 +134,11 @@ namespace CMPG223_POS
             {
                 get { return Color.FromArgb(255,255,255); }
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

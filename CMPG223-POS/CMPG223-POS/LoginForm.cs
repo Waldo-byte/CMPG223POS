@@ -17,6 +17,16 @@ namespace CMPG223_POS
             InitializeComponent();
         }
 
+        void Val()
+        {
+            btnLogin.Enabled = !String.IsNullOrWhiteSpace(txtPassword.Text) && !String.IsNullOrWhiteSpace(txtUserName.Text);
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnLogin_MouseEnter(object sender, EventArgs e)
         {
             btnLogin.FlatAppearance.BorderColor = Color.FromArgb(50, 225, 120);
@@ -30,6 +40,14 @@ namespace CMPG223_POS
             btnLogin.FlatAppearance.BorderSize = 1;
             btnLogin.BackColor = Color.FromArgb(225,225,225);
             btnLogin.ForeColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if(this.DialogResult == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         //GUI Design
