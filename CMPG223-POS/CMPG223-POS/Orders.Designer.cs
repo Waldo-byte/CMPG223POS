@@ -338,7 +338,6 @@
 
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.ListBox lbOrders;
         private System.Windows.Forms.Button btnFood;
         private System.Windows.Forms.Button btnDrinks;
         private System.Windows.Forms.Panel panelOderHome;
@@ -361,5 +360,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        public System.Windows.Forms.ListBox lbOrders;
     }
 }
