@@ -35,6 +35,8 @@ namespace CMPG223_POS
             log.MdiParent = this;
             sign.MdiParent = this;
 
+            ord.Dock = DockStyle.Fill;
+
             log.Show();
             sign.Show();
             ord.Show();

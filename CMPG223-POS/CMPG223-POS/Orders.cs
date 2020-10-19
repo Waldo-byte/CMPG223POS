@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMPG223_POS
@@ -31,6 +26,8 @@ namespace CMPG223_POS
             panelOderHome.Dock = DockStyle.Fill;
             panelDrinks.Dock = DockStyle.Fill;
             panelFood.Dock = DockStyle.Fill;
+
+            panelCenter.Location = new Point(this.Width / 2 - panelCenter.Width / 2, this.Height / 2 - panelCenter.Height);
         }
 
         private void btnDrinks_Click(object sender, EventArgs e)
@@ -59,6 +56,11 @@ namespace CMPG223_POS
             labelTitle.Text = "Orders";
 
             listPanel[0].BringToFront();
+        }
+
+        private void btnCancelOrder_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
