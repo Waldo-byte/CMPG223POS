@@ -23,7 +23,15 @@ namespace CMPG223_POS
 
         public void deleteItem(String item)
         {
-
+            Orders orderForm = new Orders();
+            for (int i = 0; i < orderForm.lbOrders.Items.Count; i++)
+            {
+                if(orderForm.lbOrders.Items.Contains(item))
+                {
+                    orderForm.lbOrders.SelectedItem =item;
+                    orderForm.lbOrders.Items.Remove(item);
+                }
+            }
         }
 
         public decimal placeOrder(String[] orders, decimal[] cost, int tableNum)
