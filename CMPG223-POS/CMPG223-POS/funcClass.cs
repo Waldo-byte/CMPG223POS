@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace CMPG223_POS
 {
@@ -15,20 +16,30 @@ namespace CMPG223_POS
         SqlCommand comm;
         SqlDataAdapter adap;
         DataSet ds;
-        public String addItem(String item)
+        public void addItem(String item)
         {
-
+            Orders orderForm = new Orders();
+            orderForm.lbOrders.Items.Add(item);
         }
 
         public void deleteItem(String item)
         {
-
+            Orders orderForm = new Orders();
+            for (int i = 0; i < orderForm.lbOrders.Items.Count; i++)
+            {
+                if(orderForm.lbOrders.Items.Contains(item))
+                {
+                    //orderForm.lbOrders.SelectedItem =item;
+                    orderForm.lbOrders.Items.Remove(item);
+                }
+            }
         }
 
-        public decimal placeOrder(String[] orders, int tableNum)
+        public decimal placeOrder(String[] orders, decimal[] cost, int tableNum)
         {
             conn.Open();
             int ammount;
+            decimal price = 0;
             for (int i = 0; i < orders.Length; i++)
             {
                 String sqlGet = "SELECT Bought_Inv FROM Menu_Item WHERE Inventory_ID = '" + orders[i] + "'";
@@ -48,9 +59,25 @@ namespace CMPG223_POS
                 }
 
                 String sqlSet = "UPDATE Menu_Item SET Bought_Inv = '" + (ammount - 1) + "'" + " WHERE Inventory_ID = " + orders[i] + "'";
+                comm = new SqlCommand(sqlSet, conn);
+                adap = new SqlDataAdapter();
+                ds = new DataSet();
+                adap.SelectCommand = comm;
+                adap.Fill(ds);
             }
+
+            StreamWriter outputFile;
+            outputFile = File.CreateText("Table " + tableNum);
+
+            for(int i = 0; i < orders.Length; i++)
+            {
+                outputFile.WriteLine(orders[i]);
+                price += cost[i];
+            }
+
+            return price;  // price moet nog bereken word
         }
-        public void addStock(String item)
+       /* public void addStock(String item)
         {
 
         }
@@ -77,7 +104,7 @@ namespace CMPG223_POS
         public void clockOut(int waiterID)
         {
 
-        }
+        }*/
 
 
 
