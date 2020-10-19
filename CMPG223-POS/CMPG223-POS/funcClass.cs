@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace CMPG223_POS
 {
@@ -28,7 +29,7 @@ namespace CMPG223_POS
             {
                 if(orderForm.lbOrders.Items.Contains(item))
                 {
-                    orderForm.lbOrders.SelectedItem =item;
+                    //orderForm.lbOrders.SelectedItem =item;
                     orderForm.lbOrders.Items.Remove(item);
                 }
             }
@@ -38,7 +39,7 @@ namespace CMPG223_POS
         {
             conn.Open();
             int ammount;
-            decimal price;
+            decimal price = 0;
             for (int i = 0; i < orders.Length; i++)
             {
                 String sqlGet = "SELECT Bought_Inv FROM Menu_Item WHERE Inventory_ID = '" + orders[i] + "'";
@@ -65,9 +66,18 @@ namespace CMPG223_POS
                 adap.Fill(ds);
             }
 
+            StreamWriter outputFile;
+            outputFile = File.CreateText("Table " + tableNum);
+
+            for(int i = 0; i < orders.Length; i++)
+            {
+                outputFile.WriteLine(orders[i]);
+                price += cost[i];
+            }
+
             return price;  // price moet nog bereken word
         }
-        public void addStock(String item)
+       /* public void addStock(String item)
         {
 
         }
@@ -94,7 +104,7 @@ namespace CMPG223_POS
         public void clockOut(int waiterID)
         {
 
-        }
+        }*/
 
 
 
