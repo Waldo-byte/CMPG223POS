@@ -32,10 +32,11 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.lbOrders = new System.Windows.Forms.ListBox();
             this.panelOderHome = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCancelOrder = new System.Windows.Forms.Button();
             this.panelCenter = new System.Windows.Forms.Panel();
             this.btnDrinks = new System.Windows.Forms.Button();
             this.btnFood = new System.Windows.Forms.Button();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panelDrinks = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.button9 = new System.Windows.Forms.Button();
@@ -63,10 +64,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBackFood = new System.Windows.Forms.Button();
             this.btnClearPreviousItemFood = new System.Windows.Forms.Button();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCancelOrder = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
             this.panelOderHome.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             this.panelCenter.SuspendLayout();
             this.panelDrinks.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
@@ -74,7 +74,6 @@
             this.panelFood.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -116,21 +115,41 @@
             this.panelOderHome.Size = new System.Drawing.Size(732, 93);
             this.panelOderHome.TabIndex = 2;
             // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel5.Controls.Add(this.btnCancelOrder);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 93);
+            this.flowLayoutPanel5.TabIndex = 3;
+            // 
+            // btnCancelOrder
+            // 
+            this.btnCancelOrder.Location = new System.Drawing.Point(3, 3);
+            this.btnCancelOrder.Name = "btnCancelOrder";
+            this.btnCancelOrder.Size = new System.Drawing.Size(194, 40);
+            this.btnCancelOrder.TabIndex = 0;
+            this.btnCancelOrder.Text = "Cancel Order";
+            this.btnCancelOrder.UseVisualStyleBackColor = true;
+            this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
+            // 
             // panelCenter
             // 
             this.panelCenter.Controls.Add(this.btnDrinks);
             this.panelCenter.Controls.Add(this.btnFood);
             this.panelCenter.Location = new System.Drawing.Point(206, 4);
             this.panelCenter.Name = "panelCenter";
-            this.panelCenter.Size = new System.Drawing.Size(517, 86);
+            this.panelCenter.Size = new System.Drawing.Size(523, 86);
             this.panelCenter.TabIndex = 2;
             // 
             // btnDrinks
             // 
             this.btnDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDrinks.Location = new System.Drawing.Point(7, 9);
+            this.btnDrinks.Location = new System.Drawing.Point(3, 3);
             this.btnDrinks.Name = "btnDrinks";
-            this.btnDrinks.Size = new System.Drawing.Size(248, 68);
+            this.btnDrinks.Size = new System.Drawing.Size(255, 80);
             this.btnDrinks.TabIndex = 0;
             this.btnDrinks.Text = "Drinks";
             this.btnDrinks.UseVisualStyleBackColor = true;
@@ -139,9 +158,9 @@
             // btnFood
             // 
             this.btnFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFood.Location = new System.Drawing.Point(261, 9);
+            this.btnFood.Location = new System.Drawing.Point(264, 3);
             this.btnFood.Name = "btnFood";
-            this.btnFood.Size = new System.Drawing.Size(248, 68);
+            this.btnFood.Size = new System.Drawing.Size(256, 80);
             this.btnFood.TabIndex = 1;
             this.btnFood.Text = "Food";
             this.btnFood.UseVisualStyleBackColor = true;
@@ -156,7 +175,7 @@
             this.panelDrinks.Controls.Add(this.flowLayoutPanel2);
             this.panelDrinks.Location = new System.Drawing.Point(8, 137);
             this.panelDrinks.Name = "panelDrinks";
-            this.panelDrinks.Size = new System.Drawing.Size(410, 493);
+            this.panelDrinks.Size = new System.Drawing.Size(446, 493);
             this.panelDrinks.TabIndex = 3;
             // 
             // flowLayoutPanel4
@@ -175,7 +194,7 @@
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(200, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(210, 493);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(246, 493);
             this.flowLayoutPanel4.TabIndex = 2;
             // 
             // button9
@@ -207,7 +226,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(3, 59);
+            this.button12.Location = new System.Drawing.Point(171, 3);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(50, 50);
             this.button12.TabIndex = 3;
@@ -216,7 +235,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(59, 59);
+            this.button13.Location = new System.Drawing.Point(3, 59);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(50, 50);
             this.button13.TabIndex = 4;
@@ -225,7 +244,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(115, 59);
+            this.button14.Location = new System.Drawing.Point(59, 59);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(50, 50);
             this.button14.TabIndex = 5;
@@ -234,7 +253,7 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(3, 115);
+            this.button15.Location = new System.Drawing.Point(115, 59);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(50, 50);
             this.button15.TabIndex = 6;
@@ -243,7 +262,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(59, 115);
+            this.button16.Location = new System.Drawing.Point(171, 59);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(50, 50);
             this.button16.TabIndex = 7;
@@ -252,7 +271,7 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(115, 115);
+            this.button17.Location = new System.Drawing.Point(3, 115);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(50, 50);
             this.button17.TabIndex = 8;
@@ -274,7 +293,7 @@
             // 
             this.btnBackDrinks.Location = new System.Drawing.Point(3, 3);
             this.btnBackDrinks.Name = "btnBackDrinks";
-            this.btnBackDrinks.Size = new System.Drawing.Size(191, 40);
+            this.btnBackDrinks.Size = new System.Drawing.Size(194, 40);
             this.btnBackDrinks.TabIndex = 0;
             this.btnBackDrinks.Text = "Back";
             this.btnBackDrinks.UseVisualStyleBackColor = true;
@@ -284,7 +303,7 @@
             // 
             this.btnClearPreviousItemDrinks.Location = new System.Drawing.Point(3, 49);
             this.btnClearPreviousItemDrinks.Name = "btnClearPreviousItemDrinks";
-            this.btnClearPreviousItemDrinks.Size = new System.Drawing.Size(191, 40);
+            this.btnClearPreviousItemDrinks.Size = new System.Drawing.Size(194, 40);
             this.btnClearPreviousItemDrinks.TabIndex = 1;
             this.btnClearPreviousItemDrinks.Text = "Clear Previous Item";
             this.btnClearPreviousItemDrinks.UseVisualStyleBackColor = true;
@@ -296,9 +315,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFood.Controls.Add(this.flowLayoutPanel3);
             this.panelFood.Controls.Add(this.flowLayoutPanel1);
-            this.panelFood.Location = new System.Drawing.Point(424, 137);
+            this.panelFood.Location = new System.Drawing.Point(460, 137);
             this.panelFood.Name = "panelFood";
-            this.panelFood.Size = new System.Drawing.Size(498, 493);
+            this.panelFood.Size = new System.Drawing.Size(462, 493);
             this.panelFood.TabIndex = 4;
             // 
             // flowLayoutPanel3
@@ -316,7 +335,7 @@
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(200, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(298, 493);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(262, 493);
             this.flowLayoutPanel3.TabIndex = 2;
             // 
             // button1
@@ -362,7 +381,7 @@
             // button5
             // 
             this.button5.AutoSize = true;
-            this.button5.Location = new System.Drawing.Point(239, 3);
+            this.button5.Location = new System.Drawing.Point(3, 59);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(53, 50);
             this.button5.TabIndex = 4;
@@ -372,7 +391,7 @@
             // button6
             // 
             this.button6.AutoSize = true;
-            this.button6.Location = new System.Drawing.Point(3, 59);
+            this.button6.Location = new System.Drawing.Point(62, 59);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(53, 50);
             this.button6.TabIndex = 5;
@@ -382,7 +401,7 @@
             // button7
             // 
             this.button7.AutoSize = true;
-            this.button7.Location = new System.Drawing.Point(62, 59);
+            this.button7.Location = new System.Drawing.Point(121, 59);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(53, 50);
             this.button7.TabIndex = 6;
@@ -392,7 +411,7 @@
             // button8
             // 
             this.button8.AutoSize = true;
-            this.button8.Location = new System.Drawing.Point(121, 59);
+            this.button8.Location = new System.Drawing.Point(180, 59);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(53, 50);
             this.button8.TabIndex = 7;
@@ -414,7 +433,7 @@
             // 
             this.btnBackFood.Location = new System.Drawing.Point(3, 3);
             this.btnBackFood.Name = "btnBackFood";
-            this.btnBackFood.Size = new System.Drawing.Size(191, 40);
+            this.btnBackFood.Size = new System.Drawing.Size(194, 40);
             this.btnBackFood.TabIndex = 0;
             this.btnBackFood.Text = "Back";
             this.btnBackFood.UseVisualStyleBackColor = true;
@@ -424,30 +443,10 @@
             // 
             this.btnClearPreviousItemFood.Location = new System.Drawing.Point(3, 49);
             this.btnClearPreviousItemFood.Name = "btnClearPreviousItemFood";
-            this.btnClearPreviousItemFood.Size = new System.Drawing.Size(191, 40);
+            this.btnClearPreviousItemFood.Size = new System.Drawing.Size(194, 40);
             this.btnClearPreviousItemFood.TabIndex = 1;
             this.btnClearPreviousItemFood.Text = "Clear Previous Item";
             this.btnClearPreviousItemFood.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel5.Controls.Add(this.btnCancelOrder);
-            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 93);
-            this.flowLayoutPanel5.TabIndex = 3;
-            // 
-            // btnCancelOrder
-            // 
-            this.btnCancelOrder.Location = new System.Drawing.Point(3, 3);
-            this.btnCancelOrder.Name = "btnCancelOrder";
-            this.btnCancelOrder.Size = new System.Drawing.Size(191, 40);
-            this.btnCancelOrder.TabIndex = 0;
-            this.btnCancelOrder.Text = "Cancel Order";
-            this.btnCancelOrder.UseVisualStyleBackColor = true;
-            this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
             // 
             // Orders
             // 
@@ -468,6 +467,7 @@
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
             this.panelOderHome.ResumeLayout(false);
+            this.flowLayoutPanel5.ResumeLayout(false);
             this.panelCenter.ResumeLayout(false);
             this.panelDrinks.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
@@ -476,7 +476,6 @@
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -485,11 +484,9 @@
 
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.ListBox lbOrders;
         private System.Windows.Forms.Button btnFood;
         private System.Windows.Forms.Button btnDrinks;
         private System.Windows.Forms.Panel panelOderHome;
-        private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Panel panelDrinks;
         private System.Windows.Forms.Panel panelFood;
         private System.Windows.Forms.Button btnBackDrinks;
@@ -520,5 +517,6 @@
         private System.Windows.Forms.Panel panelCenter;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Button btnCancelOrder;
+        public System.Windows.Forms.ListBox lbOrders;
     }
 }

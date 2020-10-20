@@ -29,17 +29,12 @@ namespace CMPG223_POS
 
             LoginForm log = new LoginForm();
             SignUp sign = new SignUp();
-            Orders ord = new Orders();
 
-            ord.MdiParent = this;
             log.MdiParent = this;
             sign.MdiParent = this;
 
-            ord.Dock = DockStyle.Fill;
-
             log.Show();
             sign.Show();
-            ord.Show();
 
             foreach (Control ctrl in this.Controls)
             {
@@ -141,6 +136,15 @@ namespace CMPG223_POS
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            panelSideBar.Hide();
+            Orders ord = new Orders();
+            ord.MdiParent = this;
+            ord.Dock = DockStyle.Fill;
+            ord.Show();
         }
     }
 }
