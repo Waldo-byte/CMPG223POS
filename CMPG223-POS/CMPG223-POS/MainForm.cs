@@ -26,6 +26,28 @@ namespace CMPG223_POS
         private void MainForm_Load(object sender, EventArgs e)
         {
             mainMenuStrip.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
+
+            LoginForm log = new LoginForm();
+            SignUp sign = new SignUp();
+            Orders ord = new Orders();
+
+            ord.MdiParent = this;
+            log.MdiParent = this;
+            sign.MdiParent = this;
+
+            ord.Dock = DockStyle.Fill;
+
+            log.Show();
+            sign.Show();
+            ord.Show();
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is MdiClient)
+                {
+                    ctrl.BackColor = Color.FromArgb(255, 255, 255);
+                }
+            }
         }
 
         //GUI
@@ -38,55 +60,52 @@ namespace CMPG223_POS
             }
             public override System.Drawing.Color ToolStripBorder
             {
-                get { return Color.FromArgb(150, 150, 150); }
+                get { return Color.FromArgb(225,225,225); }
             }
             public override System.Drawing.Color MenuItemBorder
             {
-                get { return Color.FromArgb(250, 250, 150); }
+                get { return Color.FromArgb(0, 250, 150); }
             }
 
             public override System.Drawing.Color MenuBorder
             {
-                get { return Color.FromArgb(250, 150, 150); }
-            }
-
-            public override System.Drawing.Color MenuItemPressedGradientBegin
-            {
-                get { return Color.FromArgb(50, 50, 50); }
-            }
-
-            public override System.Drawing.Color MenuItemPressedGradientEnd
-            {
-                get { return Color.FromArgb(50, 50, 50); }
+                get { return Color.FromArgb(0, 250, 150); }
             }
 
             public override System.Drawing.Color MenuItemSelected
             {
-                get { return Color.FromArgb(80, 80, 80); }
+                get { return Color.FromArgb(200,255,225); }
             }
+            //select menu strip
             public override System.Drawing.Color MenuItemSelectedGradientBegin
             {
-                get { return Color.FromArgb(80, 80, 80); }
+                get { return Color.FromArgb(200,255,225); }
             }
 
             public override System.Drawing.Color MenuItemSelectedGradientEnd
             {
-                get { return Color.FromArgb(80, 80, 80); }
+                get { return Color.FromArgb(255,255,255); }
             }
 
-            public override System.Drawing.Color MenuItemPressedGradientMiddle
+            //press menu strip
+            public override System.Drawing.Color MenuItemPressedGradientBegin
             {
-                get { return Color.FromArgb(150, 150, 150); }
+                get { return Color.FromArgb(255,255,255); }
+            }
+
+            public override System.Drawing.Color MenuItemPressedGradientEnd
+            {
+                get { return Color.FromArgb(255, 255, 255); }
             }
 
             public override System.Drawing.Color MenuStripGradientBegin
             {
-                get { return Color.FromArgb(150, 150, 150); }
+                get { return Color.FromArgb(255,255,255); }
             }
 
             public override System.Drawing.Color MenuStripGradientEnd
             {
-                get { return Color.FromArgb(150, 150, 150); }
+                get { return Color.FromArgb(255,255,255); }
             }
 
             public override System.Drawing.Color ToolStripContentPanelGradientBegin
@@ -96,28 +115,32 @@ namespace CMPG223_POS
 
             public override System.Drawing.Color ToolStripContentPanelGradientEnd
             {
-                get { return Color.FromArgb(50, 50, 50); }
+                get { return Color.FromArgb(255,255,255); }
             }
 
             public override Color ToolStripDropDownBackground
             {
-                get { return Color.FromArgb(50, 50, 50); }
+                get { return Color.FromArgb(255,255,255); }
             }
 
             public override Color ImageMarginGradientBegin
             {
-                get { return Color.FromArgb(50, 50, 50); }
+                get { return Color.FromArgb(255,255,255); }
             }
 
             public override Color ImageMarginGradientMiddle
             {
-                get { return Color.FromArgb(50, 50, 50); }
+                get { return Color.FromArgb(255,255,255); }
             }
             public override Color ImageMarginGradientEnd
             {
-                get { return Color.FromArgb(50, 50, 50); }
+                get { return Color.FromArgb(255,255,255); }
             }
+        }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

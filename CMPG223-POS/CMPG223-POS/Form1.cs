@@ -24,15 +24,13 @@ namespace CMPG223_POS
 
         private void timerLoader_Tick(object sender, EventArgs e)
         {
-            progressLoader.Width += 600;
+            progressLoader.Width += 1;
             if(progressLoader.Width >= 600)
             {
                 MainForm main = new MainForm();
-                LoginForm log = new LoginForm();
-                SignUp sign = new SignUp();
+
                 main.Show();
-                log.Show();
-                sign.Show();
+
                 timerLoader.Stop();
                 this.Hide();
             }
