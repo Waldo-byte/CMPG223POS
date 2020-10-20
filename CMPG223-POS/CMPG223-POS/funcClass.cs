@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.IO;
+using System.Windows.Forms;
 
 namespace CMPG223_POS
 {
@@ -77,34 +78,67 @@ namespace CMPG223_POS
 
             return price;  // price moet nog bereken word
         }
-       /* public void addStock(String item)
+        public void addStock(int item, String decription, double price)
         {
+            try
+            {
+                string sql_addstock = "INSERT INTO Bought_Inv ([Inventory_ID], [Description], [Price]) VALUES(@Item_ID, @Description, @Price)";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql_addstock, conn);
+                cmd.Parameters.AddWithValue("@Item_ID", item);
+                cmd.Parameters.AddWithValue("@Description", item);
+                cmd.Parameters.AddWithValue("@Price", item);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
 
+            catch(SqlException error)
+            {
+                MessageBox.Show(error.Message);
+                conn.Close();
+            }
+            
         }
 
-        public void removeStock(String item)
+        public void removeStock(int item, string description, double price)
         {
+            try
+            {
+                string sql_delstock = "DELETE FROM Bought_Inv Where [Inventory_ID] = @Item_ID";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql_delstock, conn);
+                cmd.Parameters.AddWithValue("@Item_ID", item);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                
+            }
 
+            catch(SqlException deleteEr)
+            {
+                MessageBox.Show(deleteEr.Message);
+                conn.Close();
+            }
+            
         }
 
-        public void buyStock(Stock[] buyStock)
+        //public void buyStock(Stock[] buyStock)
 
         //}
 
-        public void payBill(int tableNum)
-        {
+        //public void payBill(int tableNum)
+        //{
 
-        }
+        //}
 
-        public void clockIn(int waiaterID, String waiterPass)
-        {
+       // public void clockIn(int waiaterID, String waiterPass)
+        //{
 
-        }
+        //}
 
         public void clockOut(int waiterID)
         {
 
-        }*/
+        }
 
 
 
