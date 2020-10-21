@@ -78,16 +78,17 @@ namespace CMPG223_POS
 
             return price;  // price moet nog bereken word
         }
-        public void addStock(int item, String decription, double price)
+        public void addStock(int item, String description, double price, int qty)
         {
             try
             {
-                string sql_addstock = "INSERT INTO Bought_Inv ([Inventory_ID], [Description], [Price]) VALUES(@Item_ID, @Description, @Price)";
+                string sql_addstock = "INSERT INTO Bought_Inv ([Inventory_ID], [Description], [Price], [Quantity]) VALUES(@Item_ID, @Description, @Price, @Qty)";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql_addstock, conn);
                 cmd.Parameters.AddWithValue("@Item_ID", item);
-                cmd.Parameters.AddWithValue("@Description", item);
-                cmd.Parameters.AddWithValue("@Price", item);
+                cmd.Parameters.AddWithValue("@Description", description);
+                cmd.Parameters.AddWithValue("@Price", price);
+                cmd.Parameters.AddWithValue("@Qty", qty);
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
