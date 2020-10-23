@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuyInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuyInventoryForm.Designer.cs">
+      <DependentUpon>BuyInventoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,12 +108,21 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="StockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockForm.Designer.cs">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WaiterAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WaiterAddForm.Designer.cs">
       <DependentUpon>WaiterAddForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BuyInventoryForm.resx">
+      <DependentUpon>BuyInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WaiterAddForm.resx">
       <DependentUpon>WaiterAddForm.cs</DependentUpon>
