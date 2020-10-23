@@ -150,6 +150,7 @@
             this.btnConfirmOrder.TabIndex = 2;
             this.btnConfirmOrder.Text = "Confirm Order";
             this.btnConfirmOrder.UseVisualStyleBackColor = true;
+            this.btnConfirmOrder.Click += new System.EventHandler(this.btnConfirmOrder_Click);
             // 
             // btnPayOrder
             // 
@@ -340,6 +341,7 @@
             this.btnClearPreviousItemDrinks.TabIndex = 1;
             this.btnClearPreviousItemDrinks.Text = "Clear Previous Item";
             this.btnClearPreviousItemDrinks.UseVisualStyleBackColor = true;
+            this.btnClearPreviousItemDrinks.Click += new System.EventHandler(this.btnClearPreviousItemDrinks_Click);
             // 
             // panelFood
             // 

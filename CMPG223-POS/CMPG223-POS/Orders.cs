@@ -156,5 +156,22 @@ namespace CMPG223_POS
         {
             functions.addItem("Mild Wings");
         }
+
+        private void btnConfirmOrder_Click(object sender, EventArgs e)
+        {
+            int count = 0;
+            string[] orders = new string[100]; 
+            while(lbOrders.Items != null)
+            {
+                
+                orders[count] = lbOrders.Items[count].ToString();
+                
+            }
+        }
+
+        private void btnClearPreviousItemDrinks_Click(object sender, EventArgs e)
+        {
+            lbOrders.Items[lbOrders.Items.Count - 1] = null;
+        }
     }
 }
