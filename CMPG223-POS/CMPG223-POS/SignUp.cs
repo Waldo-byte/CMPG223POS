@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CMPG223_POS
 {
@@ -61,7 +62,12 @@ namespace CMPG223_POS
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             string sql = @"INSERT INTO ClienTable (LastName, FirstName,PhoneNumber) VALUES('" + txtSurname.Text + "' , '" + txtName.Text + "' , '" + txtPhoneNumber.Text + "'";
+            comm = new SqlCommand(sql, conn);
+            adap = new SqlDataAdapter();
+            ds = new DataSet();
 
+            adap.SelectCommand = comm;
+            adap.Fill(ds);
         }
     }
 }
