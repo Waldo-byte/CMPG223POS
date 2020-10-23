@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,36 @@ namespace CMPG223_POS
             InitializeComponent();
         }
 
+        [DllImport("user32.dll")]
+        private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+        [DllImport("user32.dll")]
+        private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+
+        private const int GWL_EXSTYLE = -20;
+        private const int WS_EX_CLIENTEDGE = 0x200;
+
+        public void buttonStyle(Control source)
+        {
+            foreach(Control con in source.Controls)
+            {
+                if (con is Button)
+                {
+                    Button but = con as Button;
+                    but.BackColor = Color.FromArgb(225,225,225);
+                    but.ForeColor = Color.FromArgb(0,0,0);
+                    but.FlatStyle = FlatStyle.Flat;
+                    but.FlatAppearance.BorderSize = 0;
+                    but.FlatAppearance.BorderColor = Color.FromArgb(125, 125, 125);
+                    but.FlatAppearance.MouseOverBackColor = Color.FromArgb(200, 100, 40);
+                }
+                else
+                {
+                    buttonStyle(con);
+                }
+            }
+        }
+
         //Exit Sequence
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -25,6 +56,8 @@ namespace CMPG223_POS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            buttonStyle(panelSideBar);
+
             mainMenuStrip.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
 
             LoginForm log = new LoginForm();
@@ -36,12 +69,14 @@ namespace CMPG223_POS
             log.Show();
             sign.Show();
 
-            foreach (Control ctrl in this.Controls)
+            foreach (var mdi in this.Controls.OfType<MdiClient>())
             {
-                if (ctrl is MdiClient)
-                {
-                    ctrl.BackColor = Color.FromArgb(255, 255, 255);
-                }
+                mdi.BackColor = Color.FromArgb(225,225,225);
+                mdi.Dock = DockStyle.None;
+                int window = GetWindowLong(mdi.Handle, GWL_EXSTYLE);
+                window &= ~WS_EX_CLIENTEDGE;
+                SetWindowLong(mdi.Handle, GWL_EXSTYLE, window);
+                mdi.Dock = DockStyle.Fill;
             }
         }
 
@@ -130,6 +165,30 @@ namespace CMPG223_POS
             public override Color ImageMarginGradientEnd
             {
                 get { return Color.FromArgb(255,255,255); }
+            }
+        }
+
+        public class CustomButton : Button
+        {
+            private static Color _activeBorder = System.Drawing.Color.Green;
+
+            private bool _active;
+            public CustomButton() : base()
+            {
+
+            }
+
+            protected override void OnControlAdded(ControlEventArgs e)
+            {
+                base.OnControlAdded(e);
+                UseVisualStyleBackColor = false;
+            }
+
+            protected override void OnMouseEnter(EventArgs e)
+            {
+                base.OnMouseEnter(e);
+                if (!_active)
+                    base.FlatAppearance.BorderColor = _activeBorder;
             }
         }
 

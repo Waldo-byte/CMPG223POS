@@ -95,7 +95,9 @@
             // 
             // btnOrders
             // 
+            this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnOrders.Location = new System.Drawing.Point(3, 3);
+            this.btnOrders.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(194, 40);
             this.btnOrders.TabIndex = 0;
@@ -105,7 +107,9 @@
             // 
             // btnAddWaiter
             // 
-            this.btnAddWaiter.Location = new System.Drawing.Point(3, 49);
+            this.btnAddWaiter.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAddWaiter.Location = new System.Drawing.Point(3, 46);
+            this.btnAddWaiter.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btnAddWaiter.Name = "btnAddWaiter";
             this.btnAddWaiter.Size = new System.Drawing.Size(194, 40);
             this.btnAddWaiter.TabIndex = 1;
@@ -114,7 +118,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(3, 95);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button2.Location = new System.Drawing.Point(3, 89);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 40);
             this.button2.TabIndex = 2;
@@ -123,7 +129,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 141);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button3.Location = new System.Drawing.Point(3, 132);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(194, 40);
             this.button3.TabIndex = 3;
@@ -132,7 +140,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(3, 187);
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button4.Location = new System.Drawing.Point(3, 175);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(194, 40);
             this.button4.TabIndex = 4;
@@ -141,7 +151,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(3, 233);
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button5.Location = new System.Drawing.Point(3, 218);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(194, 40);
             this.button5.TabIndex = 5;
@@ -150,7 +162,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(3, 279);
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button6.Location = new System.Drawing.Point(3, 261);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(194, 40);
             this.button6.TabIndex = 6;
