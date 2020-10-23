@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace CMPG223_POS
 {
+    //Janus was hier
     class funcClass
     {
         static String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
