@@ -173,5 +173,10 @@ namespace CMPG223_POS
         {
             lbOrders.Items[lbOrders.Items.Count - 1] = null;
         }
+
+        private void btnClearPreviousItemFood_Click(object sender, EventArgs e)
+        {
+            lbOrders.Items[lbOrders.Items.Count - 1] = null;
+        }
     }
 }

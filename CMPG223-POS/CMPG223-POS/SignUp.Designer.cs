@@ -99,6 +99,7 @@
             this.btnSignUp.TabIndex = 6;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             this.btnSignUp.MouseEnter += new System.EventHandler(this.btnSignUp_MouseEnter);
             this.btnSignUp.MouseLeave += new System.EventHandler(this.btnSignUp_MouseLeave);
             // 
