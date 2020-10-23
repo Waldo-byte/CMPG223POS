@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.IO;
+using System.Windows.Forms;
 
 namespace CMPG223_POS
 {
+    
     class funcClass
     {
         static String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
@@ -75,36 +77,70 @@ namespace CMPG223_POS
                 price += cost[i];
             }
 
-            return price;  // price moet nog bereken word
+            return price;  
         }
-       /* public void addStock(String item)
+        public void addStock(int item, String description, double price, int qty)
         {
+            try
+            {
+                string sql_addstock = "INSERT INTO Bought_Inv ([Inventory_ID], [Description], [Price], [Quantity]) VALUES(@Item_ID, @Description, @Price, @Qty)";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql_addstock, conn);
+                cmd.Parameters.AddWithValue("@Item_ID", item);
+                cmd.Parameters.AddWithValue("@Description", description);
+                cmd.Parameters.AddWithValue("@Price", price);
+                cmd.Parameters.AddWithValue("@Qty", qty);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
 
+            catch(SqlException error)
+            {
+                MessageBox.Show(error.Message);
+                conn.Close();
+            }
+            
         }
 
-        public void removeStock(String item)
+        public void removeStock(int item, string description, double price)
         {
+            try
+            {
+                string sql_delstock = "DELETE FROM Bought_Inv Where [Inventory_ID] = @Item_ID";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql_delstock, conn);
+                cmd.Parameters.AddWithValue("@Item_ID", item);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                
+            }
 
+            catch(SqlException deleteEr)
+            {
+                MessageBox.Show(deleteEr.Message);
+                conn.Close();
+            }
+            
         }
 
-        public void buyStock(Stock[] buyStock)
+        //public void buyStock(Stock[] buyStock)
 
         //}
 
-        public void payBill(int tableNum)
-        {
+        //public void payBill(int tableNum)
+        //{
 
-        }
+        //}
 
-        public void clockIn(int waiaterID, String waiterPass)
-        {
+       // public void clockIn(int waiaterID, String waiterPass)
+        //{
 
-        }
+        //}
 
         public void clockOut(int waiterID)
         {
 
-        }*/
+        }
 
 
 
