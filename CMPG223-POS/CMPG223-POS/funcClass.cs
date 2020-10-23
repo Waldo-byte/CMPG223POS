@@ -37,11 +37,11 @@ namespace CMPG223_POS
             }
         }
 
-        public decimal placeOrder(string[] orders, decimal cost, int tableNum)
+        public void placeOrder(string[] orders, decimal cost, int tableNum)
         {
             conn.Open();
             int ammount;
-            decimal price = 0;
+            
             for (int i = 0; i < orders.Length; i++)
             {
                 string sqlGet = "SELECT Bought_Inv FROM Menu_Item WHERE Description = '" + orders[i] + "'";
@@ -74,10 +74,17 @@ namespace CMPG223_POS
             for(int i = 0; i < orders.Length; i++)
             {
                 outputFile.WriteLine(orders[i]);
-                price = cost;
+                
             }
 
-            return price;  
+            string sql = "UPDATE Client_Order SET Amount = '" + cost + "'";
+            comm = new SqlCommand(sql, conn);
+            adap = new SqlDataAdapter();
+            ds = new DataSet();
+            adap.SelectCommand = comm;
+            adap.Fill(ds);
+
+
         }
         public void addStock(int item, string description, double price, int qty)
         {
