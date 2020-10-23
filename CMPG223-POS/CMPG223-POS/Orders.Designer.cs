@@ -67,6 +67,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBackFood = new System.Windows.Forms.Button();
             this.btnClearPreviousItemFood = new System.Windows.Forms.Button();
+            this.lblTableNumber = new System.Windows.Forms.Label();
+            this.txtTableNumber = new System.Windows.Forms.TextBox();
             this.panelTitle.SuspendLayout();
             this.panelOderHome.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
@@ -111,6 +113,8 @@
             // 
             // panelOderHome
             // 
+            this.panelOderHome.Controls.Add(this.txtTableNumber);
+            this.panelOderHome.Controls.Add(this.lblTableNumber);
             this.panelOderHome.Controls.Add(this.flowLayoutPanel5);
             this.panelOderHome.Controls.Add(this.panelCenter);
             this.panelOderHome.Location = new System.Drawing.Point(8, 38);
@@ -141,11 +145,31 @@
             this.btnCancelOrder.UseVisualStyleBackColor = true;
             this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
             // 
+            // btnConfirmOrder
+            // 
+            this.btnConfirmOrder.Location = new System.Drawing.Point(1, 42);
+            this.btnConfirmOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.btnConfirmOrder.Name = "btnConfirmOrder";
+            this.btnConfirmOrder.Size = new System.Drawing.Size(198, 40);
+            this.btnConfirmOrder.TabIndex = 2;
+            this.btnConfirmOrder.Text = "Confirm Order";
+            this.btnConfirmOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnPayOrder
+            // 
+            this.btnPayOrder.Location = new System.Drawing.Point(1, 83);
+            this.btnPayOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.btnPayOrder.Name = "btnPayOrder";
+            this.btnPayOrder.Size = new System.Drawing.Size(198, 40);
+            this.btnPayOrder.TabIndex = 3;
+            this.btnPayOrder.Text = "Pay Order";
+            this.btnPayOrder.UseVisualStyleBackColor = true;
+            // 
             // panelCenter
             // 
             this.panelCenter.Controls.Add(this.btnDrinks);
             this.panelCenter.Controls.Add(this.btnFood);
-            this.panelCenter.Location = new System.Drawing.Point(206, 4);
+            this.panelCenter.Location = new System.Drawing.Point(209, 42);
             this.panelCenter.Name = "panelCenter";
             this.panelCenter.Size = new System.Drawing.Size(523, 86);
             this.panelCenter.TabIndex = 2;
@@ -417,7 +441,7 @@
             // 
             // btnMediumChips
             // 
-            this.btnMediumChips.Location = new System.Drawing.Point(90, 175);
+            this.btnMediumChips.Location = new System.Drawing.Point(110, 115);
             this.btnMediumChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.btnMediumChips.Name = "btnMediumChips";
             this.btnMediumChips.Size = new System.Drawing.Size(80, 80);
@@ -426,10 +450,20 @@
             this.btnMediumChips.UseVisualStyleBackColor = true;
             this.btnMediumChips.Click += new System.EventHandler(this.btnMediumChips_Click);
             // 
+            // btnLargeChips
+            // 
+            this.btnLargeChips.Location = new System.Drawing.Point(5, 200);
+            this.btnLargeChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnLargeChips.Name = "btnLargeChips";
+            this.btnLargeChips.Size = new System.Drawing.Size(80, 80);
+            this.btnLargeChips.TabIndex = 8;
+            this.btnLargeChips.Text = "Large Chips";
+            this.btnLargeChips.UseVisualStyleBackColor = true;
+            // 
             // btnRegularWings
             // 
             this.btnRegularWings.AutoSize = true;
-            this.btnRegularWings.Location = new System.Drawing.Point(110, 170);
+            this.btnRegularWings.Location = new System.Drawing.Point(90, 200);
             this.btnRegularWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.btnRegularWings.Name = "btnRegularWings";
             this.btnRegularWings.Size = new System.Drawing.Size(100, 50);
@@ -441,7 +475,7 @@
             // btnHotWings
             // 
             this.btnHotWings.AutoSize = true;
-            this.btnHotWings.Location = new System.Drawing.Point(5, 225);
+            this.btnHotWings.Location = new System.Drawing.Point(5, 285);
             this.btnHotWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.btnHotWings.Name = "btnHotWings";
             this.btnHotWings.Size = new System.Drawing.Size(100, 50);
@@ -449,6 +483,14 @@
             this.btnHotWings.Text = "Hot Wings";
             this.btnHotWings.UseVisualStyleBackColor = true;
             this.btnHotWings.Click += new System.EventHandler(this.btnHotWings_Click);
+            // 
+            // btnMildWings
+            // 
+            this.btnMildWings.Location = new System.Drawing.Point(108, 283);
+            this.btnMildWings.Name = "btnMildWings";
+            this.btnMildWings.Size = new System.Drawing.Size(102, 52);
+            this.btnMildWings.TabIndex = 10;
+            this.btnMildWings.Text = "Mild Wings";
             // 
             // flowLayoutPanel1
             // 
@@ -483,45 +525,21 @@
             this.btnClearPreviousItemFood.Text = "Clear Previous Item";
             this.btnClearPreviousItemFood.UseVisualStyleBackColor = true;
             // 
-            // btnLargeChips
+            // lblTableNumber
             // 
-            this.btnLargeChips.Location = new System.Drawing.Point(5, 260);
-            this.btnLargeChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnLargeChips.Name = "btnLargeChips";
-            this.btnLargeChips.Size = new System.Drawing.Size(80, 80);
-            this.btnLargeChips.TabIndex = 8;
-            this.btnLargeChips.Text = "Large Chips";
-            this.btnLargeChips.UseVisualStyleBackColor = true;
+            this.lblTableNumber.AutoSize = true;
+            this.lblTableNumber.Location = new System.Drawing.Point(204, 4);
+            this.lblTableNumber.Name = "lblTableNumber";
+            this.lblTableNumber.Size = new System.Drawing.Size(74, 13);
+            this.lblTableNumber.TabIndex = 4;
+            this.lblTableNumber.Text = "Table Number";
             // 
-            // btnMediumChips
+            // txtTableNumber
             // 
-            this.btnMediumChips.Location = new System.Drawing.Point(90, 175);
-            this.btnMediumChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnMediumChips.Name = "btnMediumChips";
-            this.btnMediumChips.Size = new System.Drawing.Size(80, 80);
-            this.btnMediumChips.TabIndex = 9;
-            this.btnMediumChips.Text = "Medium Chips";
-            this.btnMediumChips.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirmOrder
-            // 
-            this.btnConfirmOrder.Location = new System.Drawing.Point(1, 42);
-            this.btnConfirmOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.btnConfirmOrder.Name = "btnConfirmOrder";
-            this.btnConfirmOrder.Size = new System.Drawing.Size(198, 40);
-            this.btnConfirmOrder.TabIndex = 2;
-            this.btnConfirmOrder.Text = "Confirm Order";
-            this.btnConfirmOrder.UseVisualStyleBackColor = true;
-            // 
-            // btnPayOrder
-            // 
-            this.btnPayOrder.Location = new System.Drawing.Point(1, 83);
-            this.btnPayOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.btnPayOrder.Name = "btnPayOrder";
-            this.btnPayOrder.Size = new System.Drawing.Size(198, 40);
-            this.btnPayOrder.TabIndex = 3;
-            this.btnPayOrder.Text = "Pay Order";
-            this.btnPayOrder.UseVisualStyleBackColor = true;
+            this.txtTableNumber.Location = new System.Drawing.Point(284, 1);
+            this.txtTableNumber.Name = "txtTableNumber";
+            this.txtTableNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtTableNumber.TabIndex = 5;
             // 
             // Orders
             // 
@@ -542,6 +560,7 @@
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
             this.panelOderHome.ResumeLayout(false);
+            this.panelOderHome.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.panelCenter.ResumeLayout(false);
             this.panelDrinks.ResumeLayout(false);
@@ -596,5 +615,7 @@
         private System.Windows.Forms.Button btnLargeChips;
         private System.Windows.Forms.Button btnConfirmOrder;
         private System.Windows.Forms.Button btnPayOrder;
+        private System.Windows.Forms.TextBox txtTableNumber;
+        private System.Windows.Forms.Label lblTableNumber;
     }
 }

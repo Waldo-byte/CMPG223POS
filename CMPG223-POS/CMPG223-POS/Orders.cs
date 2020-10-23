@@ -67,9 +67,9 @@ namespace CMPG223_POS
         private void btnCancelOrder_Click(object sender, EventArgs e)
         {
             //this.Close();
-            MainForm form = (MainForm)this.Owner;
+            FlowLayoutPanel side = (this.Parent as MainForm).Controls["panelSideBar"] as FlowLayoutPanel;
 
-            form.panelSideBar.Show();
+            side.Show();
         }
 
         private void btnSwartkatLager_Click(object sender, EventArgs e)
