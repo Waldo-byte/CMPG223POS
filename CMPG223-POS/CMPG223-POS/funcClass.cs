@@ -13,18 +13,18 @@ namespace CMPG223_POS
     
     class funcClass
     {
-        static String constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
         SqlDataAdapter adap;
         DataSet ds;
-        public void addItem(String item)
+        public void addItem(string item)
         {
             Orders orderForm = new Orders();
             orderForm.lbOrders.Items.Add(item);
         }
 
-        public void deleteItem(String item)
+        public void deleteItem(string item)
         {
             Orders orderForm = new Orders();
             for (int i = 0; i < orderForm.lbOrders.Items.Count; i++)
@@ -37,14 +37,14 @@ namespace CMPG223_POS
             }
         }
 
-        public decimal placeOrder(String[] orders, decimal[] cost, int tableNum)
+        public decimal placeOrder(string[] orders, decimal[] cost, int tableNum)
         {
             conn.Open();
             int ammount;
             decimal price = 0;
             for (int i = 0; i < orders.Length; i++)
             {
-                String sqlGet = "SELECT Bought_Inv FROM Menu_Item WHERE Inventory_ID = '" + orders[i] + "'";
+                string sqlGet = "SELECT Bought_Inv FROM Menu_Item WHERE Description = '" + orders[i] + "'";
                 comm = new SqlCommand(sqlGet, conn);
                 adap = new SqlDataAdapter();
                 ds = new DataSet();
@@ -60,7 +60,7 @@ namespace CMPG223_POS
                     int.TryParse((string)reader[0], out ammount);
                 }
 
-                String sqlSet = "UPDATE Menu_Item SET Bought_Inv = '" + (ammount - 1) + "'" + " WHERE Inventory_ID = " + orders[i] + "'";
+                string sqlSet = "UPDATE Menu_Item SET Bought_Inv = '" + (ammount - 1) + "'" + " WHERE Inventory_ID = " + orders[i] + "'";
                 comm = new SqlCommand(sqlSet, conn);
                 adap = new SqlDataAdapter();
                 ds = new DataSet();
@@ -79,7 +79,7 @@ namespace CMPG223_POS
 
             return price;  
         }
-        public void addStock(int item, String description, double price, int qty)
+        public void addStock(int item, string description, double price, int qty)
         {
             try
             {
@@ -132,9 +132,9 @@ namespace CMPG223_POS
 
         //}
 
-       // public void clockIn(int waiaterID, String waiterPass)
+       // public void clockIn(int waiaterID, string waiterPass)
         //{
-
+                
         //}
 
         public void clockOut(int waiterID)

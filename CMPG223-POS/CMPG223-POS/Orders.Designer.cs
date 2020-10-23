@@ -141,26 +141,6 @@
             this.btnCancelOrder.UseVisualStyleBackColor = true;
             this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
             // 
-            // btnConfirmOrder
-            // 
-            this.btnConfirmOrder.Location = new System.Drawing.Point(1, 42);
-            this.btnConfirmOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.btnConfirmOrder.Name = "btnConfirmOrder";
-            this.btnConfirmOrder.Size = new System.Drawing.Size(198, 40);
-            this.btnConfirmOrder.TabIndex = 2;
-            this.btnConfirmOrder.Text = "Confirm Order";
-            this.btnConfirmOrder.UseVisualStyleBackColor = true;
-            // 
-            // btnPayOrder
-            // 
-            this.btnPayOrder.Location = new System.Drawing.Point(1, 83);
-            this.btnPayOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.btnPayOrder.Name = "btnPayOrder";
-            this.btnPayOrder.Size = new System.Drawing.Size(198, 40);
-            this.btnPayOrder.TabIndex = 3;
-            this.btnPayOrder.Text = "Pay Order";
-            this.btnPayOrder.UseVisualStyleBackColor = true;
-            // 
             // panelCenter
             // 
             this.panelCenter.Controls.Add(this.btnDrinks);
@@ -231,6 +211,7 @@
             this.btnSwartkatLager.TabIndex = 0;
             this.btnSwartkatLager.Text = "Swartkat Lager";
             this.btnSwartkatLager.UseVisualStyleBackColor = true;
+            this.btnSwartkatLager.Click += new System.EventHandler(this.btnSwartkatLager_Click);
             // 
             // btnAfricaPilsner
             // 
@@ -241,6 +222,7 @@
             this.btnAfricaPilsner.TabIndex = 1;
             this.btnAfricaPilsner.Text = "Africa Pilsner";
             this.btnAfricaPilsner.UseVisualStyleBackColor = true;
+            this.btnAfricaPilsner.Click += new System.EventHandler(this.btnAfricaPilsner_Click);
             // 
             // btnWeisbeer
             // 
@@ -251,6 +233,7 @@
             this.btnWeisbeer.TabIndex = 2;
             this.btnWeisbeer.Text = "Weisbeer";
             this.btnWeisbeer.UseVisualStyleBackColor = true;
+            this.btnWeisbeer.Click += new System.EventHandler(this.btnWeisbeer_Click);
             // 
             // btnRedAle
             // 
@@ -261,6 +244,7 @@
             this.btnRedAle.TabIndex = 3;
             this.btnRedAle.Text = "Red Ale";
             this.btnRedAle.UseVisualStyleBackColor = true;
+            this.btnRedAle.Click += new System.EventHandler(this.btnRedAle_Click);
             // 
             // btnGRTAle
             // 
@@ -271,6 +255,7 @@
             this.btnGRTAle.TabIndex = 4;
             this.btnGRTAle.Text = "GRT Ale";
             this.btnGRTAle.UseVisualStyleBackColor = true;
+            this.btnGRTAle.Click += new System.EventHandler(this.btnGRTAle_Click);
             // 
             // btnStout
             // 
@@ -281,6 +266,7 @@
             this.btnStout.TabIndex = 5;
             this.btnStout.Text = "Stout";
             this.btnStout.UseVisualStyleBackColor = true;
+            this.btnStout.Click += new System.EventHandler(this.btnStout_Click);
             // 
             // btnCraftGin
             // 
@@ -291,6 +277,7 @@
             this.btnCraftGin.TabIndex = 6;
             this.btnCraftGin.Text = "Craft Gin";
             this.btnCraftGin.UseVisualStyleBackColor = true;
+            this.btnCraftGin.Click += new System.EventHandler(this.btnCraftGin_Click);
             // 
             // btnRum
             // 
@@ -301,6 +288,7 @@
             this.btnRum.TabIndex = 7;
             this.btnRum.Text = "Rum";
             this.btnRum.UseVisualStyleBackColor = true;
+            this.btnRum.Click += new System.EventHandler(this.btnRum_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -333,6 +321,7 @@
             this.btnClearPreviousItemDrinks.TabIndex = 1;
             this.btnClearPreviousItemDrinks.Text = "Clear Previous Item";
             this.btnClearPreviousItemDrinks.UseVisualStyleBackColor = true;
+            this.btnClearPreviousItemDrinks.Click += new System.EventHandler(this.btnClearPreviousItemDrinks_Click);
             // 
             // panelFood
             // 
@@ -376,6 +365,7 @@
             this.btnBeefBurger.TabIndex = 1;
             this.btnBeefBurger.Text = "Beef Burger";
             this.btnBeefBurger.UseVisualStyleBackColor = true;
+            this.btnBeefBurger.Click += new System.EventHandler(this.btnBeefBurger_Click);
             // 
             // btnChickenBurger
             // 
@@ -387,6 +377,7 @@
             this.btnChickenBurger.TabIndex = 2;
             this.btnChickenBurger.Text = "Chicken Burgers";
             this.btnChickenBurger.UseVisualStyleBackColor = true;
+            this.btnChickenBurger.Click += new System.EventHandler(this.btnChickenBurger_Click);
             // 
             // btnCheeseBurger
             // 
@@ -398,6 +389,7 @@
             this.btnCheeseBurger.TabIndex = 3;
             this.btnCheeseBurger.Text = "Cheese Burger";
             this.btnCheeseBurger.UseVisualStyleBackColor = true;
+            this.btnCheeseBurger.Click += new System.EventHandler(this.btnCheeseBurger_Click);
             // 
             // btnChickenSnitzel
             // 
@@ -409,6 +401,7 @@
             this.btnChickenSnitzel.TabIndex = 4;
             this.btnChickenSnitzel.Text = "Chicken Snitzel";
             this.btnChickenSnitzel.UseVisualStyleBackColor = true;
+            this.btnChickenSnitzel.Click += new System.EventHandler(this.btnChickenSnitzel_Click);
             // 
             // btnSmallChips
             // 
@@ -420,26 +413,18 @@
             this.btnSmallChips.TabIndex = 5;
             this.btnSmallChips.Text = "Small Chips";
             this.btnSmallChips.UseVisualStyleBackColor = true;
+            this.btnSmallChips.Click += new System.EventHandler(this.btnSmallChips_Click);
             // 
             // btnMediumChips
             // 
-            this.btnMediumChips.Location = new System.Drawing.Point(110, 115);
+            this.btnMediumChips.Location = new System.Drawing.Point(90, 175);
             this.btnMediumChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.btnMediumChips.Name = "btnMediumChips";
-            this.btnMediumChips.Size = new System.Drawing.Size(100, 50);
+            this.btnMediumChips.Size = new System.Drawing.Size(80, 80);
             this.btnMediumChips.TabIndex = 9;
             this.btnMediumChips.Text = "Medium Chips";
             this.btnMediumChips.UseVisualStyleBackColor = true;
-            // 
-            // btnLargeChips
-            // 
-            this.btnLargeChips.Location = new System.Drawing.Point(5, 170);
-            this.btnLargeChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnLargeChips.Name = "btnLargeChips";
-            this.btnLargeChips.Size = new System.Drawing.Size(100, 50);
-            this.btnLargeChips.TabIndex = 8;
-            this.btnLargeChips.Text = "Large Chips";
-            this.btnLargeChips.UseVisualStyleBackColor = true;
+            this.btnMediumChips.Click += new System.EventHandler(this.btnMediumChips_Click);
             // 
             // btnRegularWings
             // 
@@ -451,6 +436,7 @@
             this.btnRegularWings.TabIndex = 6;
             this.btnRegularWings.Text = "Regular Wings";
             this.btnRegularWings.UseVisualStyleBackColor = true;
+            this.btnRegularWings.Click += new System.EventHandler(this.btnRegularWings_Click);
             // 
             // btnHotWings
             // 
@@ -462,17 +448,7 @@
             this.btnHotWings.TabIndex = 7;
             this.btnHotWings.Text = "Hot Wings";
             this.btnHotWings.UseVisualStyleBackColor = true;
-            // 
-            // btnMildWings
-            // 
-            this.btnMildWings.AutoSize = true;
-            this.btnMildWings.Location = new System.Drawing.Point(110, 225);
-            this.btnMildWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnMildWings.Name = "btnMildWings";
-            this.btnMildWings.Size = new System.Drawing.Size(100, 50);
-            this.btnMildWings.TabIndex = 0;
-            this.btnMildWings.Text = "Mild Wings";
-            this.btnMildWings.UseVisualStyleBackColor = true;
+            this.btnHotWings.Click += new System.EventHandler(this.btnHotWings_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -506,6 +482,46 @@
             this.btnClearPreviousItemFood.TabIndex = 1;
             this.btnClearPreviousItemFood.Text = "Clear Previous Item";
             this.btnClearPreviousItemFood.UseVisualStyleBackColor = true;
+            // 
+            // btnLargeChips
+            // 
+            this.btnLargeChips.Location = new System.Drawing.Point(5, 260);
+            this.btnLargeChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnLargeChips.Name = "btnLargeChips";
+            this.btnLargeChips.Size = new System.Drawing.Size(80, 80);
+            this.btnLargeChips.TabIndex = 8;
+            this.btnLargeChips.Text = "Large Chips";
+            this.btnLargeChips.UseVisualStyleBackColor = true;
+            // 
+            // btnMediumChips
+            // 
+            this.btnMediumChips.Location = new System.Drawing.Point(90, 175);
+            this.btnMediumChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnMediumChips.Name = "btnMediumChips";
+            this.btnMediumChips.Size = new System.Drawing.Size(80, 80);
+            this.btnMediumChips.TabIndex = 9;
+            this.btnMediumChips.Text = "Medium Chips";
+            this.btnMediumChips.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirmOrder
+            // 
+            this.btnConfirmOrder.Location = new System.Drawing.Point(1, 42);
+            this.btnConfirmOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.btnConfirmOrder.Name = "btnConfirmOrder";
+            this.btnConfirmOrder.Size = new System.Drawing.Size(198, 40);
+            this.btnConfirmOrder.TabIndex = 2;
+            this.btnConfirmOrder.Text = "Confirm Order";
+            this.btnConfirmOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnPayOrder
+            // 
+            this.btnPayOrder.Location = new System.Drawing.Point(1, 83);
+            this.btnPayOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.btnPayOrder.Name = "btnPayOrder";
+            this.btnPayOrder.Size = new System.Drawing.Size(198, 40);
+            this.btnPayOrder.TabIndex = 3;
+            this.btnPayOrder.Text = "Pay Order";
+            this.btnPayOrder.UseVisualStyleBackColor = true;
             // 
             // Orders
             // 
