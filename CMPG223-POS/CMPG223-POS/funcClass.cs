@@ -44,7 +44,7 @@ namespace CMPG223_POS
             decimal price = 0;
             for (int i = 0; i < orders.Length; i++)
             {
-                String sqlGet = "SELECT Bought_Inv FROM Menu_Item WHERE Inventory_ID = '" + orders[i] + "'";
+                String sqlGet = "SELECT Bought_Inv FROM Menu_Item WHERE Description = '" + orders[i] + "'";
                 comm = new SqlCommand(sqlGet, conn);
                 adap = new SqlDataAdapter();
                 ds = new DataSet();
@@ -134,7 +134,7 @@ namespace CMPG223_POS
 
        // public void clockIn(int waiaterID, String waiterPass)
         //{
-
+                
         //}
 
         public void clockOut(int waiterID)
