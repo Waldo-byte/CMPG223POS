@@ -37,7 +37,7 @@ namespace CMPG223_POS
             }
         }
 
-        public decimal placeOrder(string[] orders, decimal[] cost, int tableNum)
+        public decimal placeOrder(string[] orders, decimal cost, int tableNum)
         {
             conn.Open();
             int ammount;
@@ -74,7 +74,7 @@ namespace CMPG223_POS
             for(int i = 0; i < orders.Length; i++)
             {
                 outputFile.WriteLine(orders[i]);
-                price += cost[i];
+                price = cost;
             }
 
             return price;  
