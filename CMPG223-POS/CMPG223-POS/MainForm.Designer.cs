@@ -35,8 +35,8 @@
             this.panelSideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnAddWaiter = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnBuyInventory = new System.Windows.Forms.Button();
+            this.bntStock = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -82,8 +82,8 @@
             this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.panelSideBar.Controls.Add(this.btnOrders);
             this.panelSideBar.Controls.Add(this.btnAddWaiter);
-            this.panelSideBar.Controls.Add(this.button2);
-            this.panelSideBar.Controls.Add(this.button3);
+            this.panelSideBar.Controls.Add(this.btnBuyInventory);
+            this.panelSideBar.Controls.Add(this.bntStock);
             this.panelSideBar.Controls.Add(this.button4);
             this.panelSideBar.Controls.Add(this.button5);
             this.panelSideBar.Controls.Add(this.button6);
@@ -96,10 +96,10 @@
             // btnOrders
             // 
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOrders.Location = new System.Drawing.Point(3, 3);
-            this.btnOrders.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.btnOrders.Location = new System.Drawing.Point(1, 1);
+            this.btnOrders.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(194, 40);
+            this.btnOrders.Size = new System.Drawing.Size(198, 40);
             this.btnOrders.TabIndex = 0;
             this.btnOrders.Text = "Place New Order";
             this.btnOrders.UseVisualStyleBackColor = true;
@@ -108,43 +108,43 @@
             // btnAddWaiter
             // 
             this.btnAddWaiter.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAddWaiter.Location = new System.Drawing.Point(3, 46);
-            this.btnAddWaiter.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.btnAddWaiter.Location = new System.Drawing.Point(1, 42);
+            this.btnAddWaiter.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.btnAddWaiter.Name = "btnAddWaiter";
-            this.btnAddWaiter.Size = new System.Drawing.Size(194, 40);
+            this.btnAddWaiter.Size = new System.Drawing.Size(198, 40);
             this.btnAddWaiter.TabIndex = 1;
             this.btnAddWaiter.Text = "Add New Waiter";
             this.btnAddWaiter.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnBuyInventory
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Location = new System.Drawing.Point(3, 89);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(194, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBuyInventory.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnBuyInventory.Location = new System.Drawing.Point(1, 83);
+            this.btnBuyInventory.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.btnBuyInventory.Name = "btnBuyInventory";
+            this.btnBuyInventory.Size = new System.Drawing.Size(198, 40);
+            this.btnBuyInventory.TabIndex = 2;
+            this.btnBuyInventory.Text = "Buy Inventory";
+            this.btnBuyInventory.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // bntStock
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Location = new System.Drawing.Point(3, 132);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(194, 40);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.bntStock.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.bntStock.Location = new System.Drawing.Point(1, 124);
+            this.bntStock.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.bntStock.Name = "bntStock";
+            this.bntStock.Size = new System.Drawing.Size(198, 40);
+            this.bntStock.TabIndex = 3;
+            this.bntStock.Text = "Stock";
+            this.bntStock.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button4.Location = new System.Drawing.Point(3, 175);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.button4.Location = new System.Drawing.Point(1, 165);
+            this.button4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(194, 40);
+            this.button4.Size = new System.Drawing.Size(198, 40);
             this.button4.TabIndex = 4;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
@@ -152,10 +152,10 @@
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button5.Location = new System.Drawing.Point(3, 218);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.button5.Location = new System.Drawing.Point(1, 206);
+            this.button5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(194, 40);
+            this.button5.Size = new System.Drawing.Size(198, 40);
             this.button5.TabIndex = 5;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
@@ -163,10 +163,10 @@
             // button6
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button6.Location = new System.Drawing.Point(3, 261);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.button6.Location = new System.Drawing.Point(1, 247);
+            this.button6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(194, 40);
+            this.button6.Size = new System.Drawing.Size(198, 40);
             this.button6.TabIndex = 6;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
@@ -203,8 +203,8 @@
         private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Button btnAddWaiter;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnBuyInventory;
+        private System.Windows.Forms.Button bntStock;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

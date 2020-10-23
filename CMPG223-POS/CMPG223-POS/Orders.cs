@@ -27,7 +27,12 @@ namespace CMPG223_POS
             panelDrinks.Dock = DockStyle.Fill;
             panelFood.Dock = DockStyle.Fill;
 
-            panelCenter.Location = new Point(this.Width / 2 - panelCenter.Width / 2, this.Height / 2 - panelCenter.Height / 2);
+            this.WindowState = FormWindowState.Maximized;
+
+            int h = ClientSize.Height;
+            int w = ClientSize.Width;
+
+            panelCenter.Location = new Point(w / 2 - panelCenter.Width / 2, h / 2 - panelCenter.Height / 2);
         }
 
         private void btnDrinks_Click(object sender, EventArgs e)
