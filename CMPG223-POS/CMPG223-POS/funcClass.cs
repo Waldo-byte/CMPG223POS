@@ -123,14 +123,73 @@ namespace CMPG223_POS
             
         }
 
-        //public void buyStock(Stock[] buyStock)
+        public void buyStock(string item, int qty) 
+        {
+            try
+            {
+                string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                StreamWriter outputfile = new StreamWriter(Path.Combine(docPath, "BuyStock.txt"));
+                using (outputfile)
+                {
+                    outputfile.WriteLine("" + item + " " + qty); 
+                }
+            }
 
-        //}
+            catch
+            {
+                MessageBox.Show("E");
+            }
+            
 
-        //public void payBill(int tableNum)
-        //{
 
-        //}
+
+        }
+
+        public void populateBought()
+        {
+            string sqlAll = "SELECT * FROM Bought_Inv";
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sqlAll, conn);
+            SqlDataAdapter adap = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            adap.SelectCommand = comm;
+            adap.Fill(ds, "All");
+
+            BuyInventoryForm dgview = new BuyInventoryForm();
+            dgview.dataGridViewItems.DataSource = ds;
+            dgview.dataGridViewItems.DataMember = "All";
+
+            conn.Close();
+
+
+
+        }
+
+        public void payBill(int client_ID)
+        {
+            string sqlAll = "SELECT Amount FROM Client_Order Where Client_ID = '" + client_ID + "'";
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sqlAll, conn);
+
+            SqlDataReader reader = comm.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while(reader.Read())
+                {
+                    PaymentForm paymentForm = new PaymentForm();
+                    double amnt = Convert.ToDouble((reader.GetSqlMoney(0)));
+                    paymentForm.lblPrice.Text = " R " + amnt.ToString();
+                    paymentForm.lblTaxPayable.Text = Math.Round((amnt * .15), 2).ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Client ID Not found");
+            }
+
+        }
 
        // public void clockIn(int waiaterID, string waiterPass)
         //{

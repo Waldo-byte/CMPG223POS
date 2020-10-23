@@ -16,5 +16,30 @@ namespace CMPG223_POS
         {
             InitializeComponent();
         }
+
+        private void lbl_Client_ID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if(txt_ClientID.Text == null)
+            {
+                MessageBox.Show("No ID provided");
+            }
+            else
+            {
+                try
+                {
+                    funcClass f1 = new funcClass();
+                    f1.payBill(int.Parse(txt_ClientID.Text));
+                }
+                catch
+                {
+                    MessageBox.Show("E");
+                }
+            }
+        }
     }
 }

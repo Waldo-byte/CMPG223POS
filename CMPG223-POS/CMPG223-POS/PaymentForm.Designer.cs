@@ -34,24 +34,27 @@
             this.lblTax = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblTaxPayable = new System.Windows.Forms.Label();
+            this.lbl_Client_ID = new System.Windows.Forms.Label();
+            this.txt_ClientID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnPay
             // 
             this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.Location = new System.Drawing.Point(33, 158);
-            this.btnPay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(6);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(94, 31);
             this.btnPay.TabIndex = 0;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(196, 158);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 31);
             this.btnCancel.TabIndex = 1;
@@ -98,11 +101,30 @@
             this.lblTaxPayable.TabIndex = 5;
             this.lblTaxPayable.Text = "%";
             // 
+            // lbl_Client_ID
+            // 
+            this.lbl_Client_ID.AutoSize = true;
+            this.lbl_Client_ID.Location = new System.Drawing.Point(34, 19);
+            this.lbl_Client_ID.Name = "lbl_Client_ID";
+            this.lbl_Client_ID.Size = new System.Drawing.Size(89, 24);
+            this.lbl_Client_ID.TabIndex = 6;
+            this.lbl_Client_ID.Text = "Client ID: ";
+            this.lbl_Client_ID.Click += new System.EventHandler(this.lbl_Client_ID_Click);
+            // 
+            // txt_ClientID
+            // 
+            this.txt_ClientID.Location = new System.Drawing.Point(190, 19);
+            this.txt_ClientID.Name = "txt_ClientID";
+            this.txt_ClientID.Size = new System.Drawing.Size(100, 29);
+            this.txt_ClientID.TabIndex = 7;
+            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 217);
+            this.Controls.Add(this.txt_ClientID);
+            this.Controls.Add(this.lbl_Client_ID);
             this.Controls.Add(this.lblTaxPayable);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblTax);
@@ -110,7 +132,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPay);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "PaymentForm";
             this.Text = "PaymentForm";
             this.ResumeLayout(false);
@@ -124,7 +146,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTax;
-        private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Label lblTaxPayable;
+        private System.Windows.Forms.Label lbl_Client_ID;
+        public System.Windows.Forms.Label lblPrice;
+        public System.Windows.Forms.Label lblTaxPayable;
+        public System.Windows.Forms.TextBox txt_ClientID;
     }
 }

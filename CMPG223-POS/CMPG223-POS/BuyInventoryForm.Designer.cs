@@ -47,6 +47,7 @@
             this.btnBuy.TabIndex = 0;
             this.btnBuy.Text = "Buy";
             this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // btnCancel
             // 
@@ -60,7 +61,7 @@
             // dataGridViewItems
             // 
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewItems.Location = new System.Drawing.Point(15, 128);
+            this.dataGridViewItems.Location = new System.Drawing.Point(2, 128);
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.Size = new System.Drawing.Size(494, 150);
             this.dataGridViewItems.TabIndex = 2;
@@ -112,6 +113,7 @@
             this.Controls.Add(this.btnBuy);
             this.Name = "BuyInventoryForm";
             this.Text = "BuyInventoryForm";
+            this.Load += new System.EventHandler(this.BuyInventoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownItems)).EndInit();
             this.ResumeLayout(false);
@@ -123,10 +125,10 @@
 
         private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DataGridView dataGridViewItems;
-        private System.Windows.Forms.ComboBox comboBoxItems;
-        private System.Windows.Forms.NumericUpDown numUpDownItems;
         private System.Windows.Forms.Label lblItem;
         private System.Windows.Forms.Label lblQuantity;
+        public System.Windows.Forms.ComboBox comboBoxItems;
+        public System.Windows.Forms.NumericUpDown numUpDownItems;
+        public System.Windows.Forms.DataGridView dataGridViewItems;
     }
 }
