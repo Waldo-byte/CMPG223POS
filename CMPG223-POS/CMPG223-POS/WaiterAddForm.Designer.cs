@@ -80,7 +80,7 @@
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(114, 98);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(262, 20);
             this.txtConfirmPassword.TabIndex = 4;
@@ -96,7 +96,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(132, 134);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(122, 37);
             this.btnAdd.TabIndex = 6;
@@ -116,7 +116,7 @@
             // 
             this.txtSurname.Location = new System.Drawing.Point(114, 47);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(100, 20);
+            this.txtSurname.Size = new System.Drawing.Size(261, 20);
             this.txtSurname.TabIndex = 8;
             // 
             // WaiterAddForm
@@ -133,7 +133,7 @@
             this.Controls.Add(this.lblConfirmPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WaiterAddForm";
