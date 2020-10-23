@@ -35,17 +35,20 @@
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(75, 48);
+            this.lblName.Location = new System.Drawing.Point(75, 14);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(66, 13);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Enter Name:";
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // lblPassword
             // 
@@ -69,8 +72,8 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(145, 46);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Location = new System.Drawing.Point(145, 11);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(107, 20);
             this.txtName.TabIndex = 3;
@@ -78,7 +81,7 @@
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(145, 115);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(107, 20);
             this.txtConfirmPassword.TabIndex = 4;
@@ -86,7 +89,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(145, 80);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(107, 20);
             this.txtPassword.TabIndex = 5;
@@ -94,7 +97,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(158, 159);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 37);
             this.btnAdd.TabIndex = 6;
@@ -102,11 +105,29 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // lblSurname
+            // 
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Location = new System.Drawing.Point(61, 48);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(80, 13);
+            this.lblSurname.TabIndex = 7;
+            this.lblSurname.Text = "Enter Surname:";
+            // 
+            // txtSurname
+            // 
+            this.txtSurname.Location = new System.Drawing.Point(145, 45);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(107, 20);
+            this.txtSurname.TabIndex = 8;
+            // 
             // WaiterAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 218);
+            this.Controls.Add(this.txtSurname);
+            this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtConfirmPassword);
@@ -114,7 +135,7 @@
             this.Controls.Add(this.lblConfirmPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WaiterAddForm";
             this.Text = "WaiterAddForm";
             this.ResumeLayout(false);
@@ -131,5 +152,7 @@
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblSurname;
+        private System.Windows.Forms.TextBox txtSurname;
     }
 }

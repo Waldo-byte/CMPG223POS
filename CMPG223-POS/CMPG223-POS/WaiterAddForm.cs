@@ -38,5 +38,10 @@ namespace CMPG223_POS
                 adap.Fill(ds);
             }
         }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
