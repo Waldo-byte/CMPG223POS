@@ -76,7 +76,7 @@ namespace CMPG223_POS
                 price += cost[i];
             }
 
-            return price;  // price moet nog bereken word
+            return price;  
         }
         public void addStock(int item, String description, double price, int qty)
         {
