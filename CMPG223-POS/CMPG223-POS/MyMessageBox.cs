@@ -91,8 +91,8 @@ namespace CMPG223_POS
             {
                 iconBox.Image = Properties.Resources.error;
                 messageLabel.Location = new Point(70, 23);
-                messageLabel.MinimumSize = new Size(110,0);
-                messageLabel.MaximumSize = new Size(110, 0);
+                messageLabel.MinimumSize = new Size(150,0);
+                messageLabel.MaximumSize = new Size(150, 0);
                 buttonContainer.BackColor = Color.FromArgb(255, 128, 128);
                 this.BackColor = Color.FromArgb(255, 204, 204);
                 buttonBack = Color.FromArgb(245, 75, 75);
@@ -104,8 +104,8 @@ namespace CMPG223_POS
             {
                 iconBox.Image = Properties.Resources.alert;
                 messageLabel.Location = new Point(70, 23);
-                messageLabel.MinimumSize = new Size(110, 0);
-                messageLabel.MaximumSize = new Size(110, 0);
+                messageLabel.MinimumSize = new Size(150, 0);
+                messageLabel.MaximumSize = new Size(150, 0);
                 buttonContainer.BackColor = Color.FromArgb(255, 228, 132);
                 this.BackColor = Color.FromArgb(255, 244, 206);
                 buttonBack = Color.FromArgb(245, 209, 80);
@@ -117,8 +117,8 @@ namespace CMPG223_POS
             {
                 iconBox.Image = Properties.Resources.info;
                 messageLabel.Location = new Point(70, 23);
-                messageLabel.MinimumSize = new Size(110, 0);
-                messageLabel.MaximumSize = new Size(110, 0);
+                messageLabel.MinimumSize = new Size(150, 0);
+                messageLabel.MaximumSize = new Size(150, 0);
                 buttonContainer.BackColor = Color.FromArgb(160, 180, 216);
                 this.BackColor = Color.FromArgb(217, 225, 239);
                 buttonBack = Color.FromArgb(118, 144, 193);

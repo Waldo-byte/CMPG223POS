@@ -79,6 +79,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyMessageBox";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.MyMessageBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
             this.ResumeLayout(false);

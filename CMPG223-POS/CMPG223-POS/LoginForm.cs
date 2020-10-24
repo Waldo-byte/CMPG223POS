@@ -46,21 +46,26 @@ namespace CMPG223_POS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            MyMessageBox mbox = new MyMessageBox();
+
             funcClass f1 = new funcClass();
             int login = f1.login(txtUserName.Text, txtPassword.Text);
             if(login == 0)
             {
-                MessageBox.Show("NA");
+                mbox.ShowMessageBox("Welcome Waiter " + txtUserName.Text + "!", "Waiter Login Successful", "", "");
+                mbox.ShowDialog();
                 this.Close();
             }
             else if(login == 1)
             {
-                MessageBox.Show("A");
+                mbox.ShowMessageBox("Welcome Admin!", "Admin Login Successful", "", "");
+                mbox.ShowDialog();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("I");
+                mbox.ShowMessageBox("Login Details are Invalid!\nPlease insert Correct Password and User ID!","Login Error","","Error");
+                mbox.ShowDialog();
             }
         }
 
