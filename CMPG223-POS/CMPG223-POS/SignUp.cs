@@ -14,7 +14,7 @@ namespace CMPG223_POS
     public partial class SignUp : Form
     {
 
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\Main Project\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
         SqlDataAdapter adap;
@@ -61,13 +61,36 @@ namespace CMPG223_POS
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            string sql = @"INSERT INTO ClienTable (LastName, FirstName,PhoneNumber) VALUES('" + txtSurname.Text + "' , '" + txtName.Text + "' , '" + txtPhoneNumber.Text + "'";
-            comm = new SqlCommand(sql, conn);
-            adap = new SqlDataAdapter();
-            ds = new DataSet();
+            int k;
+            Exception pNumEx = new Exception();
+            try
+            {
+                string last, first, phone;
+                last = txtSurname.Text;
+                first = txtName.Text;
+                phone = txtPhoneNumber.Text;
+                k = phone.Length;
+                if (k < 10 || k > 10)
+                    throw pNumEx;
+                string sql_addClient = "INSERT ClientTable([LastName], [FirstName], [PhoneNumber]) VALUES(@LastName, @FirstName, @PhoneNumber)";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql_addClient, conn);
+                cmd.Parameters.AddWithValue("@LastName", last);
+                cmd.Parameters.AddWithValue("@FirstName", first);
+                cmd.Parameters.AddWithValue("@PhoneNumber", phone);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Client: " + first + " " + last + " added.");
 
-            adap.SelectCommand = comm;
-            adap.Fill(ds);
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please ensure phone number is 10 digits");
+                txtPhoneNumber.Text = "";
+            }
+
+            
         }
     }
 }
