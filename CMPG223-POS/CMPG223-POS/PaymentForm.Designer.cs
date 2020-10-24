@@ -135,6 +135,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "PaymentForm";
             this.Text = "PaymentForm";
+            this.Load += new System.EventHandler(this.PaymentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

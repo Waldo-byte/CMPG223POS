@@ -41,5 +41,10 @@ namespace CMPG223_POS
                 }
             }
         }
+
+        private void PaymentForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

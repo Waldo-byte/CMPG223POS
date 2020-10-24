@@ -90,6 +90,7 @@ namespace CMPG223_POS
         {
             try
             {
+
                 string sql_addstock = "INSERT INTO Bought_Inv ([Inventory_ID], [Description], [Price], [Quantity]) VALUES(@Item_ID, @Description, @Price, @Qty)";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql_addstock, conn);
@@ -109,7 +110,7 @@ namespace CMPG223_POS
             
         }
 
-        public void removeStock(int item, string description, double price)
+        public void removeStock(int item)
         {
             try
             {
@@ -169,14 +170,14 @@ namespace CMPG223_POS
 
             conn.Close();
 
-
-
         }
 
         public void payBill(int client_ID)
         {
             string sqlAll = "SELECT Amount FROM Client_Order Where Client_ID = '" + client_ID + "'";
+            string sql_Verified = "INSERT INTO Verification([Description]) VALUES(@Description)";
             conn.Open();
+            string verified = "VERIFIED";
             SqlCommand comm = new SqlCommand(sqlAll, conn);
 
             SqlDataReader reader = comm.ExecuteReader();
@@ -190,12 +191,56 @@ namespace CMPG223_POS
                     paymentForm.lblPrice.Text = " R " + amnt.ToString();
                     paymentForm.lblTaxPayable.Text = Math.Round((amnt * .15), 2).ToString();
                 }
+                SqlCommand verify= new SqlCommand(sql_Verified, conn);
+                verify.Parameters.AddWithValue("@Description", verified);
+                verify.ExecuteNonQuery();
+                conn.Close();
             }
             else
             {
                 MessageBox.Show("Client ID Not found");
+                conn.Close();
             }
 
+        }
+        
+        public void updateStock(int iD, int amnt)
+        {
+            int amount = 0;
+            try
+            {
+                string sql_getamnt = "UPDATE SELECT Amount FROM Bought_Inv Where Inventory_ID = '" + iD + "'";
+                string sql_update = "UPDATE Bought_Inventory([Quantity]) WHERE Inventory_ID = '" + iD + "' AND VALUES(@qty)";
+                conn.Open();
+                SqlCommand getamnt = new SqlCommand(sql_getamnt, conn);
+                SqlDataReader datread = getamnt.ExecuteReader();
+                if(datread.HasRows)
+                {
+                    while(datread.Read())
+                    {
+                       amount = datread.GetInt32(0);
+                    }
+                }
+                else if(amount == 0)
+                {
+                    SqlCommand cmd = new SqlCommand(sql_update, conn);
+                    cmd.Parameters.AddWithValue("@qty", amnt + amount);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("E");
+                    conn.Close();
+                }
+                
+            }
+            catch(SqlException err)
+            {
+                MessageBox.Show(err.Message);
+
+            }
+           
         }
 
        // public void clockIn(int waiaterID, string waiterPass)
