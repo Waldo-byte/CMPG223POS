@@ -248,13 +248,14 @@ namespace CMPG223_POS
         //{
                 
         //}
+        // =)
 
         public void clockOut(int waiterID)
         {
 
         }
 
-
+        
 
     }
 }
