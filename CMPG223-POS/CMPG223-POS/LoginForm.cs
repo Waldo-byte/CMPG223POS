@@ -44,9 +44,19 @@ namespace CMPG223_POS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(this.DialogResult == DialogResult.OK)
+            funcClass f1 = new funcClass();
+            int login = f1.login(txtUserName.Text, txtPassword.Text);
+            if(login == 0)
             {
-                this.Close();
+
+            }
+            else if(login == 1)
+            {
+
+            }
+            else
+            {
+
             }
         }
 

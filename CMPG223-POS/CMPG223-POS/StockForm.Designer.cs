@@ -41,6 +41,7 @@
             this.lblStockPrice = new System.Windows.Forms.Label();
             this.numUpDownStock = new System.Windows.Forms.NumericUpDown();
             this.lblAmount = new System.Windows.Forms.Label();
+            this.btn_Restore = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownStock)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,7 @@
             this.btnBackup.TabIndex = 3;
             this.btnBackup.Text = "Backup";
             this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // dataGridViewStock
             // 
@@ -157,11 +159,22 @@
             this.lblAmount.TabIndex = 12;
             this.lblAmount.Text = "Amount:";
             // 
+            // btn_Restore
+            // 
+            this.btn_Restore.Location = new System.Drawing.Point(471, 115);
+            this.btn_Restore.Name = "btn_Restore";
+            this.btn_Restore.Size = new System.Drawing.Size(75, 23);
+            this.btn_Restore.TabIndex = 13;
+            this.btn_Restore.Text = "Restore";
+            this.btn_Restore.UseVisualStyleBackColor = true;
+            this.btn_Restore.Click += new System.EventHandler(this.btn_Restore_Click);
+            // 
             // StockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 335);
+            this.Controls.Add(this.btn_Restore);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.numUpDownStock);
             this.Controls.Add(this.lblStockPrice);
@@ -200,5 +213,6 @@
         private System.Windows.Forms.NumericUpDown numUpDownStock;
         private System.Windows.Forms.Label lblAmount;
         public System.Windows.Forms.DataGridView dataGridViewStock;
+        private System.Windows.Forms.Button btn_Restore;
     }
 }

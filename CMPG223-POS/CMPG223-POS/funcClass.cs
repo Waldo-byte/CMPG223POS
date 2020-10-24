@@ -7,13 +7,16 @@ using System.Data.SqlClient;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace CMPG223_POS
 {
     
     class funcClass
     {
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\Route96.mdf; Integrated Security = True";
+
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
         SqlDataAdapter adap;
@@ -22,6 +25,63 @@ namespace CMPG223_POS
         {
             Orders orderForm = new Orders();
             orderForm.lbOrders.Items.Add(item);
+        }
+
+        public void backupdb()
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if(fbd.ShowDialog() == DialogResult.OK)
+            {
+                string cmd = "BACKUP DATABASE [ " + conn.Database + " ] TO DISK '" + fbd.SelectedPath + "\\" + "Database" + "-" + DateTime.Now.ToString("yyyy-MM-dd") + ".bak'";
+                using (SqlCommand command = new SqlCommand(cmd, conn))
+                {
+                    if(conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Database backup done sucessfully"); 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Canceled");
+            }
+        }
+
+        public void restoredb()
+        {
+            
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "SQL SERVER database backup files|*.bak";
+            dlg.Title = "Database Restore";
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                string path = dlg.FileName;
+                try
+                {
+                    string sqlStmt2 = string.Format("ALTER DATABASE [" + conn.Database + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
+                    SqlCommand bu2 = new SqlCommand(sqlStmt2, conn);
+                    bu2.ExecuteNonQuery();
+
+                    string sqlStmt3 = "USE MASTER RESTORE DATABASE [" + conn.Database + "] FROM DISK='" + path + "'WITH REPLACE;";
+                    SqlCommand bu3 = new SqlCommand(sqlStmt3, conn);
+                    bu3.ExecuteNonQuery();
+
+                    string sqlStmt4 = string.Format("ALTER DATABASE [" + conn.Database + "] SET MULTI_USER");
+                    SqlCommand bu4 = new SqlCommand(sqlStmt4, conn);
+                    bu4.ExecuteNonQuery();
+
+                    MessageBox.Show("database restoration done successefully");
+                    conn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("E");
+                }
+            }
         }
 
         public void deleteItem(string item)
@@ -210,7 +270,7 @@ namespace CMPG223_POS
             int amount = 0;
             try
             {
-                string sql_getamnt = "UPDATE SELECT Amount FROM Bought_Inv Where Inventory_ID = '" + iD + "'";
+                string sql_getamnt = "SELECT Amount FROM Bought_Inv Where Inventory_ID = '" + iD + "'";
                 string sql_update = "UPDATE Bought_Inventory([Quantity]) WHERE Inventory_ID = '" + iD + "' AND VALUES(@qty)";
                 conn.Open();
                 SqlCommand getamnt = new SqlCommand(sql_getamnt, conn);
@@ -242,6 +302,76 @@ namespace CMPG223_POS
 
             }
            
+        }
+
+        public int login(string waiterID, string pass)
+        {
+            SqlCommand command;
+            string waiteriD = waiterID;
+            string password = pass;
+            int admini = 0;
+            conn.Open();
+            command = new SqlCommand("SELECT COUNT(*) FROM Waiter WHERE [Waiter_ID] LIKE '" + waiteriD + "' AND [Password] LIKE '" + pass + "'", conn);
+            SqlDataAdapter sdata_adap = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            sdata_adap.Fill(dt);
+
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                SqlCommand cmd = new SqlCommand("SELECT Admin FROM Waiters Where Waiter_ID = '" + waiteriD + "'", conn);
+                SqlDataReader datread = cmd.ExecuteReader();
+                if (datread.HasRows)
+                {
+                    
+                    while (datread.Read())
+                    {
+                        admini = datread.GetInt32(0);
+                    }
+                    
+                }
+                if (admini == 1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+
+            }
+            else
+            {
+                return 2;
+            }
+
+        }
+
+        public void addWaiter(string password, TimeSpan now, string firstname, string lastname, int admin)
+        {
+            try
+            {
+                string sql_addstock = "INSERT INTO Waiter([Password], [FirstName],[Time_Worked], [LastName], [Admin]) VALUES(@Password, @FirstName,@Time, @LastName, @admin)";
+                string sql_time = "INSERT INTO TimeSchedule([Time_Worked], Description) VALUES(@Time, @Desc)";
+                conn.Open();
+                SqlCommand comm = new SqlCommand(sql_time, conn);
+                comm.Parameters.AddWithValue("@Time", now);
+                comm.Parameters.AddWithValue("@Desc", firstname);
+                SqlCommand cmd = new SqlCommand(sql_addstock, conn);
+                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@FirstName", firstname);
+                cmd.Parameters.AddWithValue("@Time", now);
+                cmd.Parameters.AddWithValue("@LastName", lastname);
+                cmd.Parameters.AddWithValue("@admin", admin);
+                 //comm.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch(SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+
         }
 
        // public void clockIn(int waiaterID, string waiterPass)

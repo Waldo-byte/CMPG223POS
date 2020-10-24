@@ -94,6 +94,8 @@ namespace CMPG223_POS
 
             LoginForm log = new LoginForm();
             SignUp sign = new SignUp();
+            WaiterAddForm w1 = new WaiterAddForm();
+            w1.Show();
 
 
             log.MdiParent = this;
