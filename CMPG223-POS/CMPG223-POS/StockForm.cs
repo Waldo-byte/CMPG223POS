@@ -16,6 +16,7 @@ namespace CMPG223_POS
         {
             InitializeComponent();
         }
+        public int admin;
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -67,6 +68,18 @@ namespace CMPG223_POS
         {
             funcClass f1 = new funcClass();
             f1.populateStock();
+        }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            funcClass f1 = new funcClass();
+            f1.backupdb();
+        }
+
+        private void btn_Restore_Click(object sender, EventArgs e)
+        {
+            funcClass f1 = new funcClass();
+            f1.restoredb();
         }
     }
 }

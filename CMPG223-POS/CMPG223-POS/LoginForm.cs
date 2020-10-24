@@ -17,6 +17,8 @@ namespace CMPG223_POS
             InitializeComponent();
         }
 
+        
+
         void Val()
         {
             btnLogin.Enabled = !String.IsNullOrWhiteSpace(txtPassword.Text) && !String.IsNullOrWhiteSpace(txtUserName.Text);
@@ -44,9 +46,21 @@ namespace CMPG223_POS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(this.DialogResult == DialogResult.OK)
+            funcClass f1 = new funcClass();
+            int login = f1.login(txtUserName.Text, txtPassword.Text);
+            if(login == 0)
             {
+                MessageBox.Show("NA");
                 this.Close();
+            }
+            else if(login == 1)
+            {
+                MessageBox.Show("A");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("I");
             }
         }
 
