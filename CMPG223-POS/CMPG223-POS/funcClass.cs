@@ -8,13 +8,14 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace CMPG223_POS
 {
     
     class funcClass
     {
-        static string constr = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\Route96.mdf; Integrated Security = True";
+        static string constr = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\Route96.mdf; Trusted_Connection = True";
 
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
@@ -206,10 +207,7 @@ namespace CMPG223_POS
             {
                 MessageBox.Show("E");
             }
-            
-
-
-
+           
         }
         
         public void populateStock()
@@ -345,27 +343,27 @@ namespace CMPG223_POS
 
         }
 
-        public void addWaiter(string password, TimeSpan now, string firstname, string lastname, int admin)
+        public void addWaiter(string password, TimeSpan now, string firstname, string lastname, bool admin)
         {
             try
             {
-                string sql_addstock = "INSERT INTO Waiter([Password], [FirstName], [LastName], [Admin]) VALUES(@Password, @FirstName, @LastName, @admin)";
-                string sql_time = "INSERT INTO TimeSchedule([Time_Worked], Description) VALUES(@Time, @Desc)";
+                string sql_addwaiter = "INSERT INTO Waiter([Password], [FirstName], [LastName], [Admin]) VALUES(@Password, @FirstName, @LastName, @admin)";
+                //string sql_time = "INSERT INTO TimeSchedule([Time_Worked], Description) VALUES(@Time, @Desc)";
                 conn.Open();
-                MessageBox.Show(conn.State.ToString());
-                SqlCommand comm = new SqlCommand(sql_time, conn);
-                comm.Parameters.AddWithValue("@Time", now);
-                comm.Parameters.AddWithValue("@Desc", firstname);
-                SqlCommand cmd = new SqlCommand(sql_addstock, conn); ;
+                //MessageBox.Show(conn.State.ToString());
+               // SqlCommand comm = new SqlCommand(sql_time, conn);
+                //comm.Parameters.AddWithValue("@Time", now);
+                //comm.Parameters.AddWithValue("@Desc", firstname);
+                SqlCommand cmd = new SqlCommand(sql_addwaiter, conn);
                 cmd.Parameters.AddWithValue("@Password", password);
                 cmd.Parameters.AddWithValue("@FirstName", firstname);
                 cmd.Parameters.AddWithValue("@Time", now);
                 cmd.Parameters.AddWithValue("@LastName", lastname);
                 cmd.Parameters.AddWithValue("@admin", admin);
-                comm.ExecuteNonQuery();
+                //comm.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show(conn.State.ToString());
+                //MessageBox.Show(conn.State.ToString());
             }
             catch(SqlException e)
             {

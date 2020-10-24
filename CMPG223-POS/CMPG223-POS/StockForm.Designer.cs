@@ -33,7 +33,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnBackup = new System.Windows.Forms.Button();
             this.dataGridViewStock = new System.Windows.Forms.DataGridView();
-            this.comboBoxItemId = new System.Windows.Forms.ComboBox();
             this.lblItemId = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.numUpDownStock = new System.Windows.Forms.NumericUpDown();
             this.lblAmount = new System.Windows.Forms.Label();
             this.btn_Restore = new System.Windows.Forms.Button();
+            this.txtItemID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownStock)).BeginInit();
             this.SuspendLayout();
@@ -93,14 +93,6 @@
             this.dataGridViewStock.Name = "dataGridViewStock";
             this.dataGridViewStock.Size = new System.Drawing.Size(534, 150);
             this.dataGridViewStock.TabIndex = 4;
-            // 
-            // comboBoxItemId
-            // 
-            this.comboBoxItemId.FormattingEnabled = true;
-            this.comboBoxItemId.Location = new System.Drawing.Point(75, 12);
-            this.comboBoxItemId.Name = "comboBoxItemId";
-            this.comboBoxItemId.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxItemId.TabIndex = 5;
             // 
             // lblItemId
             // 
@@ -169,11 +161,19 @@
             this.btn_Restore.UseVisualStyleBackColor = true;
             this.btn_Restore.Click += new System.EventHandler(this.btn_Restore_Click);
             // 
+            // txtItemID
+            // 
+            this.txtItemID.Location = new System.Drawing.Point(75, 12);
+            this.txtItemID.Name = "txtItemID";
+            this.txtItemID.Size = new System.Drawing.Size(120, 20);
+            this.txtItemID.TabIndex = 14;
+            // 
             // StockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 335);
+            this.Controls.Add(this.txtItemID);
             this.Controls.Add(this.btn_Restore);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.numUpDownStock);
@@ -182,7 +182,6 @@
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblItemId);
-            this.Controls.Add(this.comboBoxItemId);
             this.Controls.Add(this.dataGridViewStock);
             this.Controls.Add(this.btnBackup);
             this.Controls.Add(this.btnUpdate);
@@ -204,7 +203,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnBackup;
-        private System.Windows.Forms.ComboBox comboBoxItemId;
         private System.Windows.Forms.Label lblItemId;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblDescription;
@@ -214,5 +212,6 @@
         private System.Windows.Forms.Label lblAmount;
         public System.Windows.Forms.DataGridView dataGridViewStock;
         private System.Windows.Forms.Button btn_Restore;
+        private System.Windows.Forms.TextBox txtItemID;
     }
 }
