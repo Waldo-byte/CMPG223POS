@@ -15,7 +15,7 @@ namespace CMPG223_POS
     
     class funcClass
     {
-        static string constr = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\Route96.mdf; Trusted_Connection = True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
 
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
@@ -343,15 +343,14 @@ namespace CMPG223_POS
 
         }
 
-        public void addWaiter(string password, TimeSpan now, string firstname, string lastname, bool admin)
+        public void addWaiter(string password, TimeSpan now, string firstname, string lastname, int admin)
         {
             try
             {
-                string sql_addwaiter = "INSERT INTO Waiter([Password], [FirstName], [LastName], [Admin]) VALUES(@Password, @FirstName, @LastName, @admin)";
-                //string sql_time = "INSERT INTO TimeSchedule([Time_Worked], Description) VALUES(@Time, @Desc)";
+                string sql_addwaiter = "INSERT Waiter([Password], [Time_Worked], [FirstName], [LastName], [Admin]) VALUES(@Password, @Time, @FirstName, @LastName, @admin)";
                 conn.Open();
-                //MessageBox.Show(conn.State.ToString());
-               // SqlCommand comm = new SqlCommand(sql_time, conn);
+                MessageBox.Show(conn.State.ToString());
+                //SqlCommand comm = new SqlCommand(sql_time, conn);
                 //comm.Parameters.AddWithValue("@Time", now);
                 //comm.Parameters.AddWithValue("@Desc", firstname);
                 SqlCommand cmd = new SqlCommand(sql_addwaiter, conn);
@@ -363,7 +362,6 @@ namespace CMPG223_POS
                 //comm.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                //MessageBox.Show(conn.State.ToString());
             }
             catch(SqlException e)
             {
