@@ -37,7 +37,7 @@
             this.btnAddWaiter = new System.Windows.Forms.Button();
             this.btnBuyInventory = new System.Windows.Forms.Button();
             this.bntStock = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSignUpCustomer = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.mainMenuStrip.SuspendLayout();
@@ -84,7 +84,7 @@
             this.panelSideBar.Controls.Add(this.btnAddWaiter);
             this.panelSideBar.Controls.Add(this.btnBuyInventory);
             this.panelSideBar.Controls.Add(this.bntStock);
-            this.panelSideBar.Controls.Add(this.button4);
+            this.panelSideBar.Controls.Add(this.btnSignUpCustomer);
             this.panelSideBar.Controls.Add(this.button5);
             this.panelSideBar.Controls.Add(this.button6);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -138,16 +138,16 @@
             this.bntStock.Text = "Stock";
             this.bntStock.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSignUpCustomer
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button4.Location = new System.Drawing.Point(1, 165);
-            this.button4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(198, 40);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSignUpCustomer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSignUpCustomer.Location = new System.Drawing.Point(1, 165);
+            this.btnSignUpCustomer.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.btnSignUpCustomer.Name = "btnSignUpCustomer";
+            this.btnSignUpCustomer.Size = new System.Drawing.Size(198, 40);
+            this.btnSignUpCustomer.TabIndex = 4;
+            this.btnSignUpCustomer.Text = "Sign Up Customer";
+            this.btnSignUpCustomer.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -205,7 +205,7 @@
         private System.Windows.Forms.Button btnAddWaiter;
         private System.Windows.Forms.Button btnBuyInventory;
         private System.Windows.Forms.Button bntStock;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSignUpCustomer;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         public System.Windows.Forms.FlowLayoutPanel panelSideBar;

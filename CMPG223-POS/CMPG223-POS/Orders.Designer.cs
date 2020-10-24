@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Orders));
             this.panelTitle = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.lbOrders = new System.Windows.Forms.ListBox();
             this.panelOderHome = new System.Windows.Forms.Panel();
+            this.txtTableNumber = new System.Windows.Forms.TextBox();
+            this.lblTableNumber = new System.Windows.Forms.Label();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancelOrder = new System.Windows.Forms.Button();
             this.btnConfirmOrder = new System.Windows.Forms.Button();
@@ -67,8 +70,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBackFood = new System.Windows.Forms.Button();
             this.btnClearPreviousItemFood = new System.Windows.Forms.Button();
-            this.lblTableNumber = new System.Windows.Forms.Label();
-            this.txtTableNumber = new System.Windows.Forms.TextBox();
             this.panelTitle.SuspendLayout();
             this.panelOderHome.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
@@ -83,7 +84,10 @@
             // 
             // panelTitle
             // 
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(24)))), ((int)(((byte)(22)))));
+            this.panelTitle.Controls.Add(this.txtTableNumber);
             this.panelTitle.Controls.Add(this.labelTitle);
+            this.panelTitle.Controls.Add(this.lblTableNumber);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Name = "panelTitle";
@@ -96,6 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
             this.labelTitle.Location = new System.Drawing.Point(3, 4);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(77, 25);
@@ -113,25 +118,46 @@
             // 
             // panelOderHome
             // 
-            this.panelOderHome.Controls.Add(this.txtTableNumber);
-            this.panelOderHome.Controls.Add(this.lblTableNumber);
+            this.panelOderHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelOderHome.BackgroundImage")));
+            this.panelOderHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelOderHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelOderHome.Controls.Add(this.flowLayoutPanel5);
             this.panelOderHome.Controls.Add(this.panelCenter);
             this.panelOderHome.Location = new System.Drawing.Point(8, 38);
             this.panelOderHome.Name = "panelOderHome";
-            this.panelOderHome.Size = new System.Drawing.Size(732, 135);
+            this.panelOderHome.Size = new System.Drawing.Size(739, 135);
             this.panelOderHome.TabIndex = 2;
+            // 
+            // txtTableNumber
+            // 
+            this.txtTableNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
+            this.txtTableNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTableNumber.Location = new System.Drawing.Point(309, 6);
+            this.txtTableNumber.Name = "txtTableNumber";
+            this.txtTableNumber.Size = new System.Drawing.Size(167, 20);
+            this.txtTableNumber.TabIndex = 5;
+            // 
+            // lblTableNumber
+            // 
+            this.lblTableNumber.AutoSize = true;
+            this.lblTableNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
+            this.lblTableNumber.Location = new System.Drawing.Point(229, 9);
+            this.lblTableNumber.Name = "lblTableNumber";
+            this.lblTableNumber.Size = new System.Drawing.Size(77, 13);
+            this.lblTableNumber.TabIndex = 4;
+            this.lblTableNumber.Text = "Table Number:";
             // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel5.Controls.Add(this.btnCancelOrder);
             this.flowLayoutPanel5.Controls.Add(this.btnConfirmOrder);
             this.flowLayoutPanel5.Controls.Add(this.btnPayOrder);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 135);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 133);
             this.flowLayoutPanel5.TabIndex = 3;
             // 
             // btnCancelOrder
@@ -167,6 +193,7 @@
             // 
             // panelCenter
             // 
+            this.panelCenter.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelCenter.Controls.Add(this.btnDrinks);
             this.panelCenter.Controls.Add(this.btnFood);
             this.panelCenter.Location = new System.Drawing.Point(209, 42);
@@ -176,10 +203,12 @@
             // 
             // btnDrinks
             // 
+            this.btnDrinks.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDrinks.Location = new System.Drawing.Point(3, 3);
+            this.btnDrinks.Location = new System.Drawing.Point(0, 0);
+            this.btnDrinks.Margin = new System.Windows.Forms.Padding(0);
             this.btnDrinks.Name = "btnDrinks";
-            this.btnDrinks.Size = new System.Drawing.Size(255, 80);
+            this.btnDrinks.Size = new System.Drawing.Size(250, 86);
             this.btnDrinks.TabIndex = 0;
             this.btnDrinks.Text = "Drinks";
             this.btnDrinks.UseVisualStyleBackColor = true;
@@ -187,10 +216,11 @@
             // 
             // btnFood
             // 
+            this.btnFood.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFood.Location = new System.Drawing.Point(264, 3);
+            this.btnFood.Location = new System.Drawing.Point(273, 0);
             this.btnFood.Name = "btnFood";
-            this.btnFood.Size = new System.Drawing.Size(256, 80);
+            this.btnFood.Size = new System.Drawing.Size(250, 86);
             this.btnFood.TabIndex = 1;
             this.btnFood.Text = "Food";
             this.btnFood.UseVisualStyleBackColor = true;
@@ -317,6 +347,7 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel2.Controls.Add(this.btnBackDrinks);
             this.flowLayoutPanel2.Controls.Add(this.btnClearPreviousItemDrinks);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -444,7 +475,7 @@
             this.btnMediumChips.Location = new System.Drawing.Point(110, 115);
             this.btnMediumChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.btnMediumChips.Name = "btnMediumChips";
-            this.btnMediumChips.Size = new System.Drawing.Size(80, 80);
+            this.btnMediumChips.Size = new System.Drawing.Size(100, 50);
             this.btnMediumChips.TabIndex = 9;
             this.btnMediumChips.Text = "Medium Chips";
             this.btnMediumChips.UseVisualStyleBackColor = true;
@@ -452,10 +483,10 @@
             // 
             // btnLargeChips
             // 
-            this.btnLargeChips.Location = new System.Drawing.Point(5, 200);
+            this.btnLargeChips.Location = new System.Drawing.Point(5, 170);
             this.btnLargeChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.btnLargeChips.Name = "btnLargeChips";
-            this.btnLargeChips.Size = new System.Drawing.Size(80, 80);
+            this.btnLargeChips.Size = new System.Drawing.Size(100, 50);
             this.btnLargeChips.TabIndex = 8;
             this.btnLargeChips.Text = "Large Chips";
             this.btnLargeChips.UseVisualStyleBackColor = true;
@@ -463,7 +494,7 @@
             // btnRegularWings
             // 
             this.btnRegularWings.AutoSize = true;
-            this.btnRegularWings.Location = new System.Drawing.Point(90, 200);
+            this.btnRegularWings.Location = new System.Drawing.Point(110, 170);
             this.btnRegularWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.btnRegularWings.Name = "btnRegularWings";
             this.btnRegularWings.Size = new System.Drawing.Size(100, 50);
@@ -474,8 +505,7 @@
             // 
             // btnHotWings
             // 
-            this.btnHotWings.AutoSize = true;
-            this.btnHotWings.Location = new System.Drawing.Point(5, 285);
+            this.btnHotWings.Location = new System.Drawing.Point(5, 225);
             this.btnHotWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.btnHotWings.Name = "btnHotWings";
             this.btnHotWings.Size = new System.Drawing.Size(100, 50);
@@ -486,15 +516,19 @@
             // 
             // btnMildWings
             // 
-            this.btnMildWings.Location = new System.Drawing.Point(108, 283);
+            this.btnMildWings.BackColor = System.Drawing.Color.White;
+            this.btnMildWings.Location = new System.Drawing.Point(110, 225);
+            this.btnMildWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.btnMildWings.Name = "btnMildWings";
-            this.btnMildWings.Size = new System.Drawing.Size(102, 52);
+            this.btnMildWings.Size = new System.Drawing.Size(100, 50);
             this.btnMildWings.TabIndex = 10;
             this.btnMildWings.Text = "Mild Wings";
+            this.btnMildWings.UseVisualStyleBackColor = false;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.btnBackFood);
             this.flowLayoutPanel1.Controls.Add(this.btnClearPreviousItemFood);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -525,22 +559,6 @@
             this.btnClearPreviousItemFood.Text = "Clear Previous Item";
             this.btnClearPreviousItemFood.UseVisualStyleBackColor = true;
             // 
-            // lblTableNumber
-            // 
-            this.lblTableNumber.AutoSize = true;
-            this.lblTableNumber.Location = new System.Drawing.Point(204, 4);
-            this.lblTableNumber.Name = "lblTableNumber";
-            this.lblTableNumber.Size = new System.Drawing.Size(74, 13);
-            this.lblTableNumber.TabIndex = 4;
-            this.lblTableNumber.Text = "Table Number";
-            // 
-            // txtTableNumber
-            // 
-            this.txtTableNumber.Location = new System.Drawing.Point(284, 1);
-            this.txtTableNumber.Name = "txtTableNumber";
-            this.txtTableNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtTableNumber.TabIndex = 5;
-            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,7 +578,6 @@
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
             this.panelOderHome.ResumeLayout(false);
-            this.panelOderHome.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.panelCenter.ResumeLayout(false);
             this.panelDrinks.ResumeLayout(false);
@@ -609,7 +626,6 @@
         private System.Windows.Forms.Button btnRum;
         private System.Windows.Forms.Panel panelCenter;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.Button btnCancelOrder;
         public System.Windows.Forms.ListBox lbOrders;
         private System.Windows.Forms.Button btnMediumChips;
         private System.Windows.Forms.Button btnLargeChips;
@@ -617,5 +633,6 @@
         private System.Windows.Forms.Button btnPayOrder;
         private System.Windows.Forms.TextBox txtTableNumber;
         private System.Windows.Forms.Label lblTableNumber;
+        public System.Windows.Forms.Button btnCancelOrder;
     }
 }
