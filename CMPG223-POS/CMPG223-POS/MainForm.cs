@@ -83,12 +83,7 @@ namespace CMPG223_POS
         //Exit Sequence
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            mbox.ShowMessageBox("Are You sure you want to Exit", "Exit?", "Yes/No", "Alert");
-            if (mbox.ShowDialog() == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-
+            Application.Exit();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
