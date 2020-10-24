@@ -74,8 +74,6 @@ namespace CMPG223_POS
 
             messageLabel.Text = message;
 
-            
-
             if(icon == "")
             {
                 iconBox.Hide();
