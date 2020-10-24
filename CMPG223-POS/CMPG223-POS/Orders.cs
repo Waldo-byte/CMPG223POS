@@ -591,5 +591,19 @@ namespace CMPG223_POS
         {
             lbOrders.Items[lbOrders.Items.Count - 1] = null;
         }
+
+        private void btnPayOrder_Click(object sender, EventArgs e)
+        {
+            decimal tax = (decimal) 0.15;
+            PaymentForm p1 = new PaymentForm();
+            p1.lblclient_id.Text = txtClientID.Text;
+            p1.lblPrice.Text = cost.ToString();
+            p1.lblTaxPayable.Text = (cost * tax).ToString();
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -191,7 +191,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnBackup;
-        private System.Windows.Forms.DataGridView dataGridViewStock;
         private System.Windows.Forms.ComboBox comboBoxItemId;
         private System.Windows.Forms.Label lblItemId;
         private System.Windows.Forms.TextBox txtDescription;
@@ -200,5 +199,6 @@
         private System.Windows.Forms.Label lblStockPrice;
         private System.Windows.Forms.NumericUpDown numUpDownStock;
         private System.Windows.Forms.Label lblAmount;
+        public System.Windows.Forms.DataGridView dataGridViewStock;
     }
 }

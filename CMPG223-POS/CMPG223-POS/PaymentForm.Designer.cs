@@ -35,7 +35,7 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblTaxPayable = new System.Windows.Forms.Label();
             this.lbl_Client_ID = new System.Windows.Forms.Label();
-            this.txt_ClientID = new System.Windows.Forms.TextBox();
+            this.lblclient_id = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPay
@@ -111,19 +111,21 @@
             this.lbl_Client_ID.Text = "Client ID: ";
             this.lbl_Client_ID.Click += new System.EventHandler(this.lbl_Client_ID_Click);
             // 
-            // txt_ClientID
+            // lblclient_id
             // 
-            this.txt_ClientID.Location = new System.Drawing.Point(190, 19);
-            this.txt_ClientID.Name = "txt_ClientID";
-            this.txt_ClientID.Size = new System.Drawing.Size(100, 29);
-            this.txt_ClientID.TabIndex = 7;
+            this.lblclient_id.AutoSize = true;
+            this.lblclient_id.Location = new System.Drawing.Point(148, 19);
+            this.lblclient_id.Name = "lblclient_id";
+            this.lblclient_id.Size = new System.Drawing.Size(94, 24);
+            this.lblclient_id.TabIndex = 7;
+            this.lblclient_id.Text = "[Client ID] ";
             // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 217);
-            this.Controls.Add(this.txt_ClientID);
+            this.Controls.Add(this.lblclient_id);
             this.Controls.Add(this.lbl_Client_ID);
             this.Controls.Add(this.lblTaxPayable);
             this.Controls.Add(this.lblPrice);
@@ -150,6 +152,6 @@
         private System.Windows.Forms.Label lbl_Client_ID;
         public System.Windows.Forms.Label lblPrice;
         public System.Windows.Forms.Label lblTaxPayable;
-        public System.Windows.Forms.TextBox txt_ClientID;
+        public System.Windows.Forms.Label lblclient_id;
     }
 }

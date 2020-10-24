@@ -65,7 +65,8 @@ namespace CMPG223_POS
 
         private void StockForm_Load(object sender, EventArgs e)
         {
-
+            funcClass f1 = new funcClass();
+            f1.populateStock();
         }
     }
 }

@@ -152,6 +152,25 @@ namespace CMPG223_POS
 
 
         }
+        
+        public void populateStock()
+        {
+            string sqlAll = "SELECT * FROM Bought_Inv";
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sqlAll, conn);
+            SqlDataAdapter adap = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            adap.SelectCommand = comm;
+            adap.Fill(ds, "All");
+
+            StockForm dgview = new StockForm();
+            dgview.dataGridViewStock.DataSource = ds;
+            dgview.dataGridViewStock.DataMember = "All";
+
+            conn.Close();
+
+        }
 
         public void populateBought()
         {
@@ -174,33 +193,15 @@ namespace CMPG223_POS
 
         public void payBill(int client_ID)
         {
-            string sqlAll = "SELECT Amount FROM Client_Order Where Client_ID = '" + client_ID + "'";
+            //string sqlAll = "INSERT INTO Verified Where Client_ID = '" + client_ID + "'";
             string sql_Verified = "INSERT INTO Verification([Description]) VALUES(@Description)";
             conn.Open();
             string verified = "VERIFIED";
-            SqlCommand comm = new SqlCommand(sqlAll, conn);
-
-            SqlDataReader reader = comm.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while(reader.Read())
-                {
-                    PaymentForm paymentForm = new PaymentForm();
-                    double amnt = Convert.ToDouble((reader.GetSqlMoney(0)));
-                    paymentForm.lblPrice.Text = " R " + amnt.ToString();
-                    paymentForm.lblTaxPayable.Text = Math.Round((amnt * .15), 2).ToString();
-                }
-                SqlCommand verify= new SqlCommand(sql_Verified, conn);
-                verify.Parameters.AddWithValue("@Description", verified);
-                verify.ExecuteNonQuery();
-                conn.Close();
-            }
-            else
-            {
-                MessageBox.Show("Client ID Not found");
-                conn.Close();
-            }
+            SqlCommand verify= new SqlCommand(sql_Verified, conn);
+            verify.Parameters.AddWithValue("@Description", verified);
+            verify.ExecuteNonQuery();
+            conn.Close();
+         
 
         }
         
