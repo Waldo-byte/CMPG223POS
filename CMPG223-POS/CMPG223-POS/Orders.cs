@@ -26,8 +26,67 @@ namespace CMPG223_POS
         List<Panel> listPanel = new List<Panel>();
         int index;
 
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        public void sidebarColor(Control source)
+        {
+            foreach(Control con in source.Controls)
+            {
+                if(con is FlowLayoutPanel)
+                {
+                    FlowLayoutPanel side = con as FlowLayoutPanel;
+                    side.BackColor = Color.FromArgb(193,72,40);
+                }
+            }
+        }
+        public void buttonStyle(Control source)
+        {
+            foreach (Control con in source.Controls)
+            {
+                if (con is Button)
+                {
+                    Button but = con as Button;
+                    but.BackColor = Color.FromArgb(163, 58, 33);
+                    but.FlatAppearance.BorderColor = Color.FromArgb(141 ,51 ,29);
+                    but.MouseEnter += new EventHandler(this.allButton_mouseEnter);
+                    but.MouseLeave += new EventHandler(this.allButton_mouseLeave);
+                    but.FlatStyle = FlatStyle.Flat;
+                    but.Margin = new Padding(5,5,5, 0);
+                    but.Size = new Size(190,40);
+                }
+                else
+                {
+                    buttonStyle(con);
+                }
+            }
+        }
+
+        private void allButton_mouseEnter(object sender, System.EventArgs e)
+        {
+            Button but = (Button)sender;
+            but.FlatAppearance.MouseOverBackColor = Color.FromArgb(175, 73, 36);
+            but.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 255, 200);
+            but.FlatAppearance.BorderColor = Color.FromArgb(200, 102, 41);
+        }
+
+        private void allButton_mouseLeave(object sender, System.EventArgs e)
+        {
+            Button but = (Button)sender;
+            but.FlatAppearance.BorderColor = Color.FromArgb(141, 51, 29);
+
+        }
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
         private void Orders_Load(object sender, EventArgs e)
         {
+            buttonStyle(flowLayoutPanel1);
+            buttonStyle(flowLayoutPanel2);
+            buttonStyle(flowLayoutPanel5);
+
+            sidebarColor(panelOderHome);
+            sidebarColor(panelDrinks);
+            sidebarColor(panelFood);
+
+
             listPanel.Add(panelOderHome);
             listPanel.Add(panelDrinks);
             listPanel.Add(panelFood);
@@ -42,6 +101,12 @@ namespace CMPG223_POS
 
             int h = ClientSize.Height;
             int w = ClientSize.Width;
+
+            panelCenter.Size = new Size(950,350);
+            panelCenter.BackColor = Color.Transparent;
+
+            btnFood.Size = new Size(350,0);
+            btnDrinks.Size = new Size(350,0);
 
             panelCenter.Location = new Point(w / 2 - panelCenter.Width / 2, h / 2 - panelCenter.Height / 2);
         }
@@ -77,9 +142,32 @@ namespace CMPG223_POS
         private void btnCancelOrder_Click(object sender, EventArgs e)
         {
             //this.Close();
-            FlowLayoutPanel side = (this.Parent as MainForm).Controls["panelSideBar"] as FlowLayoutPanel;
+            //if (this.Parent != null || this.Parent.GetType() == typeof(MainForm))
+            //{
+            //    return;
+            //}
 
-            side.Show();
+            //FlowLayoutPanel side = (this.Parent as MainForm).Controls["panelSideBar"] as FlowLayoutPanel;
+
+            //side.Show();
+        }
+
+        public partial class SideBarShow : UserControl
+        {
+            public SideBarShow()
+            {
+                
+            }
+
+            public EventHandler Ev_BTN_Pressed; 
+
+            private void btnCancelOrder_Click(Object sender, EventArgs e)
+            {
+                if(Ev_BTN_Pressed != null)
+                {
+                    Ev_BTN_Pressed(this, e);
+                }
+            }
         }
 
         private void btnSwartkatLager_Click(object sender, EventArgs e)

@@ -27,19 +27,32 @@ namespace CMPG223_POS
         private const int GWL_EXSTYLE = -20;
         private const int WS_EX_CLIENTEDGE = 0x200;
 
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        public void sidebarColor(Control source)
+        {
+            foreach (Control con in source.Controls)
+            {
+                if (con is FlowLayoutPanel)
+                {
+                    FlowLayoutPanel side = con as FlowLayoutPanel;
+                    side.BackColor = Color.FromArgb(193, 72, 40);
+                }
+            }
+        }
         public void buttonStyle(Control source)
         {
-            foreach(Control con in source.Controls)
+            foreach (Control con in source.Controls)
             {
                 if (con is Button)
                 {
                     Button but = con as Button;
-                    but.BackColor = Color.FromArgb(225,225,225);
-                    but.ForeColor = Color.FromArgb(0,0,0);
+                    but.BackColor = Color.FromArgb(163, 58, 33);
+                    but.FlatAppearance.BorderColor = Color.FromArgb(141, 51, 29);
+                    but.MouseEnter += new EventHandler(this.allButton_mouseEnter);
+                    but.MouseLeave += new EventHandler(this.allButton_mouseLeave);
                     but.FlatStyle = FlatStyle.Flat;
-                    but.FlatAppearance.BorderSize = 0;
-                    but.FlatAppearance.BorderColor = Color.FromArgb(125, 125, 125);
-                    but.FlatAppearance.MouseOverBackColor = Color.FromArgb(200, 100, 40);
+                    but.Margin = new Padding(5, 5, 5, 0);
+                    but.Size = new Size(190, 40);
                 }
                 else
                 {
@@ -47,6 +60,23 @@ namespace CMPG223_POS
                 }
             }
         }
+
+        private void allButton_mouseEnter(object sender, System.EventArgs e)
+        {
+            Button but = (Button)sender;
+            but.FlatAppearance.MouseOverBackColor = Color.FromArgb(175, 73, 36);
+            but.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, 255, 200);
+            but.FlatAppearance.BorderColor = Color.FromArgb(200, 102, 41);
+        }
+
+        private void allButton_mouseLeave(object sender, System.EventArgs e)
+        {
+            Button but = (Button)sender;
+            but.FlatAppearance.BorderColor = Color.FromArgb(141, 51, 29);
+
+        }
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
         //Exit Sequence
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -57,11 +87,14 @@ namespace CMPG223_POS
         private void MainForm_Load(object sender, EventArgs e)
         {
             buttonStyle(panelSideBar);
+            sidebarColor(this);
+
 
             mainMenuStrip.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
 
             LoginForm log = new LoginForm();
             SignUp sign = new SignUp();
+
 
             log.MdiParent = this;
             sign.MdiParent = this;
@@ -71,7 +104,7 @@ namespace CMPG223_POS
 
             foreach (var mdi in this.Controls.OfType<MdiClient>())
             {
-                mdi.BackColor = Color.FromArgb(225,225,225);
+                mdi.BackColor = Color.FromArgb(200, 100, 40);
                 mdi.Dock = DockStyle.None;
                 int window = GetWindowLong(mdi.Handle, GWL_EXSTYLE);
                 window &= ~WS_EX_CLIENTEDGE;
@@ -94,48 +127,48 @@ namespace CMPG223_POS
             }
             public override System.Drawing.Color MenuItemBorder
             {
-                get { return Color.FromArgb(0, 250, 150); }
+                get { return Color.FromArgb(200, 100, 41); }
             }
 
             public override System.Drawing.Color MenuBorder
             {
-                get { return Color.FromArgb(0, 250, 150); }
+                get { return Color.FromArgb(200,100,41); }
             }
 
             public override System.Drawing.Color MenuItemSelected
             {
-                get { return Color.FromArgb(200,255,225); }
+                get { return Color.FromArgb(73,40,26); }
             }
             //select menu strip
             public override System.Drawing.Color MenuItemSelectedGradientBegin
             {
-                get { return Color.FromArgb(200,255,225); }
+                get { return Color.FromArgb(200, 100, 40); }
             }
 
             public override System.Drawing.Color MenuItemSelectedGradientEnd
             {
-                get { return Color.FromArgb(255,255,255); }
+                get { return Color.FromArgb(41,24,22); }
             }
 
             //press menu strip
             public override System.Drawing.Color MenuItemPressedGradientBegin
             {
-                get { return Color.FromArgb(255,255,255); }
+                get { return Color.FromArgb(200,100,40); }
             }
 
             public override System.Drawing.Color MenuItemPressedGradientEnd
             {
-                get { return Color.FromArgb(255, 255, 255); }
+                get { return Color.FromArgb(41, 24, 22); }
             }
 
             public override System.Drawing.Color MenuStripGradientBegin
             {
-                get { return Color.FromArgb(255,255,255); }
+                get { return Color.FromArgb(41, 24, 22); }
             }
 
             public override System.Drawing.Color MenuStripGradientEnd
             {
-                get { return Color.FromArgb(255,255,255); }
+                get { return Color.FromArgb(200,100,40); }
             }
 
             public override System.Drawing.Color ToolStripContentPanelGradientBegin
@@ -145,26 +178,26 @@ namespace CMPG223_POS
 
             public override System.Drawing.Color ToolStripContentPanelGradientEnd
             {
-                get { return Color.FromArgb(255,255,255); }
+                get { return Color.FromArgb(41, 24, 22); }
             }
 
             public override Color ToolStripDropDownBackground
             {
-                get { return Color.FromArgb(255,255,255); }
+                get { return Color.FromArgb(41, 24, 22); }
             }
 
             public override Color ImageMarginGradientBegin
             {
-                get { return Color.FromArgb(255,255,255); }
+                get { return Color.FromArgb(41, 24, 22); }
             }
 
             public override Color ImageMarginGradientMiddle
             {
-                get { return Color.FromArgb(255,255,255); }
+                get { return Color.FromArgb(41,24,22); }
             }
             public override Color ImageMarginGradientEnd
             {
-                get { return Color.FromArgb(255,255,255); }
+                get { return Color.FromArgb(41, 24, 22); }
             }
         }
 
@@ -194,7 +227,9 @@ namespace CMPG223_POS
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            MyMessageBox mbox = new MyMessageBox();
+            mbox.Show();
+            //Application.Exit();
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
