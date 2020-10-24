@@ -177,6 +177,7 @@
             this.Controls.Add(this.btnAdd);
             this.Name = "StockForm";
             this.Text = "StockForm";
+            this.Load += new System.EventHandler(this.StockForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownStock)).EndInit();
             this.ResumeLayout(false);

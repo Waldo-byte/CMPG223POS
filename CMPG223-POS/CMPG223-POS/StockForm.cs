@@ -31,6 +31,7 @@ namespace CMPG223_POS
             {
                 funcClass f1 = new funcClass();
                 f1.updateStock(int.Parse(comboBoxItemId.Text),Convert.ToInt32(numUpDownStock.Value));
+                f1.populateBought();
             }
         }
 
@@ -44,6 +45,7 @@ namespace CMPG223_POS
             {
                 funcClass f1 = new funcClass();
                 f1.removeStock(int.Parse(comboBoxItemId.Text));
+                f1.populateBought();
             }
         }
 
@@ -57,7 +59,13 @@ namespace CMPG223_POS
             {
                 funcClass f1 = new funcClass();
                 f1.addStock(int.Parse(comboBoxItemId.Text), txtDescription.Text, double.Parse(txtStockPrice.Text), Convert.ToInt32(numUpDownStock.Value));
+                f1.populateBought();
             }
+        }
+
+        private void StockForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
