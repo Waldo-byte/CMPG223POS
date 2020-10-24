@@ -37,6 +37,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblSurname = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
+            this.chkboxadmin = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -102,6 +103,7 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblSurname
             // 
@@ -119,11 +121,22 @@
             this.txtSurname.Size = new System.Drawing.Size(261, 20);
             this.txtSurname.TabIndex = 8;
             // 
+            // chkboxadmin
+            // 
+            this.chkboxadmin.AutoSize = true;
+            this.chkboxadmin.Location = new System.Drawing.Point(286, 134);
+            this.chkboxadmin.Name = "chkboxadmin";
+            this.chkboxadmin.Size = new System.Drawing.Size(55, 17);
+            this.chkboxadmin.TabIndex = 9;
+            this.chkboxadmin.Text = "Admin";
+            this.chkboxadmin.UseVisualStyleBackColor = true;
+            // 
             // WaiterAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 182);
+            this.Controls.Add(this.chkboxadmin);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.btnAdd);
@@ -154,5 +167,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.TextBox txtSurname;
+        private System.Windows.Forms.CheckBox chkboxadmin;
     }
 }
