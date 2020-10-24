@@ -30,30 +30,47 @@
         {
             this.messageLabel = new System.Windows.Forms.Label();
             this.buttonContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.iconBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
             this.SuspendLayout();
             // 
             // messageLabel
             // 
             this.messageLabel.AutoSize = true;
-            this.messageLabel.Location = new System.Drawing.Point(10, 23);
+            this.messageLabel.Location = new System.Drawing.Point(60, 23);
+            this.messageLabel.MaximumSize = new System.Drawing.Size(110, 0);
+            this.messageLabel.MinimumSize = new System.Drawing.Size(110, 0);
             this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(150, 13);
+            this.messageLabel.Size = new System.Drawing.Size(110, 26);
             this.messageLabel.TabIndex = 0;
             this.messageLabel.Text = "This is a custom Message Box";
             // 
             // buttonContainer
             // 
             this.buttonContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonContainer.Location = new System.Drawing.Point(0, 350);
+            this.buttonContainer.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.buttonContainer.Location = new System.Drawing.Point(0, 91);
             this.buttonContainer.Name = "buttonContainer";
-            this.buttonContainer.Size = new System.Drawing.Size(800, 100);
+            this.buttonContainer.Size = new System.Drawing.Size(184, 48);
             this.buttonContainer.TabIndex = 1;
+            // 
+            // iconBox
+            // 
+            this.iconBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconBox.Image = global::CMPG223_POS.Properties.Resources.info;
+            this.iconBox.Location = new System.Drawing.Point(0, 0);
+            this.iconBox.Name = "iconBox";
+            this.iconBox.Size = new System.Drawing.Size(70, 91);
+            this.iconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconBox.TabIndex = 2;
+            this.iconBox.TabStop = false;
             // 
             // MyMessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(184, 139);
+            this.Controls.Add(this.iconBox);
             this.Controls.Add(this.buttonContainer);
             this.Controls.Add(this.messageLabel);
             this.MaximizeBox = false;
@@ -63,6 +80,7 @@
             this.ShowInTaskbar = false;
             this.Text = "MyMessageBox";
             this.Load += new System.EventHandler(this.MyMessageBox_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,5 +90,6 @@
 
         private System.Windows.Forms.Label messageLabel;
         private System.Windows.Forms.FlowLayoutPanel buttonContainer;
+        private System.Windows.Forms.PictureBox iconBox;
     }
 }

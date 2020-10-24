@@ -155,6 +155,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
@@ -191,6 +192,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Untitled-1-01.png" />
+    <None Include="Resources\Untitled-1-02.png" />
+    <None Include="Resources\Untitled-1-03.png" />
+    <None Include="Resources\alert.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\info.png" />
     <Content Include="Route96.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
