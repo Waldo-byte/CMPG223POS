@@ -51,10 +51,12 @@ namespace CMPG223_POS
             if(login == 0)
             {
                 MessageBox.Show("NA");
+                this.Close();
             }
             else if(login == 1)
             {
                 MessageBox.Show("A");
+                this.Close();
             }
             else
             {
