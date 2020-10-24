@@ -12,6 +12,7 @@ namespace CMPG223_POS
 {
     public partial class PaymentForm : Form
     {
+        public string clientID;
         public PaymentForm()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace CMPG223_POS
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if(txt_ClientID.Text == null)
+            if(lblclient_id.Text == "[Client_ID]")
             {
                 MessageBox.Show("No ID provided");
             }
@@ -33,7 +34,7 @@ namespace CMPG223_POS
                 try
                 {
                     funcClass f1 = new funcClass();
-                    f1.payBill(int.Parse(txt_ClientID.Text));
+                    f1.payBill(int.Parse(lblclient_id.Text));
                 }
                 catch
                 {

@@ -21,6 +21,7 @@ namespace CMPG223_POS
         {
             funcClass buystock = new funcClass();
             buystock.buyStock(comboBoxItems.SelectedItem.ToString(),Convert.ToInt32(numUpDownItems.Value));
+            buystock.populateBought();
         }
 
         private void BuyInventoryForm_Load(object sender, EventArgs e)

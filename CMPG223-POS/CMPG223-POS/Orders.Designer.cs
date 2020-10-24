@@ -190,6 +190,7 @@
             this.btnPayOrder.TabIndex = 3;
             this.btnPayOrder.Text = "Pay Order";
             this.btnPayOrder.UseVisualStyleBackColor = true;
+            this.btnPayOrder.Click += new System.EventHandler(this.btnPayOrder_Click);
             // 
             // panelCenter
             // 
@@ -355,6 +356,7 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 511);
             this.flowLayoutPanel2.TabIndex = 1;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // btnBackDrinks
             // 
