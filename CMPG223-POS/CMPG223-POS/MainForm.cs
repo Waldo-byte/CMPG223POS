@@ -13,6 +13,8 @@ namespace CMPG223_POS
 {
     public partial class MainForm : Form
     {
+        MyMessageBox mbox = new MyMessageBox();
+
         public MainForm()
         {
             InitializeComponent();
@@ -81,10 +83,11 @@ namespace CMPG223_POS
         //Exit Sequence
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if (mbox.ShowMessageBox("Are you sure you want to Exit", "Alert", "OK/Cancel", "Alert") == DialogResult.Yes)
-            //{
-            //    Application.Exit();
-            //}
+            mbox.ShowMessageBox("Are You sure you want to Exit", "Exit?", "Yes/No", "Alert");
+            if (mbox.ShowDialog() == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
 
         }
 
@@ -229,10 +232,8 @@ namespace CMPG223_POS
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MyMessageBox mbox = new MyMessageBox();
-            mbox.ShowMessageBox("Are You sure you want to Exit","Exit?","Yes/No","Alert");
-            mbox.Show();
-            if(mbox.DialogResult == DialogResult.Yes)
+            mbox.ShowMessageBox("Are You sure you want to Exit", "Exit?", "Yes/No", "Alert");
+            if (mbox.ShowDialog() == DialogResult.Yes)
             {
                 Application.Exit();
             }
