@@ -53,6 +53,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -62,6 +63,7 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -71,6 +73,7 @@
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnBackup
             // 
@@ -174,6 +177,7 @@
             this.Controls.Add(this.btnAdd);
             this.Name = "StockForm";
             this.Text = "StockForm";
+            this.Load += new System.EventHandler(this.StockForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownStock)).EndInit();
             this.ResumeLayout(false);
