@@ -22,15 +22,20 @@ namespace CMPG223_POS
             string name = txtName.Text;
             string pass = txtPassword.Text;
             string confirm_pass = txtConfirmPassword.Text;
-            if (1==1)
+            if (name == string.Empty || pass == string.Empty || confirm_pass == string.Empty || txtSurname.Text == string.Empty)
             {
+                MessageBox.Show("E");
+            }
+            else
+            {
+
                 if (txtConfirmPassword.Text != txtPassword.Text)
                 {
-                    MessageBox.Show("E");
+                    MessageBox.Show("Pass");
                 }
                 else
                 {
-                    if(chkboxadmin.Checked)
+                    if (chkboxadmin.Checked)
                     {
                         try
                         {
@@ -38,7 +43,7 @@ namespace CMPG223_POS
                             f1.addWaiter(pass, DateTime.Now.TimeOfDay, name, txtSurname.Text, 1);
                             MessageBox.Show("Added");
                         }
-                        catch(Exception es)
+                        catch (Exception es)
                         {
                             MessageBox.Show(es.Message);
                         }
@@ -56,12 +61,8 @@ namespace CMPG223_POS
                             MessageBox.Show(es.Message);
                         }
                     }
-                    
+
                 }
-            }
-            else
-            {
-                MessageBox.Show("E");
             }
             
         }

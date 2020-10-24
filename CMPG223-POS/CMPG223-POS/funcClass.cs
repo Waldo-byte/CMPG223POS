@@ -32,7 +32,10 @@ namespace CMPG223_POS
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if(fbd.ShowDialog() == DialogResult.OK)
             {
-                string cmd = "BACKUP DATABASE [ " + conn.Database + " ] TO DISK '" + fbd.SelectedPath + "\\" + "Database" + "-" + DateTime.Now.ToString("yyyy-MM-dd") + ".bak'";
+                conn.Open();
+                string db = conn.Database;
+                string path = fbd.SelectedPath.ToString();
+                string cmd = "BACKUP DATABASE [" + conn.Database + "] TO DISK='" + path + "\\" + "Database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
                 using (SqlCommand command = new SqlCommand(cmd, conn))
                 {
                     if(conn.State != ConnectionState.Open)
@@ -50,6 +53,7 @@ namespace CMPG223_POS
             }
         }
 
+
         public void restoredb()
         {
             
@@ -61,17 +65,18 @@ namespace CMPG223_POS
                 string path = dlg.FileName;
                 try
                 {
+                    conn.Open();
                     string sqlStmt2 = string.Format("ALTER DATABASE [" + conn.Database + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
                     SqlCommand bu2 = new SqlCommand(sqlStmt2, conn);
                     bu2.ExecuteNonQuery();
 
-                    string sqlStmt3 = "USE MASTER RESTORE DATABASE [" + conn.Database + "] FROM DISK='" + path + "'WITH REPLACE;";
+                    string sqlStmt3 = " USE MASTER RESTORE DATABASE [" + conn.Database + "] FROM DISK='" + path + "'WITH REPLACE;";
                     SqlCommand bu3 = new SqlCommand(sqlStmt3, conn);
                     bu3.ExecuteNonQuery();
 
-                    string sqlStmt4 = string.Format("ALTER DATABASE [" + conn.Database + "] SET MULTI_USER");
-                    SqlCommand bu4 = new SqlCommand(sqlStmt4, conn);
-                    bu4.ExecuteNonQuery();
+                    //string sqlStmt4 = string.Format("ALTER DATABASE [" + conn.Database + "] SET MULTI_USER");
+                   //SqlCommand bu4 = new SqlCommand(sqlStmt4, conn);
+                    //bu4.ExecuteNonQuery();
 
                     MessageBox.Show("database restoration done successefully");
                     conn.Close();
@@ -79,7 +84,7 @@ namespace CMPG223_POS
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("E");
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

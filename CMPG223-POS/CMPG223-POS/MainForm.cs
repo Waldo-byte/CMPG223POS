@@ -14,6 +14,7 @@ namespace CMPG223_POS
     public partial class MainForm : Form
     {
         MyMessageBox mbox = new MyMessageBox();
+        public bool admin = false;
 
         public MainForm()
         {
