@@ -32,13 +32,29 @@ namespace CMPG223_POS
                 {
                     if(chkboxadmin.Checked)
                     {
-                        funcClass f1 = new funcClass();
-                        f1.addWaiter(txtPassword.Text, DateTime.Now.TimeOfDay, txtName.Text, txtSurname.Text, 1);
+                        try
+                        {
+                            funcClass f1 = new funcClass();
+                            f1.addWaiter(pass, DateTime.Now.TimeOfDay, name, txtSurname.Text, 1);
+                            //MessageBox.Show("Added");
+                        }
+                        catch(Exception es)
+                        {
+                            MessageBox.Show(es.Message);
+                        }
                     }
                     else
                     {
-                        funcClass f1 = new funcClass();
-                        f1.addWaiter(txtPassword.Text, DateTime.Now.TimeOfDay, txtName.Text, txtSurname.Text, 0);
+                        try
+                        {
+                            funcClass f1 = new funcClass();
+                            f1.addWaiter(txtPassword.Text, DateTime.Now.TimeOfDay, txtName.Text, txtSurname.Text, 0);
+                            MessageBox.Show("Added");
+                        }
+                        catch (Exception es)
+                        {
+                            MessageBox.Show(es.Message);
+                        }
                     }
                     
                 }

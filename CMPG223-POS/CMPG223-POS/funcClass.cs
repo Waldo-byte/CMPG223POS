@@ -8,7 +8,6 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 using System.Configuration;
-using System.Data.SqlClient;
 
 namespace CMPG223_POS
 {
@@ -309,7 +308,7 @@ namespace CMPG223_POS
             SqlCommand command;
             string waiteriD = waiterID;
             string password = pass;
-            int admini = 0;
+            bool admini = false;
             conn.Open();
             command = new SqlCommand("SELECT COUNT(*) FROM Waiter WHERE [Waiter_ID] LIKE '" + waiteriD + "' AND [Password] LIKE '" + pass + "'", conn);
             SqlDataAdapter sdata_adap = new SqlDataAdapter(command);
@@ -318,18 +317,18 @@ namespace CMPG223_POS
 
             if (dt.Rows[0][0].ToString() == "1")
             {
-                SqlCommand cmd = new SqlCommand("SELECT Admin FROM Waiters Where Waiter_ID = '" + waiteriD + "'", conn);
+                SqlCommand cmd = new SqlCommand("SELECT Admin FROM Waiter Where Waiter_ID = '" + waiteriD + "'", conn);
                 SqlDataReader datread = cmd.ExecuteReader();
                 if (datread.HasRows)
                 {
                     
                     while (datread.Read())
                     {
-                        admini = datread.GetInt32(0);
+                        admini = datread.GetBoolean(0);
                     }
                     
                 }
-                if (admini == 1)
+                if (admini == true)
                 {
                     return 1;
                 }
@@ -350,21 +349,23 @@ namespace CMPG223_POS
         {
             try
             {
-                string sql_addstock = "INSERT INTO Waiter([Password], [FirstName],[Time_Worked], [LastName], [Admin]) VALUES(@Password, @FirstName,@Time, @LastName, @admin)";
+                string sql_addstock = "INSERT INTO Waiter([Password], [FirstName], [LastName], [Admin]) VALUES(@Password, @FirstName, @LastName, @admin)";
                 string sql_time = "INSERT INTO TimeSchedule([Time_Worked], Description) VALUES(@Time, @Desc)";
                 conn.Open();
+                MessageBox.Show(conn.State.ToString());
                 SqlCommand comm = new SqlCommand(sql_time, conn);
                 comm.Parameters.AddWithValue("@Time", now);
                 comm.Parameters.AddWithValue("@Desc", firstname);
-                SqlCommand cmd = new SqlCommand(sql_addstock, conn);
+                SqlCommand cmd = new SqlCommand(sql_addstock, conn); ;
                 cmd.Parameters.AddWithValue("@Password", password);
                 cmd.Parameters.AddWithValue("@FirstName", firstname);
                 cmd.Parameters.AddWithValue("@Time", now);
                 cmd.Parameters.AddWithValue("@LastName", lastname);
                 cmd.Parameters.AddWithValue("@admin", admin);
-                 //comm.ExecuteNonQuery();
+                comm.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                MessageBox.Show(conn.State.ToString());
             }
             catch(SqlException e)
             {
