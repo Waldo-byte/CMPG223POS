@@ -35,7 +35,7 @@ namespace CMPG223_POS
                         try
                         {
                             funcClass f1 = new funcClass();
-                            f1.addWaiter(pass, DateTime.Now.TimeOfDay, name, txtSurname.Text, true);
+                            f1.addWaiter(pass, DateTime.Now.TimeOfDay, name, txtSurname.Text, 1);
                             MessageBox.Show("Added");
                         }
                         catch(Exception es)
@@ -48,7 +48,7 @@ namespace CMPG223_POS
                         try
                         {
                             funcClass f1 = new funcClass();
-                            f1.addWaiter(txtPassword.Text, DateTime.Now.TimeOfDay, txtName.Text, txtSurname.Text, false);
+                            f1.addWaiter(txtPassword.Text, DateTime.Now.TimeOfDay, txtName.Text, txtSurname.Text, 0);
                             MessageBox.Show("Added");
                         }
                         catch (Exception es)
