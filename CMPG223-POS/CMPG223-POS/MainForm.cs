@@ -95,12 +95,19 @@ namespace CMPG223_POS
             mainMenuStrip.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
 
             LoginForm log = new LoginForm();
-            SignUp sign = new SignUp();
-            WaiterAddForm w1 = new WaiterAddForm();
-            w1.Show();
-
 
             log.Show();
+
+            foreach (ToolStripMenuItem item in mainMenuStrip.Items)
+            {
+                item.ForeColor = Color.FromArgb(200, 100, 41);
+                foreach (ToolStripMenuItem children in item.DropDownItems)
+                {
+                    children.ForeColor = Color.FromArgb(200, 100, 41);
+                }
+            }
+
+            mainMenuStrip.ForeColor = Color.FromArgb(255, 255, 255);
 
             foreach (var mdi in this.Controls.OfType<MdiClient>())
             {
@@ -117,10 +124,11 @@ namespace CMPG223_POS
         public class CustomProfessionalColors : ProfessionalColorTable
         {
 
-            public CustomProfessionalColors()
+            public CustomProfessionalColors() : base()
             {
                 base.UseSystemColors = false;
             }
+
             public override System.Drawing.Color ToolStripBorder
             {
                 get { return Color.FromArgb(225,225,225); }
@@ -236,11 +244,19 @@ namespace CMPG223_POS
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            panelSideBar.Hide();
             Orders ord = new Orders();
             ord.MdiParent = this;
             ord.Dock = DockStyle.Fill;
             ord.Show();
+
+            foreach (ToolStripMenuItem item in mainMenuStrip.Items)
+            {
+                item.ForeColor = Color.FromArgb(200, 100, 41);
+                foreach (ToolStripMenuItem children in item.DropDownItems)
+                {
+                    children.ForeColor = Color.FromArgb(200, 100, 41);
+                }
+            }
         }
 
         private void btnAddWaiter_Click(object sender, EventArgs e)

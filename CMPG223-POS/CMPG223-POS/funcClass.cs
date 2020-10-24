@@ -164,7 +164,9 @@ namespace CMPG223_POS
 
             catch(SqlException error)
             {
-                MessageBox.Show(error.Message);
+                MyMessageBox mbox = new MyMessageBox();
+                mbox.ShowMessageBox(error.Message, "SQL Error","","Error");
+                mbox.ShowDialog();
                 conn.Close();
             }
             
@@ -185,7 +187,9 @@ namespace CMPG223_POS
 
             catch(SqlException deleteEr)
             {
-                MessageBox.Show(deleteEr.Message);
+                MyMessageBox mbox = new MyMessageBox();
+                mbox.ShowMessageBox(deleteEr.Message, "SQL Delete Error", "", "Error");
+                mbox.ShowDialog();
                 conn.Close();
             }
             
@@ -205,7 +209,9 @@ namespace CMPG223_POS
 
             catch
             {
-                MessageBox.Show("E");
+                MyMessageBox mbox = new MyMessageBox();
+                mbox.ShowMessageBox("Could not output BuyStock.txt", "SQL Delete Error", "", "Error");
+                mbox.ShowDialog();
             }
            
         }
@@ -295,8 +301,9 @@ namespace CMPG223_POS
             }
             catch(SqlException err)
             {
-                MessageBox.Show(err.Message);
-
+                MyMessageBox mbox = new MyMessageBox();
+                mbox.ShowMessageBox(err.Message, "SQL Error", "", "Error");
+                mbox.ShowDialog();
             }
            
         }
@@ -367,7 +374,9 @@ namespace CMPG223_POS
             }
             catch(SqlException e)
             {
-                MessageBox.Show(e.Message);
+                MyMessageBox mbox = new MyMessageBox();
+                mbox.ShowMessageBox(e.Message, "SQL Error", "", "Error");
+                mbox.ShowDialog();
             }
 
 

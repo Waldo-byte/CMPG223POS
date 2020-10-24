@@ -41,7 +41,7 @@
             // 
             // btnBuy
             // 
-            this.btnBuy.Location = new System.Drawing.Point(158, 87);
+            this.btnBuy.Location = new System.Drawing.Point(12, 99);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(77, 35);
             this.btnBuy.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(283, 87);
+            this.btnCancel.Location = new System.Drawing.Point(110, 99);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(77, 35);
             this.btnCancel.TabIndex = 1;
@@ -61,9 +61,10 @@
             // dataGridViewItems
             // 
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewItems.Location = new System.Drawing.Point(2, 128);
+            this.dataGridViewItems.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewItems.Location = new System.Drawing.Point(0, 140);
             this.dataGridViewItems.Name = "dataGridViewItems";
-            this.dataGridViewItems.Size = new System.Drawing.Size(494, 150);
+            this.dataGridViewItems.Size = new System.Drawing.Size(518, 150);
             this.dataGridViewItems.TabIndex = 2;
             // 
             // comboBoxItems

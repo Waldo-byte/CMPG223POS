@@ -41,7 +41,7 @@
             // btnPay
             // 
             this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPay.Location = new System.Drawing.Point(33, 158);
+            this.btnPay.Location = new System.Drawing.Point(15, 171);
             this.btnPay.Margin = new System.Windows.Forms.Padding(6);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(94, 31);
@@ -53,7 +53,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(196, 158);
+            this.btnCancel.Location = new System.Drawing.Point(221, 171);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 31);

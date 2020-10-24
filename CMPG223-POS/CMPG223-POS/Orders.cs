@@ -141,15 +141,7 @@ namespace CMPG223_POS
 
         private void btnCancelOrder_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            //if (this.Parent != null || this.Parent.GetType() == typeof(MainForm))
-            //{
-            //    return;
-            //}
-
-            //FlowLayoutPanel side = (this.Parent as MainForm).Controls["panelSideBar"] as FlowLayoutPanel;
-
-            //side.Show();
+            this.Close();
         }
 
         public partial class SideBarShow : UserControl

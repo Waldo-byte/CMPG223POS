@@ -53,7 +53,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(11, 77);
+            this.lblPassword.Location = new System.Drawing.Point(11, 59);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(84, 13);
@@ -63,7 +63,7 @@
             // lblConfirmPassword
             // 
             this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(11, 101);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(11, 83);
             this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(99, 13);
@@ -80,7 +80,7 @@
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(114, 98);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(114, 80);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(262, 20);
@@ -88,7 +88,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(114, 74);
+            this.txtPassword.Location = new System.Drawing.Point(114, 56);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(262, 20);
@@ -96,7 +96,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(132, 134);
+            this.btnAdd.Location = new System.Drawing.Point(132, 114);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(122, 37);
@@ -108,7 +108,7 @@
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
-            this.lblSurname.Location = new System.Drawing.Point(13, 47);
+            this.lblSurname.Location = new System.Drawing.Point(11, 34);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(80, 13);
             this.lblSurname.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(114, 47);
+            this.txtSurname.Location = new System.Drawing.Point(114, 31);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(261, 20);
             this.txtSurname.TabIndex = 8;
@@ -124,7 +124,7 @@
             // chkboxadmin
             // 
             this.chkboxadmin.AutoSize = true;
-            this.chkboxadmin.Location = new System.Drawing.Point(286, 134);
+            this.chkboxadmin.Location = new System.Drawing.Point(320, 125);
             this.chkboxadmin.Name = "chkboxadmin";
             this.chkboxadmin.Size = new System.Drawing.Size(55, 17);
             this.chkboxadmin.TabIndex = 9;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 182);
+            this.ClientSize = new System.Drawing.Size(387, 163);
             this.Controls.Add(this.chkboxadmin);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.lblSurname);

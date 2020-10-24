@@ -40,9 +40,9 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Location = new System.Drawing.Point(12, 15);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(63, 13);
+            this.lblUserName.Size = new System.Drawing.Size(46, 13);
             this.lblUserName.TabIndex = 4;
-            this.lblUserName.Text = "User Name:";
+            this.lblUserName.Text = "User ID:";
             // 
             // lblPassword
             // 
