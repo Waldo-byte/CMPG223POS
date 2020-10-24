@@ -76,7 +76,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(262, 20);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 0;
             // 
             // txtConfirmPassword
             // 
@@ -84,7 +84,8 @@
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(262, 20);
-            this.txtConfirmPassword.TabIndex = 4;
+            this.txtConfirmPassword.TabIndex = 3;
+            this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
             // 
             // txtPassword
             // 
@@ -92,7 +93,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(262, 20);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.TabIndex = 2;
             // 
             // btnAdd
             // 
@@ -100,7 +101,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(122, 37);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -119,7 +120,7 @@
             this.txtSurname.Location = new System.Drawing.Point(114, 31);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(261, 20);
-            this.txtSurname.TabIndex = 8;
+            this.txtSurname.TabIndex = 1;
             // 
             // chkboxadmin
             // 
@@ -127,7 +128,7 @@
             this.chkboxadmin.Location = new System.Drawing.Point(320, 125);
             this.chkboxadmin.Name = "chkboxadmin";
             this.chkboxadmin.Size = new System.Drawing.Size(55, 17);
-            this.chkboxadmin.TabIndex = 9;
+            this.chkboxadmin.TabIndex = 5;
             this.chkboxadmin.Text = "Admin";
             this.chkboxadmin.UseVisualStyleBackColor = true;
             // 

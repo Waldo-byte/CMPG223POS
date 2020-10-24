@@ -65,5 +65,10 @@ namespace CMPG223_POS
             }
             
         }
+
+        private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
