@@ -16,5 +16,17 @@ namespace CMPG223_POS
         {
             InitializeComponent();
         }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            funcClass buystock = new funcClass();
+            buystock.buyStock(comboBoxItems.SelectedItem.ToString(),Convert.ToInt32(numUpDownItems.Value));
+        }
+
+        private void BuyInventoryForm_Load(object sender, EventArgs e)
+        {
+            funcClass pop = new funcClass();
+            pop.populateBought();
+        }
     }
 }
