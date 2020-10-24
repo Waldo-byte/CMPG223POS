@@ -66,75 +66,28 @@ namespace CMPG223_POS
 
         }
         //---------------------------------------------------------------------------------------------
+        static string Button_id;
 
         public void ShowMessageBox(string message, string title,string buttons, string icon)
         {
-            int width = messageLabel.Location.X * 2 + messageLabel.Width;
-            int height = messageLabel.Location.Y * 2 + messageLabel.Height + buttonContainer.Height;
-
-            this.ClientSize = new Size(width, height);
-
             this.Text = title;
 
             messageLabel.Text = message;
 
-            if(buttons == "")
-            {
-                buttonContainer.Controls.Add(btnOk);
-                btnOk.Text = "OK";
-
-                btnOk.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
-            }
-            else if (buttons == "OK/Cancel")
-            {
-                buttonContainer.Controls.Add(btnOk);
-                buttonContainer.Controls.Add(btnCancel);
-                btnOk.Text = "OK";
-                btnCancel.Text = "Cancel";
-
-                btnOk.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
-                btnCancel.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
-
-            }
-            else if (buttons == "Yes/No")
-            {
-                buttonContainer.Controls.Add(btnYes);
-                buttonContainer.Controls.Add(btnNo);
-                btnYes.Text = "Yes";
-                btnNo.Text = "No";
-
-                btnYes.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
-                btnNo.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
-            }
-            else if (buttons == "Yes/No/Cancel")
-            {
-                buttonContainer.Controls.Add(btnYes);
-                buttonContainer.Controls.Add(btnNo);
-                btnYes.Text = "Yes";
-                btnNo.Text = "No";
-
-                btnYes.Size = new Size((this.ClientSize.Width - 32) / 3, buttonContainer.Height - 16);
-                btnNo.Size = new Size((this.ClientSize.Width - 32) / 3, buttonContainer.Height - 16);
-            }
-
-            btnOk.DialogResult = DialogResult.OK;
-            btnCancel.DialogResult = DialogResult.Cancel;
-            btnYes.DialogResult = DialogResult.Yes;
-            btnNo.DialogResult = DialogResult.No;
+            
 
             if(icon == "")
             {
                 iconBox.Hide();
                 messageLabel.Location = new Point(10, 23);
                 messageLabel.MinimumSize = new Size(180, 0);
-                messageLabel.MinimumSize = new Size(180, 0);
+                messageLabel.MaximumSize = new Size(180, 0);
                 buttonContainer.BackColor = Color.FromArgb(153, 240, 188);
                 this.BackColor = Color.FromArgb(214, 249, 228);
                 buttonBack = Color.FromArgb(108, 225, 155);
                 buttonBorder = Color.FromArgb(92, 208, 138);
-                buttonOverBack = Color.FromArgb(94, 225, 146);
+                buttonOverBack = Color.FromArgb(75, 225, 135);
                 buttonOverBorder = Color.FromArgb(50, 225, 120);
-
             }
             else if(icon == "Error")
             {
@@ -175,6 +128,74 @@ namespace CMPG223_POS
                 buttonOverBack = Color.FromArgb(104, 134, 189);
                 buttonOverBorder = Color.FromArgb(64, 104, 177);
             }
+
+            int width = messageLabel.Location.X * 2 + messageLabel.Width;
+            int height = messageLabel.Location.Y * 2 + messageLabel.Height + buttonContainer.Height;
+
+            this.ClientSize = new Size(width, height);
+
+            if (buttons == "")
+            {
+                buttonContainer.Controls.Add(btnOk);
+                btnOk.Text = "OK";
+
+                btnOk.DialogResult = DialogResult.OK;
+                btnCancel.DialogResult = DialogResult.Cancel;
+
+                btnOk.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
+
+                this.AcceptButton = btnOk;
+            }
+            else if (buttons == "OK/Cancel")
+            {
+                buttonContainer.Controls.Add(btnOk);
+                buttonContainer.Controls.Add(btnCancel);
+                btnOk.Text = "OK";
+                btnCancel.Text = "Cancel";
+
+                btnOk.DialogResult = DialogResult.OK;
+                btnCancel.DialogResult = DialogResult.Cancel;
+
+                btnOk.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
+                btnCancel.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
+
+                this.AcceptButton = btnOk;
+
+            }
+            else if (buttons == "Yes/No")
+            {
+                buttonContainer.Controls.Add(btnYes);
+                buttonContainer.Controls.Add(btnNo);
+                btnYes.Text = "Yes";
+                btnNo.Text = "No";
+
+                btnYes.DialogResult = DialogResult.Yes;
+                btnNo.DialogResult = DialogResult.No;
+
+                btnYes.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
+                btnNo.Size = new Size((this.ClientSize.Width - 24) / 2, buttonContainer.Height - 16);
+
+                this.AcceptButton = btnYes;
+
+            }
+            else if (buttons == "Yes/No/Cancel")
+            {
+                buttonContainer.Controls.Add(btnYes);
+                buttonContainer.Controls.Add(btnNo);
+                btnYes.Text = "Yes";
+                btnNo.Text = "No";
+
+                btnYes.DialogResult = DialogResult.Yes;
+                btnNo.DialogResult = DialogResult.No;
+
+                btnYes.Size = new Size((this.ClientSize.Width - 32) / 3, buttonContainer.Height - 16);
+                btnNo.Size = new Size((this.ClientSize.Width - 32) / 3, buttonContainer.Height - 16);
+
+                this.AcceptButton = btnYes;
+            }
+
+            
+            
         }
 
         public void MessageBoxSize()
@@ -188,7 +209,6 @@ namespace CMPG223_POS
         private void MyMessageBox_Load(object sender, EventArgs e)
         {
             MessageBoxSize();
-            ShowMessageBox("Error found","Error!","Yes/No","");
             buttonStyle(buttonContainer);
         }
     }

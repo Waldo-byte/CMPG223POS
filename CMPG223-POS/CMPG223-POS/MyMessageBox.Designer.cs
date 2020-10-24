@@ -38,10 +38,8 @@
             // 
             this.messageLabel.AutoSize = true;
             this.messageLabel.Location = new System.Drawing.Point(60, 23);
-            this.messageLabel.MaximumSize = new System.Drawing.Size(110, 0);
-            this.messageLabel.MinimumSize = new System.Drawing.Size(110, 0);
             this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(110, 26);
+            this.messageLabel.Size = new System.Drawing.Size(150, 13);
             this.messageLabel.TabIndex = 0;
             this.messageLabel.Text = "This is a custom Message Box";
             // 
@@ -51,7 +49,7 @@
             this.buttonContainer.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.buttonContainer.Location = new System.Drawing.Point(0, 91);
             this.buttonContainer.Name = "buttonContainer";
-            this.buttonContainer.Size = new System.Drawing.Size(184, 48);
+            this.buttonContainer.Size = new System.Drawing.Size(233, 48);
             this.buttonContainer.TabIndex = 1;
             // 
             // iconBox
@@ -69,15 +67,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(184, 139);
+            this.ClientSize = new System.Drawing.Size(233, 139);
             this.Controls.Add(this.iconBox);
             this.Controls.Add(this.buttonContainer);
             this.Controls.Add(this.messageLabel);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MyMessageBox";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyMessageBox";
             this.Load += new System.EventHandler(this.MyMessageBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
@@ -88,8 +88,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label messageLabel;
-        private System.Windows.Forms.FlowLayoutPanel buttonContainer;
-        private System.Windows.Forms.PictureBox iconBox;
+        public System.Windows.Forms.Label messageLabel;
+        public System.Windows.Forms.FlowLayoutPanel buttonContainer;
+        public System.Windows.Forms.PictureBox iconBox;
     }
 }

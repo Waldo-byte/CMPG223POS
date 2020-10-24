@@ -81,7 +81,11 @@ namespace CMPG223_POS
         //Exit Sequence
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //if (mbox.ShowMessageBox("Are you sure you want to Exit", "Alert", "OK/Cancel", "Alert") == DialogResult.Yes)
+            //{
+            //    Application.Exit();
+            //}
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -96,11 +100,7 @@ namespace CMPG223_POS
             SignUp sign = new SignUp();
 
 
-            log.MdiParent = this;
-            sign.MdiParent = this;
-
             log.Show();
-            sign.Show();
 
             foreach (var mdi in this.Controls.OfType<MdiClient>())
             {
@@ -228,8 +228,12 @@ namespace CMPG223_POS
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MyMessageBox mbox = new MyMessageBox();
+            mbox.ShowMessageBox("Are You sure you want to Exit","Exit?","Yes/No","Alert");
             mbox.Show();
-            //Application.Exit();
+            if(mbox.DialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
@@ -239,6 +243,24 @@ namespace CMPG223_POS
             ord.MdiParent = this;
             ord.Dock = DockStyle.Fill;
             ord.Show();
+        }
+
+        private void btnAddWaiter_Click(object sender, EventArgs e)
+        {
+            WaiterAddForm addwaiter = new WaiterAddForm();
+            addwaiter.Show();
+        }
+
+        private void bntStock_Click(object sender, EventArgs e)
+        {
+            StockForm stock = new StockForm();
+            stock.Show();
+        }
+
+        private void btnSignUpCustomer_Click(object sender, EventArgs e)
+        {
+            SignUp sign = new SignUp();
+            sign.Show();
         }
     }
 }

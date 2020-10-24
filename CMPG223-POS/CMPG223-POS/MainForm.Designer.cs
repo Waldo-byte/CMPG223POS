@@ -35,11 +35,8 @@
             this.panelSideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnAddWaiter = new System.Windows.Forms.Button();
-            this.btnBuyInventory = new System.Windows.Forms.Button();
             this.bntStock = new System.Windows.Forms.Button();
             this.btnSignUpCustomer = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.mainMenuStrip.SuspendLayout();
             this.panelSideBar.SuspendLayout();
             this.SuspendLayout();
@@ -82,11 +79,8 @@
             this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.panelSideBar.Controls.Add(this.btnOrders);
             this.panelSideBar.Controls.Add(this.btnAddWaiter);
-            this.panelSideBar.Controls.Add(this.btnBuyInventory);
             this.panelSideBar.Controls.Add(this.bntStock);
             this.panelSideBar.Controls.Add(this.btnSignUpCustomer);
-            this.panelSideBar.Controls.Add(this.button5);
-            this.panelSideBar.Controls.Add(this.button6);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 24);
             this.panelSideBar.Name = "panelSideBar";
@@ -115,61 +109,31 @@
             this.btnAddWaiter.TabIndex = 1;
             this.btnAddWaiter.Text = "Add New Waiter";
             this.btnAddWaiter.UseVisualStyleBackColor = true;
-            // 
-            // btnBuyInventory
-            // 
-            this.btnBuyInventory.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnBuyInventory.Location = new System.Drawing.Point(1, 83);
-            this.btnBuyInventory.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.btnBuyInventory.Name = "btnBuyInventory";
-            this.btnBuyInventory.Size = new System.Drawing.Size(198, 40);
-            this.btnBuyInventory.TabIndex = 2;
-            this.btnBuyInventory.Text = "Buy Inventory";
-            this.btnBuyInventory.UseVisualStyleBackColor = true;
+            this.btnAddWaiter.Click += new System.EventHandler(this.btnAddWaiter_Click);
             // 
             // bntStock
             // 
             this.bntStock.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bntStock.Location = new System.Drawing.Point(1, 124);
+            this.bntStock.Location = new System.Drawing.Point(1, 83);
             this.bntStock.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.bntStock.Name = "bntStock";
             this.bntStock.Size = new System.Drawing.Size(198, 40);
             this.bntStock.TabIndex = 3;
             this.bntStock.Text = "Stock";
             this.bntStock.UseVisualStyleBackColor = true;
+            this.bntStock.Click += new System.EventHandler(this.bntStock_Click);
             // 
             // btnSignUpCustomer
             // 
             this.btnSignUpCustomer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSignUpCustomer.Location = new System.Drawing.Point(1, 165);
+            this.btnSignUpCustomer.Location = new System.Drawing.Point(1, 124);
             this.btnSignUpCustomer.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.btnSignUpCustomer.Name = "btnSignUpCustomer";
             this.btnSignUpCustomer.Size = new System.Drawing.Size(198, 40);
             this.btnSignUpCustomer.TabIndex = 4;
             this.btnSignUpCustomer.Text = "Sign Up Customer";
             this.btnSignUpCustomer.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button5.Location = new System.Drawing.Point(1, 206);
-            this.button5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(198, 40);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button6.Location = new System.Drawing.Point(1, 247);
-            this.button6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(198, 40);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSignUpCustomer.Click += new System.EventHandler(this.btnSignUpCustomer_Click);
             // 
             // MainForm
             // 
@@ -203,11 +167,8 @@
         private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Button btnAddWaiter;
-        private System.Windows.Forms.Button btnBuyInventory;
         private System.Windows.Forms.Button bntStock;
         private System.Windows.Forms.Button btnSignUpCustomer;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         public System.Windows.Forms.FlowLayoutPanel panelSideBar;
     }
 }
