@@ -579,7 +579,7 @@ namespace CMPG223_POS
                 
             }
 
-            functions.placeOrder(orders, cost, int.Parse(txtTableNumber.Text));
+            functions.placeOrder(orders, cost, int.Parse(txtClientID.Text));
         }
 
         private void btnClearPreviousItemDrinks_Click(object sender, EventArgs e)

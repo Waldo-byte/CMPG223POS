@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Orders));
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.txtClientID = new System.Windows.Forms.TextBox();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.lbClientID = new System.Windows.Forms.Label();
             this.lbOrders = new System.Windows.Forms.ListBox();
             this.panelOderHome = new System.Windows.Forms.Panel();
-            this.txtTableNumber = new System.Windows.Forms.TextBox();
-            this.lblTableNumber = new System.Windows.Forms.Label();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancelOrder = new System.Windows.Forms.Button();
             this.btnConfirmOrder = new System.Windows.Forms.Button();
@@ -85,14 +85,23 @@
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(24)))), ((int)(((byte)(22)))));
-            this.panelTitle.Controls.Add(this.txtTableNumber);
+            this.panelTitle.Controls.Add(this.txtClientID);
             this.panelTitle.Controls.Add(this.labelTitle);
-            this.panelTitle.Controls.Add(this.lblTableNumber);
+            this.panelTitle.Controls.Add(this.lbClientID);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(1184, 32);
             this.panelTitle.TabIndex = 0;
+            // 
+            // txtClientID
+            // 
+            this.txtClientID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
+            this.txtClientID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtClientID.Location = new System.Drawing.Point(309, 6);
+            this.txtClientID.Name = "txtClientID";
+            this.txtClientID.Size = new System.Drawing.Size(167, 20);
+            this.txtClientID.TabIndex = 5;
             // 
             // labelTitle
             // 
@@ -106,6 +115,16 @@
             this.labelTitle.Size = new System.Drawing.Size(77, 25);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Orders";
+            // 
+            // lbClientID
+            // 
+            this.lbClientID.AutoSize = true;
+            this.lbClientID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
+            this.lbClientID.Location = new System.Drawing.Point(229, 9);
+            this.lbClientID.Name = "lbClientID";
+            this.lbClientID.Size = new System.Drawing.Size(50, 13);
+            this.lbClientID.TabIndex = 4;
+            this.lbClientID.Text = "Client ID:";
             // 
             // lbOrders
             // 
@@ -127,25 +146,6 @@
             this.panelOderHome.Name = "panelOderHome";
             this.panelOderHome.Size = new System.Drawing.Size(739, 135);
             this.panelOderHome.TabIndex = 2;
-            // 
-            // txtTableNumber
-            // 
-            this.txtTableNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
-            this.txtTableNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTableNumber.Location = new System.Drawing.Point(309, 6);
-            this.txtTableNumber.Name = "txtTableNumber";
-            this.txtTableNumber.Size = new System.Drawing.Size(167, 20);
-            this.txtTableNumber.TabIndex = 5;
-            // 
-            // lblTableNumber
-            // 
-            this.lblTableNumber.AutoSize = true;
-            this.lblTableNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
-            this.lblTableNumber.Location = new System.Drawing.Point(229, 9);
-            this.lblTableNumber.Name = "lblTableNumber";
-            this.lblTableNumber.Size = new System.Drawing.Size(77, 13);
-            this.lblTableNumber.TabIndex = 4;
-            this.lblTableNumber.Text = "Table Number:";
             // 
             // flowLayoutPanel5
             // 
@@ -631,8 +631,8 @@
         private System.Windows.Forms.Button btnLargeChips;
         private System.Windows.Forms.Button btnConfirmOrder;
         private System.Windows.Forms.Button btnPayOrder;
-        private System.Windows.Forms.TextBox txtTableNumber;
-        private System.Windows.Forms.Label lblTableNumber;
+        private System.Windows.Forms.TextBox txtClientID;
+        private System.Windows.Forms.Label lbClientID;
         public System.Windows.Forms.Button btnCancelOrder;
     }
 }
