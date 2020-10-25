@@ -80,9 +80,9 @@
             // 
             this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.panelSideBar.Controls.Add(this.btnOrders);
-            this.panelSideBar.Controls.Add(this.btnAddWaiter);
-            this.panelSideBar.Controls.Add(this.bntStock);
             this.panelSideBar.Controls.Add(this.btnSignUpCustomer);
+            this.panelSideBar.Controls.Add(this.bntStock);
+            this.panelSideBar.Controls.Add(this.btnAddWaiter);
             this.panelSideBar.Controls.Add(this.btnBuyInventory);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 24);
@@ -105,7 +105,7 @@
             // btnAddWaiter
             // 
             this.btnAddWaiter.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAddWaiter.Location = new System.Drawing.Point(1, 42);
+            this.btnAddWaiter.Location = new System.Drawing.Point(1, 124);
             this.btnAddWaiter.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.btnAddWaiter.Name = "btnAddWaiter";
             this.btnAddWaiter.Size = new System.Drawing.Size(198, 40);
@@ -129,7 +129,7 @@
             // btnSignUpCustomer
             // 
             this.btnSignUpCustomer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSignUpCustomer.Location = new System.Drawing.Point(1, 124);
+            this.btnSignUpCustomer.Location = new System.Drawing.Point(1, 42);
             this.btnSignUpCustomer.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.btnSignUpCustomer.Name = "btnSignUpCustomer";
             this.btnSignUpCustomer.Size = new System.Drawing.Size(198, 40);
