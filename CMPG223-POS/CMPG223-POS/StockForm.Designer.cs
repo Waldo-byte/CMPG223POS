@@ -221,7 +221,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonContainer);
             this.Controls.Add(this.dataGridViewStock);
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(574, 374);
             this.Name = "StockForm";

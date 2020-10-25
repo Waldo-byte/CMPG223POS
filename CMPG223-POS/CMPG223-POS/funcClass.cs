@@ -23,6 +23,7 @@ namespace CMPG223_POS
         SqlDataAdapter adap;
         DataSet ds;
         public bool isAdmin = true;
+        MyMessageBox mbox = new MyMessageBox();
         public void addItem(string item)
         {
             Orders orderForm = new Orders();
@@ -46,7 +47,8 @@ namespace CMPG223_POS
                     }
                     command.ExecuteNonQuery();
                     conn.Close();
-                    MessageBox.Show("Database backup done sucessfully"); 
+                    mbox.ShowMessageBox("Backup successful.", "Sucess!", "", "");
+                    mbox.ShowDialog();
                 }
             }
             else
@@ -77,10 +79,12 @@ namespace CMPG223_POS
                     bu3.ExecuteNonQuery();
 
                     //string sqlStmt4 = string.Format("ALTER DATABASE [" + conn.Database + "] SET MULTI_USER");
-                   //SqlCommand bu4 = new SqlCommand(sqlStmt4, conn);
+                    //SqlCommand bu4 = new SqlCommand(sqlStmt4, conn);
                     //bu4.ExecuteNonQuery();
 
-                    MessageBox.Show("database restoration done successefully");
+                    mbox.ShowMessageBox("Restore successful.", "Sucess!", "", "");
+                    mbox.ShowDialog();
+                    
                     conn.Close();
 
                 }

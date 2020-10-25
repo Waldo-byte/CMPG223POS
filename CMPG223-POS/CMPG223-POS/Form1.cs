@@ -24,7 +24,7 @@ namespace CMPG223_POS
 
         private void timerLoader_Tick(object sender, EventArgs e)
         {
-            progressLoader.Width += 600;
+            progressLoader.Width += 1;
             if(progressLoader.Width >= 600)
             {
                 LoginForm log = new LoginForm();
