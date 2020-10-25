@@ -42,13 +42,18 @@
             this.lblAmount = new System.Windows.Forms.Label();
             this.btn_Restore = new System.Windows.Forms.Button();
             this.txtItemID = new System.Windows.Forms.TextBox();
+            this.buttonContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownStock)).BeginInit();
+            this.buttonContainer.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 144);
+            this.btnAdd.Location = new System.Drawing.Point(6, 6);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 0);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 4;
@@ -58,7 +63,8 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(166, 144);
+            this.btnDelete.Location = new System.Drawing.Point(87, 6);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(0, 6, 6, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 5;
@@ -68,7 +74,8 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(311, 144);
+            this.btnUpdate.Location = new System.Drawing.Point(168, 6);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(0, 6, 6, 0);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 6;
@@ -78,7 +85,8 @@
             // 
             // btnBackup
             // 
-            this.btnBackup.Location = new System.Drawing.Point(471, 144);
+            this.btnBackup.Location = new System.Drawing.Point(249, 6);
+            this.btnBackup.Margin = new System.Windows.Forms.Padding(0, 6, 6, 0);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(75, 23);
             this.btnBackup.TabIndex = 8;
@@ -88,16 +96,20 @@
             // 
             // dataGridViewStock
             // 
+            this.dataGridViewStock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStock.Location = new System.Drawing.Point(12, 173);
+            this.dataGridViewStock.Location = new System.Drawing.Point(0, 156);
+            this.dataGridViewStock.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewStock.Name = "dataGridViewStock";
-            this.dataGridViewStock.Size = new System.Drawing.Size(534, 150);
+            this.dataGridViewStock.Size = new System.Drawing.Size(558, 179);
             this.dataGridViewStock.TabIndex = 4;
             // 
             // lblItemId
             // 
             this.lblItemId.AutoSize = true;
-            this.lblItemId.Location = new System.Drawing.Point(25, 15);
+            this.lblItemId.Location = new System.Drawing.Point(12, 7);
             this.lblItemId.Name = "lblItemId";
             this.lblItemId.Size = new System.Drawing.Size(44, 13);
             this.lblItemId.TabIndex = 6;
@@ -105,15 +117,15 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(75, 39);
+            this.txtDescription.Location = new System.Drawing.Point(84, 30);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(121, 20);
+            this.txtDescription.Size = new System.Drawing.Size(156, 20);
             this.txtDescription.TabIndex = 1;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(6, 42);
+            this.lblDescription.Location = new System.Drawing.Point(12, 33);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(63, 13);
             this.lblDescription.TabIndex = 8;
@@ -121,15 +133,15 @@
             // 
             // txtStockPrice
             // 
-            this.txtStockPrice.Location = new System.Drawing.Point(75, 65);
+            this.txtStockPrice.Location = new System.Drawing.Point(84, 56);
             this.txtStockPrice.Name = "txtStockPrice";
-            this.txtStockPrice.Size = new System.Drawing.Size(121, 20);
+            this.txtStockPrice.Size = new System.Drawing.Size(156, 20);
             this.txtStockPrice.TabIndex = 2;
             // 
             // lblStockPrice
             // 
             this.lblStockPrice.AutoSize = true;
-            this.lblStockPrice.Location = new System.Drawing.Point(34, 68);
+            this.lblStockPrice.Location = new System.Drawing.Point(12, 59);
             this.lblStockPrice.Name = "lblStockPrice";
             this.lblStockPrice.Size = new System.Drawing.Size(34, 13);
             this.lblStockPrice.TabIndex = 10;
@@ -137,15 +149,17 @@
             // 
             // numUpDownStock
             // 
-            this.numUpDownStock.Location = new System.Drawing.Point(75, 92);
+            this.numUpDownStock.BackColor = System.Drawing.SystemColors.Window;
+            this.numUpDownStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numUpDownStock.Location = new System.Drawing.Point(84, 82);
             this.numUpDownStock.Name = "numUpDownStock";
-            this.numUpDownStock.Size = new System.Drawing.Size(120, 20);
+            this.numUpDownStock.Size = new System.Drawing.Size(156, 20);
             this.numUpDownStock.TabIndex = 3;
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(22, 94);
+            this.lblAmount.Location = new System.Drawing.Point(12, 84);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(46, 13);
             this.lblAmount.TabIndex = 12;
@@ -153,7 +167,8 @@
             // 
             // btn_Restore
             // 
-            this.btn_Restore.Location = new System.Drawing.Point(471, 115);
+            this.btn_Restore.Location = new System.Drawing.Point(330, 6);
+            this.btn_Restore.Margin = new System.Windows.Forms.Padding(0, 6, 6, 0);
             this.btn_Restore.Name = "btn_Restore";
             this.btn_Restore.Size = new System.Drawing.Size(75, 23);
             this.btn_Restore.TabIndex = 7;
@@ -163,37 +178,63 @@
             // 
             // txtItemID
             // 
-            this.txtItemID.Location = new System.Drawing.Point(75, 12);
+            this.txtItemID.Location = new System.Drawing.Point(84, 4);
             this.txtItemID.Name = "txtItemID";
-            this.txtItemID.Size = new System.Drawing.Size(120, 20);
+            this.txtItemID.Size = new System.Drawing.Size(155, 20);
             this.txtItemID.TabIndex = 0;
+            // 
+            // buttonContainer
+            // 
+            this.buttonContainer.Controls.Add(this.btnAdd);
+            this.buttonContainer.Controls.Add(this.btnDelete);
+            this.buttonContainer.Controls.Add(this.btnUpdate);
+            this.buttonContainer.Controls.Add(this.btnBackup);
+            this.buttonContainer.Controls.Add(this.btn_Restore);
+            this.buttonContainer.Location = new System.Drawing.Point(0, 116);
+            this.buttonContainer.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.buttonContainer.Name = "buttonContainer";
+            this.buttonContainer.Size = new System.Drawing.Size(558, 40);
+            this.buttonContainer.TabIndex = 13;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblItemId);
+            this.panel1.Controls.Add(this.lblDescription);
+            this.panel1.Controls.Add(this.numUpDownStock);
+            this.panel1.Controls.Add(this.txtItemID);
+            this.panel1.Controls.Add(this.txtStockPrice);
+            this.panel1.Controls.Add(this.lblStockPrice);
+            this.panel1.Controls.Add(this.txtDescription);
+            this.panel1.Controls.Add(this.lblAmount);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(558, 116);
+            this.panel1.TabIndex = 14;
             // 
             // StockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 335);
-            this.Controls.Add(this.txtItemID);
-            this.Controls.Add(this.btn_Restore);
-            this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.numUpDownStock);
-            this.Controls.Add(this.lblStockPrice);
-            this.Controls.Add(this.txtStockPrice);
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.lblItemId);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.buttonContainer);
             this.Controls.Add(this.dataGridViewStock);
-            this.Controls.Add(this.btnBackup);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnAdd);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(574, 374);
             this.Name = "StockForm";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StockForm";
             this.Load += new System.EventHandler(this.StockForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownStock)).EndInit();
+            this.buttonContainer.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -213,5 +254,7 @@
         public System.Windows.Forms.DataGridView dataGridViewStock;
         private System.Windows.Forms.Button btn_Restore;
         private System.Windows.Forms.TextBox txtItemID;
+        private System.Windows.Forms.FlowLayoutPanel buttonContainer;
+        private System.Windows.Forms.Panel panel1;
     }
 }
