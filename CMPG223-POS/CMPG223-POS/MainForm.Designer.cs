@@ -37,6 +37,7 @@
             this.btnAddWaiter = new System.Windows.Forms.Button();
             this.bntStock = new System.Windows.Forms.Button();
             this.btnSignUpCustomer = new System.Windows.Forms.Button();
+            this.btnBuyInventory = new System.Windows.Forms.Button();
             this.mainMenuStrip.SuspendLayout();
             this.panelSideBar.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +66,7 @@
             // 
             this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -82,6 +83,7 @@
             this.panelSideBar.Controls.Add(this.btnAddWaiter);
             this.panelSideBar.Controls.Add(this.bntStock);
             this.panelSideBar.Controls.Add(this.btnSignUpCustomer);
+            this.panelSideBar.Controls.Add(this.btnBuyInventory);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 24);
             this.panelSideBar.Name = "panelSideBar";
@@ -136,6 +138,17 @@
             this.btnSignUpCustomer.UseVisualStyleBackColor = true;
             this.btnSignUpCustomer.Click += new System.EventHandler(this.btnSignUpCustomer_Click);
             // 
+            // btnBuyInventory
+            // 
+            this.btnBuyInventory.Location = new System.Drawing.Point(1, 165);
+            this.btnBuyInventory.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.btnBuyInventory.Name = "btnBuyInventory";
+            this.btnBuyInventory.Size = new System.Drawing.Size(198, 40);
+            this.btnBuyInventory.TabIndex = 5;
+            this.btnBuyInventory.Text = "Buy Inventory";
+            this.btnBuyInventory.UseVisualStyleBackColor = true;
+            this.btnBuyInventory.Click += new System.EventHandler(this.btnBuyInventory_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,5 +184,6 @@
         private System.Windows.Forms.Button bntStock;
         private System.Windows.Forms.Button btnSignUpCustomer;
         public System.Windows.Forms.FlowLayoutPanel panelSideBar;
+        private System.Windows.Forms.Button btnBuyInventory;
     }
 }
