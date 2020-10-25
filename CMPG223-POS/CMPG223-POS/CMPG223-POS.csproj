@@ -208,6 +208,14 @@
     <None Include="Resources\Mild Wings.png" />
     <None Include="Resources\Regular Wings.png" />
     <None Include="Resources\Small Chips.png" />
+    <None Include="Resources\AP.png" />
+    <None Include="Resources\GIN.png" />
+    <None Include="Resources\GRT.png" />
+    <None Include="Resources\RA.png" />
+    <None Include="Resources\RUM.png" />
+    <None Include="Resources\SKL.png" />
+    <None Include="Resources\STOUT.png" />
+    <None Include="Resources\WB.png" />
     <Content Include="Route96.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

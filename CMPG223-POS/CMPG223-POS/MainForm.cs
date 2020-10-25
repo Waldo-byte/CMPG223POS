@@ -277,5 +277,11 @@ namespace CMPG223_POS
             SignUp sign = new SignUp();
             sign.Show();
         }
+
+        private void btnBuyInventory_Click(object sender, EventArgs e)
+        {
+            BuyInventoryForm buy = new BuyInventoryForm();
+            buy.Show();
+        }
     }
 }

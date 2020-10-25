@@ -73,6 +73,16 @@ namespace CMPG223_POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AP {
+            get {
+                object obj = ResourceManager.GetObject("AP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Beef_Burger {
             get {
                 object obj = ResourceManager.GetObject("Beef Burger", resourceCulture);
@@ -116,6 +126,26 @@ namespace CMPG223_POS.Properties {
         internal static System.Drawing.Bitmap error {
             get {
                 object obj = ResourceManager.GetObject("error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GIN {
+            get {
+                object obj = ResourceManager.GetObject("GIN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GRT {
+            get {
+                object obj = ResourceManager.GetObject("GRT", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +203,16 @@ namespace CMPG223_POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RA {
+            get {
+                object obj = ResourceManager.GetObject("RA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Regular_Wings {
             get {
                 object obj = ResourceManager.GetObject("Regular Wings", resourceCulture);
@@ -183,9 +223,39 @@ namespace CMPG223_POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RUM {
+            get {
+                object obj = ResourceManager.GetObject("RUM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SKL {
+            get {
+                object obj = ResourceManager.GetObject("SKL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Small_Chips {
             get {
                 object obj = ResourceManager.GetObject("Small Chips", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap STOUT {
+            get {
+                object obj = ResourceManager.GetObject("STOUT", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +286,16 @@ namespace CMPG223_POS.Properties {
         internal static System.Drawing.Bitmap Untitled_1_03 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-1-03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WB {
+            get {
+                object obj = ResourceManager.GetObject("WB", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
