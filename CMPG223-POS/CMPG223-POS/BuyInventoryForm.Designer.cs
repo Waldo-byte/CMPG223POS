@@ -31,12 +31,12 @@
             this.btnBuy = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
-            this.comboBoxItems = new System.Windows.Forms.ComboBox();
             this.numUpDownItems = new System.Windows.Forms.NumericUpDown();
             this.lblItem = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.buttonContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownItems)).BeginInit();
             this.buttonContainer.SuspendLayout();
@@ -77,14 +77,6 @@
             this.dataGridViewItems.Size = new System.Drawing.Size(518, 150);
             this.dataGridViewItems.TabIndex = 2;
             // 
-            // comboBoxItems
-            // 
-            this.comboBoxItems.FormattingEnabled = true;
-            this.comboBoxItems.Location = new System.Drawing.Point(58, 5);
-            this.comboBoxItems.Name = "comboBoxItems";
-            this.comboBoxItems.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxItems.TabIndex = 3;
-            // 
             // numUpDownItems
             // 
             this.numUpDownItems.Location = new System.Drawing.Point(58, 32);
@@ -122,8 +114,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.lblItem);
-            this.panel1.Controls.Add(this.comboBoxItems);
             this.panel1.Controls.Add(this.lblQuantity);
             this.panel1.Controls.Add(this.numUpDownItems);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -132,6 +124,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(518, 100);
             this.panel1.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(58, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(120, 20);
+            this.textBox1.TabIndex = 7;
             // 
             // BuyInventoryForm
             // 
@@ -162,10 +161,10 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblItem;
         private System.Windows.Forms.Label lblQuantity;
-        public System.Windows.Forms.ComboBox comboBoxItems;
         public System.Windows.Forms.NumericUpDown numUpDownItems;
         public System.Windows.Forms.DataGridView dataGridViewItems;
         private System.Windows.Forms.FlowLayoutPanel buttonContainer;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

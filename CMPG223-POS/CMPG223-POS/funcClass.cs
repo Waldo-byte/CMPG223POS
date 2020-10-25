@@ -16,7 +16,11 @@ namespace CMPG223_POS
     
     class funcClass
     {
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\Main\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+<<<<<<< HEAD
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+=======
+        public static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+>>>>>>> 477860ae36892a3c50eaa28f804666318e3e2201
 
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
@@ -210,12 +214,21 @@ namespace CMPG223_POS
         {
             try
             {
-                string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                StreamWriter outputfile = new StreamWriter(Path.Combine(docPath, "BuyStock.txt"));
-                using (outputfile)
+                FolderBrowserDialog fd1 = new FolderBrowserDialog();
+                if(fd1.ShowDialog() == DialogResult.OK)
                 {
-                    outputfile.WriteLine("" + item + " " + qty); 
+                    string docPath = fd1.SelectedPath;
+                    StreamWriter outputfile = new StreamWriter(Path.Combine(docPath, "BuyStock.txt"), true);
+                    using (outputfile)
+                    {
+                        outputfile.Write("Item ID To Buy :" + item + " Amount To Buy :" + qty + "\n");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Search canceled");
+                }
+                
             }
 
             catch
@@ -246,22 +259,11 @@ namespace CMPG223_POS
 
         }
 
-        public void populateBought()
+        public DataGridView populateBought()
         {
-            string sqlAll = "SELECT * FROM Bought_Inv";
-            conn.Open();
-            SqlCommand comm = new SqlCommand(sqlAll, conn);
-            SqlDataAdapter adap = new SqlDataAdapter();
-            DataSet ds = new DataSet();
+            DataGridView dg1 = new DataGridView();
 
-            adap.SelectCommand = comm;
-            adap.Fill(ds, "All");
-
-            BuyInventoryForm dgview = new BuyInventoryForm();
-            dgview.dataGridViewItems.DataSource = ds;
-            dgview.dataGridViewItems.DataMember = "All";
-
-            conn.Close();
+            return dg1;
 
         }
 

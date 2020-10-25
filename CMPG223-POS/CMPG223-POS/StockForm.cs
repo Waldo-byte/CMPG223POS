@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,6 +56,26 @@ namespace CMPG223_POS
 
         public int admin;
 
+        public void populateBought()
+        {
+            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(constr);
+            string sqlAll = "SELECT * FROM Bought_Inv";
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sqlAll, conn);
+            SqlDataAdapter adap = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            adap.SelectCommand = comm;
+            adap.Fill(ds, "All");
+
+            BuyInventoryForm dgview = new BuyInventoryForm();
+            dataGridViewStock.DataSource = ds;
+            dataGridViewStock.DataMember = "All";
+
+            conn.Close();
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtItemID.Text.Trim() == string.Empty)
@@ -69,7 +90,7 @@ namespace CMPG223_POS
             {
                 funcClass f1 = new funcClass();
                 f1.updateStock(int.Parse(txtItemID.Text),Convert.ToInt32(numUpDownStock.Value));
-                //f1.populateBought();
+                populateBought();
             }
         }
 
@@ -91,7 +112,7 @@ namespace CMPG223_POS
                 {
                     funcClass f1 = new funcClass();
                     f1.removeStock(int.Parse(txtItemID.Text));
-                    f1.populateBought();
+                    populateBought();
                     mbox.ShowMessageBox("Stock successfully deleted.", "Sucess!", "", "");
                     mbox.ShowDialog();
                     txtDescription.Text = "";
@@ -142,7 +163,7 @@ namespace CMPG223_POS
                 {
                     funcClass f1 = new funcClass();
                     f1.addStock(int.Parse(txtItemID.Text), txtDescription.Text, double.Parse(txtStockPrice.Text), Convert.ToInt32(numUpDownStock.Value));
-                    f1.populateBought();
+                    populateBought();
                     mbox.ShowMessageBox("Stock successfully added.", "Sucess!", "", "");
                     mbox.ShowDialog();
                     txtDescription.Text = "";
@@ -162,7 +183,7 @@ namespace CMPG223_POS
         private void StockForm_Load(object sender, EventArgs e)
         {
             funcClass f1 = new funcClass();
-            f1.populateStock();
+            populateBought();
             buttonStyle(this);
         }
 
@@ -176,6 +197,11 @@ namespace CMPG223_POS
         {
             funcClass f1 = new funcClass();
             f1.restoredb();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
