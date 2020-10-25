@@ -39,6 +39,7 @@
             this.bntStock = new System.Windows.Forms.Button();
             this.btnAddWaiter = new System.Windows.Forms.Button();
             this.btnBuyInventory = new System.Windows.Forms.Button();
+            this.btnReportClientOrder = new System.Windows.Forms.Button();
             this.mainMenuStrip.SuspendLayout();
             this.panelSideBar.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +94,7 @@
             this.panelSideBar.Controls.Add(this.bntStock);
             this.panelSideBar.Controls.Add(this.btnAddWaiter);
             this.panelSideBar.Controls.Add(this.btnBuyInventory);
+            this.panelSideBar.Controls.Add(this.btnReportClientOrder);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 24);
             this.panelSideBar.Name = "panelSideBar";
@@ -158,6 +160,15 @@
             this.btnBuyInventory.UseVisualStyleBackColor = true;
             this.btnBuyInventory.Click += new System.EventHandler(this.btnBuyInventory_Click);
             // 
+            // btnReportClientOrder
+            // 
+            this.btnReportClientOrder.Location = new System.Drawing.Point(3, 208);
+            this.btnReportClientOrder.Name = "btnReportClientOrder";
+            this.btnReportClientOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnReportClientOrder.TabIndex = 6;
+            this.btnReportClientOrder.Text = "Report Client Order";
+            this.btnReportClientOrder.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,5 +207,6 @@
         public System.Windows.Forms.FlowLayoutPanel panelSideBar;
         private System.Windows.Forms.Button btnBuyInventory;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.Button btnReportClientOrder;
     }
 }

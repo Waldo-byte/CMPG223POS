@@ -79,6 +79,7 @@
             this.btnFood = new System.Windows.Forms.Button();
             this.txtWaiterID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
             this.panelDrinks.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
@@ -180,8 +181,6 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            //this.btnSearch.MouseEnter += new System.EventHandler(this.btnSearch_MouseEnter);
-            //this.btnSearch.MouseLeave += new System.EventHandler(this.btnSearch_MouseLeave);
             // 
             // textBox1
             // 
@@ -654,6 +653,7 @@
             // 
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(72)))), ((int)(((byte)(40)))));
             this.flowLayoutPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel5.Controls.Add(this.btnBack);
             this.flowLayoutPanel5.Controls.Add(this.btnCancelOrder);
             this.flowLayoutPanel5.Controls.Add(this.btnConfirmOrder);
             this.flowLayoutPanel5.Controls.Add(this.btnPayOrder);
@@ -665,7 +665,7 @@
             // 
             // btnCancelOrder
             // 
-            this.btnCancelOrder.Location = new System.Drawing.Point(1, 1);
+            this.btnCancelOrder.Location = new System.Drawing.Point(1, 30);
             this.btnCancelOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.btnCancelOrder.Name = "btnCancelOrder";
             this.btnCancelOrder.Size = new System.Drawing.Size(198, 40);
@@ -676,7 +676,7 @@
             // 
             // btnConfirmOrder
             // 
-            this.btnConfirmOrder.Location = new System.Drawing.Point(1, 42);
+            this.btnConfirmOrder.Location = new System.Drawing.Point(1, 71);
             this.btnConfirmOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.btnConfirmOrder.Name = "btnConfirmOrder";
             this.btnConfirmOrder.Size = new System.Drawing.Size(198, 40);
@@ -687,7 +687,7 @@
             // 
             // btnPayOrder
             // 
-            this.btnPayOrder.Location = new System.Drawing.Point(1, 83);
+            this.btnPayOrder.Location = new System.Drawing.Point(1, 112);
             this.btnPayOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.btnPayOrder.Name = "btnPayOrder";
             this.btnPayOrder.Size = new System.Drawing.Size(198, 40);
@@ -757,6 +757,15 @@
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Waiter ID:";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(3, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
             // 
             // Orders
             // 
@@ -843,5 +852,6 @@
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.TextBox txtWaiterID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBack;
     }
 }
