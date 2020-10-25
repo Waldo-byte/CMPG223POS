@@ -191,6 +191,7 @@
             this.txtClientID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtClientID.Location = new System.Drawing.Point(309, 6);
             this.txtClientID.Name = "txtClientID";
+            this.txtClientID.ReadOnly = true;
             this.txtClientID.Size = new System.Drawing.Size(167, 20);
             this.txtClientID.TabIndex = 5;
             // 

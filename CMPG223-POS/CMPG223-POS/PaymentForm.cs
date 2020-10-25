@@ -36,7 +36,7 @@ namespace CMPG223_POS
                     but.MouseLeave += new EventHandler(this.allButton_mouseLeave);
                     but.FlatStyle = FlatStyle.Flat;
                     //but.Margin = new Padding(3, 3, 3, 0);
-                    but.Size = new Size((buttonContainer.Width - 18) / 2, buttonContainer.Height - 12);
+                    //but.Size = new Size((//buttonContainer.Width - 18) / 2, buttonContainer.Height - 12);
                 }
                 else
                 {
@@ -81,7 +81,7 @@ namespace CMPG223_POS
 
         private void PaymentForm_Load(object sender, EventArgs e)
         {
-            buttonStyle(buttonContainer);
+            //buttonStyle(buttonContainer);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
