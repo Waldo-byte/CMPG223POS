@@ -19,19 +19,22 @@ namespace CMPG223_POS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            MyMessageBox mbox = new MyMessageBox();
             string name = txtName.Text;
             string pass = txtPassword.Text;
             string confirm_pass = txtConfirmPassword.Text;
             if (name == string.Empty || pass == string.Empty || confirm_pass == string.Empty || txtSurname.Text == string.Empty)
             {
-                MessageBox.Show("Please ensure all text fields are filled");
+                mbox.ShowMessageBox("Please ensure all text fields are filled", "Field filled error", "", "Error");
+                mbox.ShowDialog();
             }
             else
             {
 
                 if (txtConfirmPassword.Text != txtPassword.Text)
                 {
-                    MessageBox.Show("Please ensure your passwords match");
+                    mbox.ShowMessageBox("Please ensure your passwords match", "Password match error", "", "Error");
+                    mbox.ShowDialog();
                     txtConfirmPassword.Text = "";
                     txtPassword.Text = "";
                 }
@@ -43,7 +46,8 @@ namespace CMPG223_POS
                         {
                             funcClass f1 = new funcClass();
                             f1.addWaiter(pass, DateTime.Now.TimeOfDay, name, txtSurname.Text, 1);
-                            MessageBox.Show("New waiter added (admin)");
+                            mbox.ShowMessageBox("New waiter added (admin)", "Success!", "", "");
+                            mbox.ShowDialog();
                         }
                         catch (Exception es)
                         {
@@ -56,7 +60,8 @@ namespace CMPG223_POS
                         {
                             funcClass f1 = new funcClass();
                             f1.addWaiter(txtPassword.Text, DateTime.Now.TimeOfDay, txtName.Text, txtSurname.Text, 0);
-                            MessageBox.Show("New waiter added (non-admin)");
+                            mbox.ShowMessageBox("New waiter added (non-admin)", "Success!", "", "");
+                            mbox.ShowDialog();
                         }
                         catch (Exception es)
                         {
