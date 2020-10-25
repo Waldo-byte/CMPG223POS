@@ -16,7 +16,7 @@ namespace CMPG223_POS
     
     class funcClass
     {
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        public static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
 
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
@@ -246,22 +246,11 @@ namespace CMPG223_POS
 
         }
 
-        public void populateBought()
+        public DataGridView populateBought()
         {
-            string sqlAll = "SELECT * FROM Bought_Inv";
-            conn.Open();
-            SqlCommand comm = new SqlCommand(sqlAll, conn);
-            SqlDataAdapter adap = new SqlDataAdapter();
-            DataSet ds = new DataSet();
+            DataGridView dg1 = new DataGridView();
 
-            adap.SelectCommand = comm;
-            adap.Fill(ds, "All");
-
-            BuyInventoryForm dgview = new BuyInventoryForm();
-            dgview.dataGridViewItems.DataSource = ds;
-            dgview.dataGridViewItems.DataMember = "All";
-
-            conn.Close();
+            return dg1;
 
         }
 

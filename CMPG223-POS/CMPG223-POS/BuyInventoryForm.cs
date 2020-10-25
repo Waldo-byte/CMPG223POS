@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CMPG223_POS
 {
@@ -55,15 +56,42 @@ namespace CMPG223_POS
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            funcClass buystock = new funcClass();
-            buystock.buyStock(comboBoxItems.SelectedItem.ToString(),Convert.ToInt32(numUpDownItems.Value));
-            buystock.populateBought();
+            if(textBox1.Text == "0" || textBox1.Text == "" || Convert.ToInt32(numUpDownItems.Value) == 0)
+            {
+                MessageBox.Show("Please enter a correct value for item ID or amount");
+            }
+            else
+            {
+                funcClass buystock = new funcClass();
+                buystock.buyStock(textBox1.Text, Convert.ToInt32(numUpDownItems.Value));
+            }
+            
+        }
+
+        public void populateBought()
+        {
+            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(constr);
+            string sqlAll = "SELECT * FROM Bought_Inv";
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sqlAll, conn);
+            SqlDataAdapter adap = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            adap.SelectCommand = comm;
+            adap.Fill(ds, "All");
+
+            BuyInventoryForm dgview = new BuyInventoryForm();
+            dataGridViewItems.DataSource = ds;
+            dataGridViewItems.DataMember = "All";
+
+            conn.Close();
         }
 
         private void BuyInventoryForm_Load(object sender, EventArgs e)
         {
             funcClass pop = new funcClass();
-            pop.populateBought();
+            populateBought();
             buttonStyle(buttonContainer);
         }
 
