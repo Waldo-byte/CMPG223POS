@@ -16,7 +16,7 @@ namespace CMPG223_POS
     
     class funcClass
     {
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\Main\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
 
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
@@ -507,14 +507,15 @@ namespace CMPG223_POS
 
         }
 
-       // public void clockIn(int waiaterID, string waiterPass)
-        //{
-                
-        //}
-
-        public void clockOut(int waiterID)
+        public void clockOut(string wait_ID,TimeSpan loggedIn)
         {
-
+            string sqlClockOut = "INSERT TimeSchedule([Time_Worked], [Description]) VALUES(@loggedIn, @wait_ID)";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sqlClockOut, conn);
+            cmd.Parameters.AddWithValue("@loggedIn", loggedIn);
+            cmd.Parameters.AddWithValue("@wait_ID", wait_ID);   
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         
