@@ -61,8 +61,11 @@ namespace CMPG223_POS
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+            MyMessageBox mbox = new MyMessageBox();
             int k;
+            k = txtPhoneNumber.Text.Length;
             Exception pNumEx = new Exception();
+            Exception txtFEX = new Exception();
             try
             {
                 string last, first, phone;
@@ -70,6 +73,8 @@ namespace CMPG223_POS
                 first = txtName.Text;
                 phone = txtPhoneNumber.Text;
                 k = phone.Length;
+                if (txtName.Text == "" || txtPhoneNumber.Text == "" || txtSurname.Text == "")
+                    throw txtFEX;
                 if (k < 10 || k > 10)
                     throw pNumEx;
                 string sql_addClient = "INSERT ClientTable([LastName], [FirstName], [PhoneNumber]) VALUES(@LastName, @FirstName, @PhoneNumber)";
@@ -86,8 +91,18 @@ namespace CMPG223_POS
             }
             catch (Exception)
             {
-                MessageBox.Show("Please ensure phone number is 10 digits");
-                txtPhoneNumber.Text = "";
+                if (k < 10 || k > 10)
+                {
+                    mbox.ShowMessageBox("Please ensure phone number is 10 digits!", "Incorrect input", "", "Error");
+                    mbox.ShowDialog();
+                    txtPhoneNumber.Text = "";
+                }
+                else
+                {
+                    mbox.ShowMessageBox("Please ensure all fields are filled!", "Incorrect input", "", "Error");
+                    mbox.ShowDialog();
+                }
+                
             }
 
             
