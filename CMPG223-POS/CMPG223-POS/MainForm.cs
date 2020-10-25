@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,11 +15,16 @@ namespace CMPG223_POS
     public partial class MainForm : Form
     {
         MyMessageBox mbox = new MyMessageBox();
-        public bool admin = false;
 
-        public MainForm()
+        public MainForm(bool Admin)
         {
             InitializeComponent();
+
+            if (Admin == false)
+            {
+                btnAddWaiter.Visible = false;
+                btnBuyInventory.Visible = false;
+            }
         }
 
         [DllImport("user32.dll")]
@@ -259,8 +265,8 @@ namespace CMPG223_POS
 
         private void btnAddWaiter_Click(object sender, EventArgs e)
         {
-            WaiterAddForm addwaiter = new WaiterAddForm();
-            addwaiter.Show();
+                WaiterAddForm addwaiter = new WaiterAddForm();
+                addwaiter.Show();  
         }
 
         private void bntStock_Click(object sender, EventArgs e)

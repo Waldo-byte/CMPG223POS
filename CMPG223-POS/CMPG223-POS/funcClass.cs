@@ -15,12 +15,13 @@ namespace CMPG223_POS
     
     class funcClass
     {
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\New\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
 
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
         SqlDataAdapter adap;
         DataSet ds;
+        public bool isAdmin = true;
         public void addItem(string item)
         {
             Orders orderForm = new Orders();
@@ -413,6 +414,16 @@ namespace CMPG223_POS
             }
 
 
+        }
+
+        public void setAdmin(bool admin)
+        {
+            isAdmin = admin;
+        }
+
+        public bool getAdmin()
+        {
+            return isAdmin;
         }
 
        // public void clockIn(int waiaterID, string waiterPass)
