@@ -95,10 +95,6 @@ namespace CMPG223_POS
 
             mainMenuStrip.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
 
-            LoginForm log = new LoginForm();
-
-            log.Show();
-
             foreach (ToolStripMenuItem item in mainMenuStrip.Items)
             {
                 item.ForeColor = Color.FromArgb(200, 100, 41);
