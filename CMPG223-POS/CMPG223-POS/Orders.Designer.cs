@@ -180,6 +180,7 @@
             this.btnConfirmOrder.TabIndex = 2;
             this.btnConfirmOrder.Text = "Confirm Order";
             this.btnConfirmOrder.UseVisualStyleBackColor = true;
+            this.btnConfirmOrder.Click += new System.EventHandler(this.btnConfirmOrder_Click_1);
             // 
             // btnPayOrder
             // 

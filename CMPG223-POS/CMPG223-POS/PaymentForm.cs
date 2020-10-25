@@ -47,5 +47,10 @@ namespace CMPG223_POS
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

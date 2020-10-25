@@ -261,14 +261,43 @@ namespace CMPG223_POS
 
         public void payBill(int client_ID)
         {
-            //string sqlAll = "INSERT INTO Verified Where Client_ID = '" + client_ID + "'";
+            int orderNum = 0;
+            string sqlAll = "SELECT Order_Num FROM Client_Order Where C_ID = '" + client_ID + "'";
             string sql_Verified = "INSERT INTO Verification([Description]) VALUES(@Description)";
+            string sql_add = "INSERT Payment_Result([Order_Num]) Value(@Order_num)";
             conn.Open();
-            string verified = "VERIFIED";
-            SqlCommand verify= new SqlCommand(sql_Verified, conn);
-            verify.Parameters.AddWithValue("@Description", verified);
-            verify.ExecuteNonQuery();
-            conn.Close();
+            SqlCommand comm2 = new SqlCommand(sqlAll, conn);
+            SqlCommand comm3 = new SqlCommand(sql_add, conn);
+            SqlDataReader datread = comm2.ExecuteReader();
+            if (datread.HasRows)
+            {
+                while (datread.Read())
+                {
+                    orderNum = datread.GetInt32(0);
+                }
+                conn.Close();
+                conn.Open();
+                string verified = "VERIFIED";
+                SqlCommand verify = new SqlCommand(sql_Verified, conn);
+                verify.Parameters.AddWithValue("@Description", verified);
+                verify.ExecuteNonQuery();
+                conn.Close();
+                try
+                {
+                    comm3.Parameters.AddWithValue("@Order_num", orderNum);
+                    comm3.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Error at adding Order");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Order not found");
+            }
+            
 
         }
         

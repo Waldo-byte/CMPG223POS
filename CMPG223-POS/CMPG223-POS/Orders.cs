@@ -591,9 +591,15 @@ namespace CMPG223_POS
             p1.lblclient_id.Text = txtClientID.Text;
             p1.lblPrice.Text = cost.ToString();
             p1.lblTaxPayable.Text = (cost * tax).ToString();
+            p1.Show();
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnConfirmOrder_Click_1(object sender, EventArgs e)
         {
 
         }
