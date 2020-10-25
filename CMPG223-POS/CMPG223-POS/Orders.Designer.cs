@@ -52,8 +52,8 @@
             this.btnCraftGin = new System.Windows.Forms.Button();
             this.btnRum = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnBackDrinks = new System.Windows.Forms.Button();
             this.btnClearPreviousItemDrinks = new System.Windows.Forms.Button();
+            this.btnBackDrinks = new System.Windows.Forms.Button();
             this.panelFood = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBeefBurger = new System.Windows.Forms.Button();
@@ -77,6 +77,8 @@
             this.panelCenter = new System.Windows.Forms.Panel();
             this.btnDrinks = new System.Windows.Forms.Button();
             this.btnFood = new System.Windows.Forms.Button();
+            this.txtWaiterID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelTitle.SuspendLayout();
             this.panelDrinks.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
@@ -381,8 +383,8 @@
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(72)))), ((int)(((byte)(40)))));
             this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel2.Controls.Add(this.btnBackDrinks);
             this.flowLayoutPanel2.Controls.Add(this.btnClearPreviousItemDrinks);
+            this.flowLayoutPanel2.Controls.Add(this.btnBackDrinks);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -390,20 +392,9 @@
             this.flowLayoutPanel2.TabIndex = 1;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
-            // btnBackDrinks
-            // 
-            this.btnBackDrinks.Location = new System.Drawing.Point(1, 1);
-            this.btnBackDrinks.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.btnBackDrinks.Name = "btnBackDrinks";
-            this.btnBackDrinks.Size = new System.Drawing.Size(198, 40);
-            this.btnBackDrinks.TabIndex = 0;
-            this.btnBackDrinks.Text = "Back";
-            this.btnBackDrinks.UseVisualStyleBackColor = true;
-            this.btnBackDrinks.Click += new System.EventHandler(this.btnBackDrinks_Click);
-            // 
             // btnClearPreviousItemDrinks
             // 
-            this.btnClearPreviousItemDrinks.Location = new System.Drawing.Point(1, 42);
+            this.btnClearPreviousItemDrinks.Location = new System.Drawing.Point(1, 1);
             this.btnClearPreviousItemDrinks.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.btnClearPreviousItemDrinks.Name = "btnClearPreviousItemDrinks";
             this.btnClearPreviousItemDrinks.Size = new System.Drawing.Size(198, 40);
@@ -411,6 +402,17 @@
             this.btnClearPreviousItemDrinks.Text = "Clear Previous Item";
             this.btnClearPreviousItemDrinks.UseVisualStyleBackColor = true;
             this.btnClearPreviousItemDrinks.Click += new System.EventHandler(this.btnClearPreviousItemDrinks_Click);
+            // 
+            // btnBackDrinks
+            // 
+            this.btnBackDrinks.Location = new System.Drawing.Point(1, 42);
+            this.btnBackDrinks.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.btnBackDrinks.Name = "btnBackDrinks";
+            this.btnBackDrinks.Size = new System.Drawing.Size(198, 40);
+            this.btnBackDrinks.TabIndex = 0;
+            this.btnBackDrinks.Text = "Back";
+            this.btnBackDrinks.UseVisualStyleBackColor = true;
+            this.btnBackDrinks.Click += new System.EventHandler(this.btnBackDrinks_Click);
             // 
             // panelFood
             // 
@@ -631,6 +633,8 @@
             this.panelOderHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelOderHome.Controls.Add(this.flowLayoutPanel5);
             this.panelOderHome.Controls.Add(this.panelCenter);
+            this.panelOderHome.Controls.Add(this.txtWaiterID);
+            this.panelOderHome.Controls.Add(this.label1);
             this.panelOderHome.Location = new System.Drawing.Point(8, 38);
             this.panelOderHome.Name = "panelOderHome";
             this.panelOderHome.Size = new System.Drawing.Size(739, 135);
@@ -717,6 +721,25 @@
             this.btnFood.UseVisualStyleBackColor = true;
             this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
             // 
+            // txtWaiterID
+            // 
+            this.txtWaiterID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
+            this.txtWaiterID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtWaiterID.Location = new System.Drawing.Point(300, 9);
+            this.txtWaiterID.Name = "txtWaiterID";
+            this.txtWaiterID.Size = new System.Drawing.Size(111, 20);
+            this.txtWaiterID.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(215, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Waiter ID:";
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,6 +766,7 @@
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelOderHome.ResumeLayout(false);
+            this.panelOderHome.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.panelCenter.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -799,5 +823,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.TextBox txtWaiterID;
+        private System.Windows.Forms.Label label1;
     }
 }

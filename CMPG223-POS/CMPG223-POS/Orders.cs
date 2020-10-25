@@ -9,8 +9,8 @@ namespace CMPG223_POS
 {
     public partial class Orders : Form
     {
-
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\New\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        public int i = 0;
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
         SqlDataAdapter adap;
@@ -23,6 +23,7 @@ namespace CMPG223_POS
             InitializeComponent();
         }
 
+        public TimeSpan t1;
         List<Panel> listPanel = new List<Panel>();
         int index;
 
@@ -747,7 +748,7 @@ namespace CMPG223_POS
         {
             if (lbOrders.Items.Count - 1 == -1)
             {
-                MessageBox.Show("E");
+                MessageBox.Show("Order Empty");
             }
             else
             {
@@ -774,12 +775,21 @@ namespace CMPG223_POS
             }
             else
             {
-                decimal tax = (decimal)0.15;
-                PaymentForm p1 = new PaymentForm();
-                p1.lblclient_id.Text = txtClientID.Text;
-                p1.lblPrice.Text = Math.Round(cost,2).ToString();
-                p1.lblTaxPayable.Text = Math.Round((cost * tax),2).ToString();
-                p1.Show();
+                if(i == 0)
+                {
+                    MessageBox.Show("Please confirm order first");
+                }
+                else
+                {
+                    decimal tax = (decimal)0.15;
+                    PaymentForm p1 = new PaymentForm();
+                    p1.ordertime = t1;
+                    p1.lblclient_id.Text = txtClientID.Text;
+                    p1.lblPrice.Text = Math.Round(cost, 2).ToString();
+                    p1.lblTaxPayable.Text = Math.Round((cost * tax), 2).ToString();
+                    p1.Show();
+                }
+                
             }
             
         }
@@ -791,14 +801,43 @@ namespace CMPG223_POS
 
         private void btnConfirmOrder_Click_1(object sender, EventArgs e)
         {
+            
+            if(txtWaiterID.Text == "0" || txtWaiterID.Text == "")
+            {
+                MessageBox.Show("Please enter a valid waiter ID");
+            }
+            else if(txtClientID.Text == "0" || txtClientID.Text == "")
+            {
+                MessageBox.Show("Please get a valid customer");
 
+            }
+            else if(lbOrders.Items.Count == -1)
+            {
+                MessageBox.Show("Please add items to order");
+            }
+            else
+            {
+                funcClass f1 = new funcClass();
+                
+                f1.confirmOrder(lbOrders, txtClientID.Text);
+                try
+                {
+                    t1 = f1.add_Order(txtWaiterID.Text, txtClientID.Text, cost, lbOrders);
+                    i = 1;
+                }
+                catch
+                {
+                    MessageBox.Show("Error adding to client order.\nCheck to see if all information are correct");
+                }
+                
+            }
         }
 
         private void btnClearPreviousItemFood_Click_1(object sender, EventArgs e)
         {
             if (lbOrders.Items.Count - 1 == -1)
             {
-                MessageBox.Show("E");
+                MessageBox.Show("Order Empty");
             }
             else
             {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CMPG223_POS
 {
@@ -17,6 +18,7 @@ namespace CMPG223_POS
         {
             InitializeComponent();
         }
+        public TimeSpan ordertime;
 
         private void lbl_Client_ID_Click(object sender, EventArgs e)
         {
@@ -61,22 +63,17 @@ namespace CMPG223_POS
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if(lblclient_id.Text == "[Client_ID]")
+            
+            try
             {
-                MessageBox.Show("No ID provided");
+                funcClass f1 = new funcClass();
+                f1.payBill(int.Parse(lblclient_id.Text), ordertime);
             }
-            else
+            catch(Exception E)
             {
-                try
-                {
-                    funcClass f1 = new funcClass();
-                    f1.payBill(int.Parse(lblclient_id.Text));
-                }
-                catch
-                {
-                    MessageBox.Show("E");
-                }
+                MessageBox.Show(E.Message);
             }
+            
         }
 
         private void PaymentForm_Load(object sender, EventArgs e)

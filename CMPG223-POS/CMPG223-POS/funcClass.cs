@@ -16,7 +16,7 @@ namespace CMPG223_POS
     
     class funcClass
     {
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\New\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
 
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
@@ -285,18 +285,19 @@ namespace CMPG223_POS
 
         }
 
-        public void payBill(int client_ID)
+        public void payBill(int client_ID, TimeSpan t1)
         {
             int orderNum = 0;
-            string sqlAll = "SELECT Order_Num FROM Client_Order Where C_ID = '" + client_ID + "'";
+            string sqlAll = "SELECT [Order_Num] FROM Client_Order Where [C_ID] ='" + client_ID + "' AND [Order_Time] ='" + t1 + "'";
             string sql_Verified = "INSERT INTO Verification([Description]) VALUES(@Description)";
-            string sql_add = "INSERT Payment_Result([Order_Num]) Value(@Order_num)";
+            string sql_add = "INSERT Payment_Result([Order_Num]) VALUES(@Order_num)";
             conn.Open();
             SqlCommand comm2 = new SqlCommand(sqlAll, conn);
             SqlCommand comm3 = new SqlCommand(sql_add, conn);
             SqlDataReader datread = comm2.ExecuteReader();
             if (datread.HasRows)
             {
+                MessageBox.Show("Has Rows");
                 while (datread.Read())
                 {
                     orderNum = datread.GetInt32(0);
@@ -310,12 +311,14 @@ namespace CMPG223_POS
                 conn.Close();
                 try
                 {
+                    conn.Open();
                     comm3.Parameters.AddWithValue("@Order_num", orderNum);
                     comm3.ExecuteNonQuery();
+                    conn.Close();
                 }
-                catch
+                catch(Exception E)
                 {
-                    MessageBox.Show("Error at adding Order");
+                    MessageBox.Show(E.Message);
 
                 }
             }
@@ -449,6 +452,55 @@ namespace CMPG223_POS
         public bool getAdmin()
         {
             return isAdmin;
+        }
+
+        public void confirmOrder(ListBox lbox, string clientID)
+        {
+            FolderBrowserDialog fb1 = new FolderBrowserDialog();
+            if (fb1.ShowDialog() == DialogResult.OK)
+            {
+                string path = fb1.SelectedPath;
+                System.IO.StreamWriter savefile = new System.IO.StreamWriter(path + "\\Orders" + "-" + DateTime.Now.ToString("dd-MM-yyyy--HH-mm-ss") +".txt");
+                foreach (var item in lbox.Items)
+                {
+                    //MessageBox.Show(item.ToString());
+                    savefile.Write(item.ToString() + " Client ID : " + clientID + "\n");
+                }
+                savefile.Close();
+                MessageBox.Show("File Saved");
+            }
+            else
+            {
+                MessageBox.Show("E");
+            }
+            
+
+        }
+
+        public TimeSpan add_Order(string w_ID, string c_id, decimal amnt, ListBox lbox)
+        {
+            string inventory = "";
+            DateTime date = DateTime.Now;
+            TimeSpan d1 = date.TimeOfDay;
+            string formatteddate = date.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            foreach (var item in lbox.Items)
+            {
+                inventory += item.ToString() + ", ";
+            }
+
+            string sql_insert = "INSERT Client_Order([Waiter_ID], [C_ID], [Inv_ID], [Order_date], [Order_Time], [Amount]) VALUES(@w_id, @c_id, @inv_id, @or_date, @or_time, @amount)";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql_insert, conn);
+            cmd.Parameters.AddWithValue("@w_id", w_ID);
+            cmd.Parameters.AddWithValue("@c_id", c_id);
+            cmd.Parameters.AddWithValue("@inv_id", inventory);
+            cmd.Parameters.AddWithValue("@or_date", formatteddate);
+            cmd.Parameters.AddWithValue("@or_time", d1);
+            cmd.Parameters.AddWithValue("@amount", amnt);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            return d1;
+
         }
 
        // public void clockIn(int waiaterID, string waiterPass)
