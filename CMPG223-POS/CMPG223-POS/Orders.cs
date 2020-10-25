@@ -906,5 +906,10 @@ namespace CMPG223_POS
             }
             
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
