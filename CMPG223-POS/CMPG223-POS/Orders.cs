@@ -161,15 +161,22 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                ammount = Convert.ToDecimal((string)reader[0]);
-                //decimal.TryParse((string)reader[0], out ammount);
+                while(reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+                
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
+            
             cost += ammount;
             conn.Close();
         }
@@ -187,13 +194,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -212,13 +226,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -236,13 +257,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -260,13 +288,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -284,13 +319,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -308,13 +350,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -333,13 +382,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -357,13 +413,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -381,13 +444,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -405,13 +475,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -429,13 +506,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -453,13 +537,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -477,13 +568,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -501,13 +599,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -525,13 +630,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -549,13 +661,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -573,13 +692,20 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds);
             SqlDataReader reader = comm.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
+
             }
             else
             {
-                decimal.TryParse((string)reader[0], out ammount);
+                while (reader.Read())
+                {
+                    ammount = reader.GetDecimal(0);
+                }
             }
             cost += ammount;
             conn.Close();
@@ -602,12 +728,12 @@ namespace CMPG223_POS
 
         private void btnClearPreviousItemDrinks_Click(object sender, EventArgs e)
         {
-            lbOrders.Items[lbOrders.Items.Count - 1] = null;
+            lbOrders.Items.Remove((lbOrders.Items[lbOrders.Items.Count].ToString())) ;
         }
 
         private void btnClearPreviousItemFood_Click(object sender, EventArgs e)
         {
-            lbOrders.Items[lbOrders.Items.Count - 1] = null;
+            lbOrders.Items.Remove((lbOrders.Items[lbOrders.Items.Count].ToString()));
         }
 
         private void btnPayOrder_Click(object sender, EventArgs e)
