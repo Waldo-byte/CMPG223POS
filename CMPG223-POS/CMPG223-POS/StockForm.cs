@@ -32,7 +32,7 @@ namespace CMPG223_POS
             {
                 funcClass f1 = new funcClass();
                 f1.updateStock(int.Parse(txtItemID.Text),Convert.ToInt32(numUpDownStock.Value));
-                f1.populateBought();
+                //f1.populateBought();
             }
         }
 

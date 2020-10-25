@@ -15,7 +15,7 @@ namespace CMPG223_POS
     
     class funcClass
     {
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\Main Project\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security = True";
 
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
@@ -278,7 +278,7 @@ namespace CMPG223_POS
             int amount = 0;
             try
             {
-                string sql_getamnt = "SELECT Amount FROM Bought_Inv Where Inventory_ID = '" + iD + "'";
+                string sql_getamnt = "SELECT Quantity FROM Bought_Inv Where Inventory_ID = '" + iD + "'";
                 string sql_update = "UPDATE Bought_Inventory([Quantity]) WHERE Inventory_ID = '" + iD + "' AND VALUES(@qty)";
                 conn.Open();
                 SqlCommand getamnt = new SqlCommand(sql_getamnt, conn);
@@ -288,13 +288,16 @@ namespace CMPG223_POS
                     while(datread.Read())
                     {
                        amount = datread.GetInt32(0);
+                        
                     }
+                    conn.Close();
                 }
-                else if(amount == 0)
+                if(amount >= 0)
                 {
-                    SqlCommand cmd = new SqlCommand(sql_update, conn);
-                    cmd.Parameters.AddWithValue("@qty", amnt + amount);
-                    cmd.ExecuteNonQuery();
+                    conn.Open();
+                    SqlCommand cmd2 = new SqlCommand(sql_update, conn);
+                    cmd2.Parameters.AddWithValue("@qty", amnt + amount);
+                    cmd2.ExecuteNonQuery();
                     conn.Close();
                 }
                 else
