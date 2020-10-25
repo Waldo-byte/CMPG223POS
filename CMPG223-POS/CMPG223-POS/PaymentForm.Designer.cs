@@ -189,6 +189,7 @@
             this.buttonContainer.Name = "buttonContainer";
             this.buttonContainer.Size = new System.Drawing.Size(330, 46);
             this.buttonContainer.TabIndex = 12;
+            this.buttonContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.buttonContainer_Paint);
             // 
             // PaymentForm
             // 

@@ -52,18 +52,20 @@ namespace CMPG223_POS
             int login = f1.login(txtUserName.Text, txtPassword.Text);
             if(login == 0)
             {
+                f1.setAdmin(false);
                 mbox.ShowMessageBox("Welcome Waiter " + txtUserName.Text + "!", "Waiter Login Successful", "", "");
                 mbox.ShowDialog();
-                MainForm main = new MainForm();
+                MainForm main = new MainForm(f1.getAdmin());
 
                 main.Show();
                 this.Close();
             }
             else if(login == 1)
             {
+                f1.setAdmin(true);
                 mbox.ShowMessageBox("Welcome Admin!", "Admin Login Successful", "", "");
                 mbox.ShowDialog();
-                MainForm main = new MainForm();
+                MainForm main = new MainForm(f1.getAdmin());
 
                 main.Show();
                 this.Close();
