@@ -621,6 +621,7 @@
             this.btnClearPreviousItemFood.TabIndex = 1;
             this.btnClearPreviousItemFood.Text = "Clear Previous Item";
             this.btnClearPreviousItemFood.UseVisualStyleBackColor = true;
+            this.btnClearPreviousItemFood.Click += new System.EventHandler(this.btnClearPreviousItemFood_Click_1);
             // 
             // panelOderHome
             // 

@@ -89,6 +89,7 @@ namespace CMPG223_POS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             buttonStyle(panelSideBar);
             sidebarColor(this);
 
