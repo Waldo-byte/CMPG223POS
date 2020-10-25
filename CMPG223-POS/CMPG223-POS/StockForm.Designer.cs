@@ -51,7 +51,7 @@
             this.btnAdd.Location = new System.Drawing.Point(12, 144);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -61,7 +61,7 @@
             this.btnDelete.Location = new System.Drawing.Point(166, 144);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -71,7 +71,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(311, 144);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -81,7 +81,7 @@
             this.btnBackup.Location = new System.Drawing.Point(471, 144);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(75, 23);
-            this.btnBackup.TabIndex = 3;
+            this.btnBackup.TabIndex = 8;
             this.btnBackup.Text = "Backup";
             this.btnBackup.UseVisualStyleBackColor = true;
             this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
@@ -108,7 +108,7 @@
             this.txtDescription.Location = new System.Drawing.Point(75, 39);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(121, 20);
-            this.txtDescription.TabIndex = 7;
+            this.txtDescription.TabIndex = 1;
             // 
             // lblDescription
             // 
@@ -124,7 +124,7 @@
             this.txtStockPrice.Location = new System.Drawing.Point(75, 65);
             this.txtStockPrice.Name = "txtStockPrice";
             this.txtStockPrice.Size = new System.Drawing.Size(121, 20);
-            this.txtStockPrice.TabIndex = 9;
+            this.txtStockPrice.TabIndex = 2;
             // 
             // lblStockPrice
             // 
@@ -140,7 +140,7 @@
             this.numUpDownStock.Location = new System.Drawing.Point(75, 92);
             this.numUpDownStock.Name = "numUpDownStock";
             this.numUpDownStock.Size = new System.Drawing.Size(120, 20);
-            this.numUpDownStock.TabIndex = 11;
+            this.numUpDownStock.TabIndex = 3;
             // 
             // lblAmount
             // 
@@ -156,7 +156,7 @@
             this.btn_Restore.Location = new System.Drawing.Point(471, 115);
             this.btn_Restore.Name = "btn_Restore";
             this.btn_Restore.Size = new System.Drawing.Size(75, 23);
-            this.btn_Restore.TabIndex = 13;
+            this.btn_Restore.TabIndex = 7;
             this.btn_Restore.Text = "Restore";
             this.btn_Restore.UseVisualStyleBackColor = true;
             this.btn_Restore.Click += new System.EventHandler(this.btn_Restore_Click);
@@ -166,7 +166,7 @@
             this.txtItemID.Location = new System.Drawing.Point(75, 12);
             this.txtItemID.Name = "txtItemID";
             this.txtItemID.Size = new System.Drawing.Size(120, 20);
-            this.txtItemID.TabIndex = 14;
+            this.txtItemID.TabIndex = 0;
             // 
             // StockForm
             // 
