@@ -745,12 +745,20 @@ namespace CMPG223_POS
 
         private void btnClearPreviousItemDrinks_Click(object sender, EventArgs e)
         {
-            lbOrders.Items.Remove((lbOrders.Items[lbOrders.Items.Count].ToString())) ;
+            if(lbOrders.Items.Count -1 == -1)
+            {
+                MessageBox.Show("E");
+            }
+            else
+            {
+                lbOrders.Items.RemoveAt((lbOrders.Items.Count - 1));
+            }
+            
         }
 
         private void btnClearPreviousItemFood_Click(object sender, EventArgs e)
         {
-            lbOrders.Items.Remove((lbOrders.Items[lbOrders.Items.Count].ToString()));
+            
         }
 
         private void btnPayOrder_Click(object sender, EventArgs e)
@@ -772,6 +780,18 @@ namespace CMPG223_POS
         private void btnConfirmOrder_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClearPreviousItemFood_Click_1(object sender, EventArgs e)
+        {
+            if (lbOrders.Items.Count - 1 == -1)
+            {
+                MessageBox.Show("E");
+            }
+            else
+            {
+                lbOrders.Items.RemoveAt((lbOrders.Items.Count - 1));
+            }
         }
     }
 }
