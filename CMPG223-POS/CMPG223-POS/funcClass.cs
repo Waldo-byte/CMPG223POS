@@ -15,7 +15,7 @@ namespace CMPG223_POS
     
     class funcClass
     {
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\Main Project\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
 
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
@@ -232,10 +232,10 @@ namespace CMPG223_POS
             adap.SelectCommand = comm;
             adap.Fill(ds, "All");
 
-            StockForm dgview = new StockForm();
-            dgview.dataGridViewStock.DataSource = ds;
-            dgview.dataGridViewStock.DataMember = "All";
-
+            //StockForm dgview = new StockForm();
+            //dgview.dataGridViewStock.DataSource = ds;
+            //dgview.dataGridViewStock.DataMember = "All";
+            
             conn.Close();
 
         }

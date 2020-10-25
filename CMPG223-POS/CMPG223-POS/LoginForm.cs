@@ -60,6 +60,8 @@ namespace CMPG223_POS
             {
                 mbox.ShowMessageBox("Welcome Admin!", "Admin Login Successful", "", "");
                 mbox.ShowDialog();
+                MainForm m1 = new MainForm();
+                m1.admin = true;
                 this.Close();
             }
             else
