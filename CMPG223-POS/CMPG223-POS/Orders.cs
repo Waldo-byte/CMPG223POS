@@ -27,17 +27,7 @@ namespace CMPG223_POS
         int index;
 
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        public void sidebarColor(Control source)
-        {
-            foreach(Control con in source.Controls)
-            {
-                if(con is FlowLayoutPanel)
-                {
-                    FlowLayoutPanel side = con as FlowLayoutPanel;
-                    side.BackColor = Color.FromArgb(193,72,40);
-                }
-            }
-        }
+       
         public void buttonStyle(Control source)
         {
             foreach (Control con in source.Controls)
@@ -81,11 +71,6 @@ namespace CMPG223_POS
             buttonStyle(flowLayoutPanel1);
             buttonStyle(flowLayoutPanel2);
             buttonStyle(flowLayoutPanel5);
-
-            sidebarColor(panelOderHome);
-            sidebarColor(panelDrinks);
-            sidebarColor(panelFood);
-
 
             listPanel.Add(panelOderHome);
             listPanel.Add(panelDrinks);

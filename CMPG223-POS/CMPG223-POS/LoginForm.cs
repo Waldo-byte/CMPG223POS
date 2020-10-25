@@ -54,12 +54,18 @@ namespace CMPG223_POS
             {
                 mbox.ShowMessageBox("Welcome Waiter " + txtUserName.Text + "!", "Waiter Login Successful", "", "");
                 mbox.ShowDialog();
+                MainForm main = new MainForm();
+
+                main.Show();
                 this.Close();
             }
             else if(login == 1)
             {
                 mbox.ShowMessageBox("Welcome Admin!", "Admin Login Successful", "", "");
                 mbox.ShowDialog();
+                MainForm main = new MainForm();
+
+                main.Show();
                 this.Close();
             }
             else

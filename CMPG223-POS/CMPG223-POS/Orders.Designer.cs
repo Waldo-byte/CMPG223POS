@@ -36,14 +36,19 @@
             this.lbOrders = new System.Windows.Forms.ListBox();
             this.panelDrinks = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSwartkatLager = new System.Windows.Forms.Button();
+            this.btnAfricaPilsner = new System.Windows.Forms.Button();
+            this.btnWeisbeer = new System.Windows.Forms.Button();
+            this.btnRedAle = new System.Windows.Forms.Button();
+            this.btnGRTAle = new System.Windows.Forms.Button();
+            this.btnStout = new System.Windows.Forms.Button();
+            this.btnCraftGin = new System.Windows.Forms.Button();
+            this.btnRum = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBackDrinks = new System.Windows.Forms.Button();
             this.btnClearPreviousItemDrinks = new System.Windows.Forms.Button();
             this.panelFood = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnBackFood = new System.Windows.Forms.Button();
-            this.btnClearPreviousItemFood = new System.Windows.Forms.Button();
             this.btnBeefBurger = new System.Windows.Forms.Button();
             this.btnChickenBurger = new System.Windows.Forms.Button();
             this.btnCheeseBurger = new System.Windows.Forms.Button();
@@ -54,14 +59,9 @@
             this.btnRegularWings = new System.Windows.Forms.Button();
             this.btnMildWings = new System.Windows.Forms.Button();
             this.btnHotWings = new System.Windows.Forms.Button();
-            this.btnSwartkatLager = new System.Windows.Forms.Button();
-            this.btnAfricaPilsner = new System.Windows.Forms.Button();
-            this.btnWeisbeer = new System.Windows.Forms.Button();
-            this.btnRedAle = new System.Windows.Forms.Button();
-            this.btnGRTAle = new System.Windows.Forms.Button();
-            this.btnStout = new System.Windows.Forms.Button();
-            this.btnCraftGin = new System.Windows.Forms.Button();
-            this.btnRum = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnBackFood = new System.Windows.Forms.Button();
+            this.btnClearPreviousItemFood = new System.Windows.Forms.Button();
             this.panelOderHome = new System.Windows.Forms.Panel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancelOrder = new System.Windows.Forms.Button();
@@ -149,7 +149,7 @@
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
             this.flowLayoutPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel4.Controls.Add(this.btnSwartkatLager);
             this.flowLayoutPanel4.Controls.Add(this.btnAfricaPilsner);
@@ -165,9 +165,129 @@
             this.flowLayoutPanel4.Size = new System.Drawing.Size(246, 511);
             this.flowLayoutPanel4.TabIndex = 2;
             // 
+            // btnSwartkatLager
+            // 
+            this.btnSwartkatLager.BackgroundImage = global::CMPG223_POS.Properties.Resources.SKL;
+            this.btnSwartkatLager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSwartkatLager.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnSwartkatLager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSwartkatLager.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSwartkatLager.Location = new System.Drawing.Point(5, 5);
+            this.btnSwartkatLager.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnSwartkatLager.Name = "btnSwartkatLager";
+            this.btnSwartkatLager.Size = new System.Drawing.Size(250, 250);
+            this.btnSwartkatLager.TabIndex = 0;
+            this.btnSwartkatLager.UseVisualStyleBackColor = true;
+            this.btnSwartkatLager.Click += new System.EventHandler(this.btnSwartkatLager_Click);
+            // 
+            // btnAfricaPilsner
+            // 
+            this.btnAfricaPilsner.BackgroundImage = global::CMPG223_POS.Properties.Resources.AP;
+            this.btnAfricaPilsner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAfricaPilsner.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnAfricaPilsner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAfricaPilsner.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAfricaPilsner.Location = new System.Drawing.Point(5, 260);
+            this.btnAfricaPilsner.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnAfricaPilsner.Name = "btnAfricaPilsner";
+            this.btnAfricaPilsner.Size = new System.Drawing.Size(250, 250);
+            this.btnAfricaPilsner.TabIndex = 1;
+            this.btnAfricaPilsner.UseVisualStyleBackColor = true;
+            this.btnAfricaPilsner.Click += new System.EventHandler(this.btnAfricaPilsner_Click);
+            // 
+            // btnWeisbeer
+            // 
+            this.btnWeisbeer.BackgroundImage = global::CMPG223_POS.Properties.Resources.WB;
+            this.btnWeisbeer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnWeisbeer.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnWeisbeer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWeisbeer.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnWeisbeer.Location = new System.Drawing.Point(5, 515);
+            this.btnWeisbeer.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnWeisbeer.Name = "btnWeisbeer";
+            this.btnWeisbeer.Size = new System.Drawing.Size(250, 250);
+            this.btnWeisbeer.TabIndex = 2;
+            this.btnWeisbeer.UseVisualStyleBackColor = true;
+            this.btnWeisbeer.Click += new System.EventHandler(this.btnWeisbeer_Click);
+            // 
+            // btnRedAle
+            // 
+            this.btnRedAle.BackgroundImage = global::CMPG223_POS.Properties.Resources.RA;
+            this.btnRedAle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRedAle.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnRedAle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedAle.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRedAle.Location = new System.Drawing.Point(5, 770);
+            this.btnRedAle.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnRedAle.Name = "btnRedAle";
+            this.btnRedAle.Size = new System.Drawing.Size(250, 250);
+            this.btnRedAle.TabIndex = 3;
+            this.btnRedAle.UseVisualStyleBackColor = true;
+            this.btnRedAle.Click += new System.EventHandler(this.btnRedAle_Click);
+            // 
+            // btnGRTAle
+            // 
+            this.btnGRTAle.BackgroundImage = global::CMPG223_POS.Properties.Resources.GRT;
+            this.btnGRTAle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGRTAle.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnGRTAle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGRTAle.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGRTAle.Location = new System.Drawing.Point(5, 1025);
+            this.btnGRTAle.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnGRTAle.Name = "btnGRTAle";
+            this.btnGRTAle.Size = new System.Drawing.Size(250, 250);
+            this.btnGRTAle.TabIndex = 4;
+            this.btnGRTAle.UseVisualStyleBackColor = true;
+            this.btnGRTAle.Click += new System.EventHandler(this.btnGRTAle_Click);
+            // 
+            // btnStout
+            // 
+            this.btnStout.BackgroundImage = global::CMPG223_POS.Properties.Resources.STOUT;
+            this.btnStout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStout.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnStout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStout.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnStout.Location = new System.Drawing.Point(5, 1280);
+            this.btnStout.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnStout.Name = "btnStout";
+            this.btnStout.Size = new System.Drawing.Size(250, 250);
+            this.btnStout.TabIndex = 5;
+            this.btnStout.UseVisualStyleBackColor = true;
+            this.btnStout.Click += new System.EventHandler(this.btnStout_Click);
+            // 
+            // btnCraftGin
+            // 
+            this.btnCraftGin.BackgroundImage = global::CMPG223_POS.Properties.Resources.GIN;
+            this.btnCraftGin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCraftGin.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnCraftGin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCraftGin.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCraftGin.Location = new System.Drawing.Point(5, 1535);
+            this.btnCraftGin.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnCraftGin.Name = "btnCraftGin";
+            this.btnCraftGin.Size = new System.Drawing.Size(250, 250);
+            this.btnCraftGin.TabIndex = 6;
+            this.btnCraftGin.UseVisualStyleBackColor = true;
+            this.btnCraftGin.Click += new System.EventHandler(this.btnCraftGin_Click);
+            // 
+            // btnRum
+            // 
+            this.btnRum.BackgroundImage = global::CMPG223_POS.Properties.Resources.RUM;
+            this.btnRum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRum.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnRum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRum.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRum.Location = new System.Drawing.Point(5, 1790);
+            this.btnRum.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnRum.Name = "btnRum";
+            this.btnRum.Size = new System.Drawing.Size(250, 250);
+            this.btnRum.TabIndex = 7;
+            this.btnRum.UseVisualStyleBackColor = true;
+            this.btnRum.Click += new System.EventHandler(this.btnRum_Click);
+            // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(72)))), ((int)(((byte)(40)))));
             this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel2.Controls.Add(this.btnBackDrinks);
             this.flowLayoutPanel2.Controls.Add(this.btnClearPreviousItemDrinks);
@@ -214,7 +334,7 @@
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
             this.flowLayoutPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel3.Controls.Add(this.btnBeefBurger);
             this.flowLayoutPanel3.Controls.Add(this.btnChickenBurger);
@@ -232,9 +352,154 @@
             this.flowLayoutPanel3.Size = new System.Drawing.Size(262, 512);
             this.flowLayoutPanel3.TabIndex = 2;
             // 
+            // btnBeefBurger
+            // 
+            this.btnBeefBurger.AutoSize = true;
+            this.btnBeefBurger.BackgroundImage = global::CMPG223_POS.Properties.Resources.Beef_Burger;
+            this.btnBeefBurger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBeefBurger.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnBeefBurger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBeefBurger.Location = new System.Drawing.Point(5, 5);
+            this.btnBeefBurger.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnBeefBurger.Name = "btnBeefBurger";
+            this.btnBeefBurger.Size = new System.Drawing.Size(250, 250);
+            this.btnBeefBurger.TabIndex = 1;
+            this.btnBeefBurger.UseVisualStyleBackColor = true;
+            this.btnBeefBurger.Click += new System.EventHandler(this.btnBeefBurger_Click);
+            // 
+            // btnChickenBurger
+            // 
+            this.btnChickenBurger.AutoSize = true;
+            this.btnChickenBurger.BackgroundImage = global::CMPG223_POS.Properties.Resources.Chicken_Burger;
+            this.btnChickenBurger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnChickenBurger.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnChickenBurger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChickenBurger.Location = new System.Drawing.Point(5, 260);
+            this.btnChickenBurger.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnChickenBurger.Name = "btnChickenBurger";
+            this.btnChickenBurger.Size = new System.Drawing.Size(250, 250);
+            this.btnChickenBurger.TabIndex = 2;
+            this.btnChickenBurger.UseVisualStyleBackColor = true;
+            this.btnChickenBurger.Click += new System.EventHandler(this.btnChickenBurger_Click);
+            // 
+            // btnCheeseBurger
+            // 
+            this.btnCheeseBurger.AutoSize = true;
+            this.btnCheeseBurger.BackgroundImage = global::CMPG223_POS.Properties.Resources.Cheese_Burger;
+            this.btnCheeseBurger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCheeseBurger.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnCheeseBurger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheeseBurger.Location = new System.Drawing.Point(5, 515);
+            this.btnCheeseBurger.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnCheeseBurger.Name = "btnCheeseBurger";
+            this.btnCheeseBurger.Size = new System.Drawing.Size(250, 250);
+            this.btnCheeseBurger.TabIndex = 3;
+            this.btnCheeseBurger.UseVisualStyleBackColor = true;
+            this.btnCheeseBurger.Click += new System.EventHandler(this.btnCheeseBurger_Click);
+            // 
+            // btnChickenSnitzel
+            // 
+            this.btnChickenSnitzel.AutoSize = true;
+            this.btnChickenSnitzel.BackgroundImage = global::CMPG223_POS.Properties.Resources.Chicken_Schnitzel;
+            this.btnChickenSnitzel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnChickenSnitzel.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnChickenSnitzel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChickenSnitzel.Location = new System.Drawing.Point(5, 770);
+            this.btnChickenSnitzel.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnChickenSnitzel.Name = "btnChickenSnitzel";
+            this.btnChickenSnitzel.Size = new System.Drawing.Size(250, 250);
+            this.btnChickenSnitzel.TabIndex = 4;
+            this.btnChickenSnitzel.UseVisualStyleBackColor = true;
+            this.btnChickenSnitzel.Click += new System.EventHandler(this.btnChickenSnitzel_Click);
+            // 
+            // btnSmallChips
+            // 
+            this.btnSmallChips.AutoSize = true;
+            this.btnSmallChips.BackgroundImage = global::CMPG223_POS.Properties.Resources.Small_Chips;
+            this.btnSmallChips.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSmallChips.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnSmallChips.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSmallChips.Location = new System.Drawing.Point(5, 1025);
+            this.btnSmallChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnSmallChips.Name = "btnSmallChips";
+            this.btnSmallChips.Size = new System.Drawing.Size(250, 250);
+            this.btnSmallChips.TabIndex = 5;
+            this.btnSmallChips.UseVisualStyleBackColor = true;
+            this.btnSmallChips.Click += new System.EventHandler(this.btnSmallChips_Click);
+            // 
+            // btnMediumChips
+            // 
+            this.btnMediumChips.BackgroundImage = global::CMPG223_POS.Properties.Resources.Medium_Chips;
+            this.btnMediumChips.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMediumChips.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnMediumChips.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMediumChips.Location = new System.Drawing.Point(5, 1280);
+            this.btnMediumChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnMediumChips.Name = "btnMediumChips";
+            this.btnMediumChips.Size = new System.Drawing.Size(250, 250);
+            this.btnMediumChips.TabIndex = 9;
+            this.btnMediumChips.UseVisualStyleBackColor = true;
+            this.btnMediumChips.Click += new System.EventHandler(this.btnMediumChips_Click);
+            // 
+            // btnLargeChips
+            // 
+            this.btnLargeChips.BackgroundImage = global::CMPG223_POS.Properties.Resources.Large_Chips;
+            this.btnLargeChips.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLargeChips.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnLargeChips.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLargeChips.Location = new System.Drawing.Point(5, 1535);
+            this.btnLargeChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnLargeChips.Name = "btnLargeChips";
+            this.btnLargeChips.Size = new System.Drawing.Size(250, 250);
+            this.btnLargeChips.TabIndex = 8;
+            this.btnLargeChips.UseVisualStyleBackColor = true;
+            // 
+            // btnRegularWings
+            // 
+            this.btnRegularWings.AutoSize = true;
+            this.btnRegularWings.BackgroundImage = global::CMPG223_POS.Properties.Resources.Regular_Wings;
+            this.btnRegularWings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegularWings.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnRegularWings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegularWings.Location = new System.Drawing.Point(5, 1790);
+            this.btnRegularWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnRegularWings.Name = "btnRegularWings";
+            this.btnRegularWings.Size = new System.Drawing.Size(250, 250);
+            this.btnRegularWings.TabIndex = 6;
+            this.btnRegularWings.UseVisualStyleBackColor = true;
+            this.btnRegularWings.Click += new System.EventHandler(this.btnRegularWings_Click);
+            // 
+            // btnMildWings
+            // 
+            this.btnMildWings.BackColor = System.Drawing.Color.White;
+            this.btnMildWings.BackgroundImage = global::CMPG223_POS.Properties.Resources.Mild_Wings;
+            this.btnMildWings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMildWings.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnMildWings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMildWings.Location = new System.Drawing.Point(5, 2045);
+            this.btnMildWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnMildWings.Name = "btnMildWings";
+            this.btnMildWings.Size = new System.Drawing.Size(250, 250);
+            this.btnMildWings.TabIndex = 10;
+            this.btnMildWings.UseVisualStyleBackColor = false;
+            // 
+            // btnHotWings
+            // 
+            this.btnHotWings.BackgroundImage = global::CMPG223_POS.Properties.Resources.Hot_Wings;
+            this.btnHotWings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHotWings.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnHotWings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHotWings.Location = new System.Drawing.Point(5, 2300);
+            this.btnHotWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.btnHotWings.Name = "btnHotWings";
+            this.btnHotWings.Size = new System.Drawing.Size(250, 250);
+            this.btnHotWings.TabIndex = 7;
+            this.btnHotWings.UseVisualStyleBackColor = true;
+            this.btnHotWings.Click += new System.EventHandler(this.btnHotWings_Click);
+            // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(72)))), ((int)(((byte)(40)))));
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.btnBackFood);
             this.flowLayoutPanel1.Controls.Add(this.btnClearPreviousItemFood);
@@ -266,235 +531,6 @@
             this.btnClearPreviousItemFood.Text = "Clear Previous Item";
             this.btnClearPreviousItemFood.UseVisualStyleBackColor = true;
             // 
-            // btnBeefBurger
-            // 
-            this.btnBeefBurger.AutoSize = true;
-            this.btnBeefBurger.BackgroundImage = global::CMPG223_POS.Properties.Resources.Beef_Burger;
-            this.btnBeefBurger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBeefBurger.Location = new System.Drawing.Point(5, 5);
-            this.btnBeefBurger.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnBeefBurger.Name = "btnBeefBurger";
-            this.btnBeefBurger.Size = new System.Drawing.Size(200, 200);
-            this.btnBeefBurger.TabIndex = 1;
-            this.btnBeefBurger.UseVisualStyleBackColor = true;
-            this.btnBeefBurger.Click += new System.EventHandler(this.btnBeefBurger_Click);
-            // 
-            // btnChickenBurger
-            // 
-            this.btnChickenBurger.AutoSize = true;
-            this.btnChickenBurger.BackgroundImage = global::CMPG223_POS.Properties.Resources.Chicken_Burger;
-            this.btnChickenBurger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnChickenBurger.Location = new System.Drawing.Point(5, 210);
-            this.btnChickenBurger.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnChickenBurger.Name = "btnChickenBurger";
-            this.btnChickenBurger.Size = new System.Drawing.Size(200, 200);
-            this.btnChickenBurger.TabIndex = 2;
-            this.btnChickenBurger.UseVisualStyleBackColor = true;
-            this.btnChickenBurger.Click += new System.EventHandler(this.btnChickenBurger_Click);
-            // 
-            // btnCheeseBurger
-            // 
-            this.btnCheeseBurger.AutoSize = true;
-            this.btnCheeseBurger.BackgroundImage = global::CMPG223_POS.Properties.Resources.Cheese_Burger;
-            this.btnCheeseBurger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCheeseBurger.Location = new System.Drawing.Point(5, 415);
-            this.btnCheeseBurger.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnCheeseBurger.Name = "btnCheeseBurger";
-            this.btnCheeseBurger.Size = new System.Drawing.Size(200, 200);
-            this.btnCheeseBurger.TabIndex = 3;
-            this.btnCheeseBurger.UseVisualStyleBackColor = true;
-            this.btnCheeseBurger.Click += new System.EventHandler(this.btnCheeseBurger_Click);
-            // 
-            // btnChickenSnitzel
-            // 
-            this.btnChickenSnitzel.AutoSize = true;
-            this.btnChickenSnitzel.BackgroundImage = global::CMPG223_POS.Properties.Resources.Chicken_Schnitzel;
-            this.btnChickenSnitzel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnChickenSnitzel.Location = new System.Drawing.Point(5, 620);
-            this.btnChickenSnitzel.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnChickenSnitzel.Name = "btnChickenSnitzel";
-            this.btnChickenSnitzel.Size = new System.Drawing.Size(200, 200);
-            this.btnChickenSnitzel.TabIndex = 4;
-            this.btnChickenSnitzel.UseVisualStyleBackColor = true;
-            this.btnChickenSnitzel.Click += new System.EventHandler(this.btnChickenSnitzel_Click);
-            // 
-            // btnSmallChips
-            // 
-            this.btnSmallChips.AutoSize = true;
-            this.btnSmallChips.BackgroundImage = global::CMPG223_POS.Properties.Resources.Small_Chips;
-            this.btnSmallChips.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSmallChips.Location = new System.Drawing.Point(5, 825);
-            this.btnSmallChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnSmallChips.Name = "btnSmallChips";
-            this.btnSmallChips.Size = new System.Drawing.Size(200, 200);
-            this.btnSmallChips.TabIndex = 5;
-            this.btnSmallChips.UseVisualStyleBackColor = true;
-            this.btnSmallChips.Click += new System.EventHandler(this.btnSmallChips_Click);
-            // 
-            // btnMediumChips
-            // 
-            this.btnMediumChips.BackgroundImage = global::CMPG223_POS.Properties.Resources.Medium_Chips;
-            this.btnMediumChips.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMediumChips.Location = new System.Drawing.Point(5, 1030);
-            this.btnMediumChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnMediumChips.Name = "btnMediumChips";
-            this.btnMediumChips.Size = new System.Drawing.Size(200, 200);
-            this.btnMediumChips.TabIndex = 9;
-            this.btnMediumChips.UseVisualStyleBackColor = true;
-            this.btnMediumChips.Click += new System.EventHandler(this.btnMediumChips_Click);
-            // 
-            // btnLargeChips
-            // 
-            this.btnLargeChips.BackgroundImage = global::CMPG223_POS.Properties.Resources.Large_Chips;
-            this.btnLargeChips.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLargeChips.Location = new System.Drawing.Point(5, 1235);
-            this.btnLargeChips.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnLargeChips.Name = "btnLargeChips";
-            this.btnLargeChips.Size = new System.Drawing.Size(200, 200);
-            this.btnLargeChips.TabIndex = 8;
-            this.btnLargeChips.UseVisualStyleBackColor = true;
-            // 
-            // btnRegularWings
-            // 
-            this.btnRegularWings.AutoSize = true;
-            this.btnRegularWings.BackgroundImage = global::CMPG223_POS.Properties.Resources.Regular_Wings;
-            this.btnRegularWings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegularWings.Location = new System.Drawing.Point(5, 1440);
-            this.btnRegularWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnRegularWings.Name = "btnRegularWings";
-            this.btnRegularWings.Size = new System.Drawing.Size(200, 200);
-            this.btnRegularWings.TabIndex = 6;
-            this.btnRegularWings.UseVisualStyleBackColor = true;
-            this.btnRegularWings.Click += new System.EventHandler(this.btnRegularWings_Click);
-            // 
-            // btnMildWings
-            // 
-            this.btnMildWings.BackColor = System.Drawing.Color.White;
-            this.btnMildWings.BackgroundImage = global::CMPG223_POS.Properties.Resources.Mild_Wings;
-            this.btnMildWings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMildWings.Location = new System.Drawing.Point(5, 1645);
-            this.btnMildWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnMildWings.Name = "btnMildWings";
-            this.btnMildWings.Size = new System.Drawing.Size(200, 200);
-            this.btnMildWings.TabIndex = 10;
-            this.btnMildWings.UseVisualStyleBackColor = false;
-            // 
-            // btnHotWings
-            // 
-            this.btnHotWings.BackgroundImage = global::CMPG223_POS.Properties.Resources.Hot_Wings;
-            this.btnHotWings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHotWings.Location = new System.Drawing.Point(5, 1850);
-            this.btnHotWings.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnHotWings.Name = "btnHotWings";
-            this.btnHotWings.Size = new System.Drawing.Size(200, 200);
-            this.btnHotWings.TabIndex = 7;
-            this.btnHotWings.UseVisualStyleBackColor = true;
-            this.btnHotWings.Click += new System.EventHandler(this.btnHotWings_Click);
-            // 
-            // btnSwartkatLager
-            // 
-            this.btnSwartkatLager.BackgroundImage = global::CMPG223_POS.Properties.Resources.SKL;
-            this.btnSwartkatLager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSwartkatLager.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSwartkatLager.Location = new System.Drawing.Point(5, 5);
-            this.btnSwartkatLager.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnSwartkatLager.Name = "btnSwartkatLager";
-            this.btnSwartkatLager.Size = new System.Drawing.Size(200, 200);
-            this.btnSwartkatLager.TabIndex = 0;
-            this.btnSwartkatLager.UseVisualStyleBackColor = true;
-            this.btnSwartkatLager.Click += new System.EventHandler(this.btnSwartkatLager_Click);
-            // 
-            // btnAfricaPilsner
-            // 
-            this.btnAfricaPilsner.BackgroundImage = global::CMPG223_POS.Properties.Resources.AP;
-            this.btnAfricaPilsner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAfricaPilsner.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAfricaPilsner.Location = new System.Drawing.Point(5, 210);
-            this.btnAfricaPilsner.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnAfricaPilsner.Name = "btnAfricaPilsner";
-            this.btnAfricaPilsner.Size = new System.Drawing.Size(200, 200);
-            this.btnAfricaPilsner.TabIndex = 1;
-            this.btnAfricaPilsner.UseVisualStyleBackColor = true;
-            this.btnAfricaPilsner.Click += new System.EventHandler(this.btnAfricaPilsner_Click);
-            // 
-            // btnWeisbeer
-            // 
-            this.btnWeisbeer.BackgroundImage = global::CMPG223_POS.Properties.Resources.WB;
-            this.btnWeisbeer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnWeisbeer.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnWeisbeer.Location = new System.Drawing.Point(5, 415);
-            this.btnWeisbeer.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnWeisbeer.Name = "btnWeisbeer";
-            this.btnWeisbeer.Size = new System.Drawing.Size(200, 200);
-            this.btnWeisbeer.TabIndex = 2;
-            this.btnWeisbeer.UseVisualStyleBackColor = true;
-            this.btnWeisbeer.Click += new System.EventHandler(this.btnWeisbeer_Click);
-            // 
-            // btnRedAle
-            // 
-            this.btnRedAle.BackgroundImage = global::CMPG223_POS.Properties.Resources.RA;
-            this.btnRedAle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRedAle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRedAle.Location = new System.Drawing.Point(5, 620);
-            this.btnRedAle.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnRedAle.Name = "btnRedAle";
-            this.btnRedAle.Size = new System.Drawing.Size(200, 200);
-            this.btnRedAle.TabIndex = 3;
-            this.btnRedAle.UseVisualStyleBackColor = true;
-            this.btnRedAle.Click += new System.EventHandler(this.btnRedAle_Click);
-            // 
-            // btnGRTAle
-            // 
-            this.btnGRTAle.BackgroundImage = global::CMPG223_POS.Properties.Resources.GRT;
-            this.btnGRTAle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGRTAle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGRTAle.Location = new System.Drawing.Point(5, 825);
-            this.btnGRTAle.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnGRTAle.Name = "btnGRTAle";
-            this.btnGRTAle.Size = new System.Drawing.Size(200, 200);
-            this.btnGRTAle.TabIndex = 4;
-            this.btnGRTAle.UseVisualStyleBackColor = true;
-            this.btnGRTAle.Click += new System.EventHandler(this.btnGRTAle_Click);
-            // 
-            // btnStout
-            // 
-            this.btnStout.BackgroundImage = global::CMPG223_POS.Properties.Resources.STOUT;
-            this.btnStout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnStout.Location = new System.Drawing.Point(5, 1030);
-            this.btnStout.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnStout.Name = "btnStout";
-            this.btnStout.Size = new System.Drawing.Size(200, 200);
-            this.btnStout.TabIndex = 5;
-            this.btnStout.UseVisualStyleBackColor = true;
-            this.btnStout.Click += new System.EventHandler(this.btnStout_Click);
-            // 
-            // btnCraftGin
-            // 
-            this.btnCraftGin.BackgroundImage = global::CMPG223_POS.Properties.Resources.GIN;
-            this.btnCraftGin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCraftGin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCraftGin.Location = new System.Drawing.Point(5, 1235);
-            this.btnCraftGin.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnCraftGin.Name = "btnCraftGin";
-            this.btnCraftGin.Size = new System.Drawing.Size(200, 200);
-            this.btnCraftGin.TabIndex = 6;
-            this.btnCraftGin.UseVisualStyleBackColor = true;
-            this.btnCraftGin.Click += new System.EventHandler(this.btnCraftGin_Click);
-            // 
-            // btnRum
-            // 
-            this.btnRum.BackgroundImage = global::CMPG223_POS.Properties.Resources.RUM;
-            this.btnRum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRum.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRum.Location = new System.Drawing.Point(5, 1440);
-            this.btnRum.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.btnRum.Name = "btnRum";
-            this.btnRum.Size = new System.Drawing.Size(200, 200);
-            this.btnRum.TabIndex = 7;
-            this.btnRum.UseVisualStyleBackColor = true;
-            this.btnRum.Click += new System.EventHandler(this.btnRum_Click);
-            // 
             // panelOderHome
             // 
             this.panelOderHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelOderHome.BackgroundImage")));
@@ -509,7 +545,7 @@
             // 
             // flowLayoutPanel5
             // 
-            this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(72)))), ((int)(((byte)(40)))));
             this.flowLayoutPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel5.Controls.Add(this.btnCancelOrder);
             this.flowLayoutPanel5.Controls.Add(this.btnConfirmOrder);

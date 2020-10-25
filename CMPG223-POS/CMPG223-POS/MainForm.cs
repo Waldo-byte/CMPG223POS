@@ -89,15 +89,12 @@ namespace CMPG223_POS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             buttonStyle(panelSideBar);
             sidebarColor(this);
 
 
             mainMenuStrip.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
-
-            LoginForm log = new LoginForm();
-
-            log.Show();
 
             foreach (ToolStripMenuItem item in mainMenuStrip.Items)
             {
