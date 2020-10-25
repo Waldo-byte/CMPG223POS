@@ -149,7 +149,7 @@ namespace CMPG223_POS
 
         private void btnSwartkatLager_Click(object sender, EventArgs e)
         {
-            string item = "Swartkat Lager";
+            
             
             decimal ammount;
             string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Swartkat Lager'";
