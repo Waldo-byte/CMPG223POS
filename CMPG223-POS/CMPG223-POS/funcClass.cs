@@ -9,6 +9,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics.Contracts;
 
 namespace CMPG223_POS
 {
@@ -257,6 +258,30 @@ namespace CMPG223_POS
             dgview.dataGridViewItems.DataMember = "All";
 
             conn.Close();
+
+        }
+
+        public int clientID_Search(string txtName, string txtLname, string number)
+        {
+            int clientID = 0;
+            string sqlAll = "SELECT Client_ID FROM ClientTable Where LastName ='" + txtLname + "' AND FirstName='"+ txtName + "' AND PhoneNumber='"+ number +"'";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sqlAll, conn);
+            SqlDataReader read = cmd.ExecuteReader();
+            if(read.HasRows)
+            {
+                while(read.Read())
+                {
+                    clientID = read.GetInt32(0);
+                }
+                conn.Close();
+                return clientID;
+            }
+            else
+            {
+                conn.Close();
+                return 0;
+            }
 
         }
 

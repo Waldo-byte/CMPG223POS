@@ -763,13 +763,25 @@ namespace CMPG223_POS
 
         private void btnPayOrder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cost.ToString());
-            decimal tax = (decimal)0.15;
-            PaymentForm p1 = new PaymentForm();
-            p1.lblclient_id.Text = txtClientID.Text;
-            p1.lblPrice.Text = cost.ToString();
-            p1.lblTaxPayable.Text = (cost * tax).ToString();
-            p1.Show();
+            if (txtClientID.Text == "0" || txtClientID.Text == "")
+            {
+                MessageBox.Show("Please find a valid Customer first");
+
+            }
+            else if(cost == 0)
+            {
+                MessageBox.Show("You have not olrdered anything yet");
+            }
+            else
+            {
+                decimal tax = (decimal)0.15;
+                PaymentForm p1 = new PaymentForm();
+                p1.lblclient_id.Text = txtClientID.Text;
+                p1.lblPrice.Text = Math.Round(cost,2).ToString();
+                p1.lblTaxPayable.Text = Math.Round((cost * tax),2).ToString();
+                p1.Show();
+            }
+            
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -796,7 +808,42 @@ namespace CMPG223_POS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            int clientID;
+            if(txtPhoneNumber.Text.Length != 10)
+            {
+                MessageBox.Show("Phone Numbers can only be 10 characters");
+            }
+            else if(textBox1.Text == "" || txtLastName.Text == "" || txtPhoneNumber.Text == "")
+            {
+                MessageBox.Show("Please Enter valid Values");
+            }
+            else
+            {
+                try
+                {
+                    funcClass f1 = new funcClass();
+                    clientID = f1.clientID_Search(textBox1.Text, txtLastName.Text, txtPhoneNumber.Text);
+                    if(clientID == 0)
+                    {
+                        MessageBox.Show("Client not  Found");
+                        txtClientID.Text = "0";
+                    }
+                    else
+                    {
+                        txtClientID.Text = clientID.ToString();
+                        MessageBox.Show("Client Found");
+                        
+                    }
 
+                }
+                catch
+                {
+                    MessageBox.Show("Client Not Found");
+                    txtClientID.Text = "0";
+                }
+
+            }
+            
         }
     }
 }
