@@ -24,14 +24,16 @@ namespace CMPG223_POS
             string confirm_pass = txtConfirmPassword.Text;
             if (name == string.Empty || pass == string.Empty || confirm_pass == string.Empty || txtSurname.Text == string.Empty)
             {
-                MessageBox.Show("E");
+                MessageBox.Show("Please ensure all text fields are filled");
             }
             else
             {
 
                 if (txtConfirmPassword.Text != txtPassword.Text)
                 {
-                    MessageBox.Show("Pass");
+                    MessageBox.Show("Please ensure your passwords match");
+                    txtConfirmPassword.Text = "";
+                    txtPassword.Text = "";
                 }
                 else
                 {
@@ -41,7 +43,7 @@ namespace CMPG223_POS
                         {
                             funcClass f1 = new funcClass();
                             f1.addWaiter(pass, DateTime.Now.TimeOfDay, name, txtSurname.Text, 1);
-                            MessageBox.Show("Added");
+                            MessageBox.Show("New waiter added (admin)");
                         }
                         catch (Exception es)
                         {
@@ -54,7 +56,7 @@ namespace CMPG223_POS
                         {
                             funcClass f1 = new funcClass();
                             f1.addWaiter(txtPassword.Text, DateTime.Now.TimeOfDay, txtName.Text, txtSurname.Text, 0);
-                            MessageBox.Show("Added");
+                            MessageBox.Show("New waiter added (non-admin)");
                         }
                         catch (Exception es)
                         {
