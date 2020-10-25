@@ -210,12 +210,21 @@ namespace CMPG223_POS
         {
             try
             {
-                string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                StreamWriter outputfile = new StreamWriter(Path.Combine(docPath, "BuyStock.txt"));
-                using (outputfile)
+                FolderBrowserDialog fd1 = new FolderBrowserDialog();
+                if(fd1.ShowDialog() == DialogResult.OK)
                 {
-                    outputfile.WriteLine("" + item + " " + qty); 
+                    string docPath = fd1.SelectedPath;
+                    StreamWriter outputfile = new StreamWriter(Path.Combine(docPath, "BuyStock.txt"), true);
+                    using (outputfile)
+                    {
+                        outputfile.Write("Item ID To Buy :" + item + " Amount To Buy :" + qty + "\n");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Search canceled");
+                }
+                
             }
 
             catch
