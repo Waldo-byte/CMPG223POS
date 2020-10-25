@@ -269,7 +269,6 @@ namespace CMPG223_POS
             verify.Parameters.AddWithValue("@Description", verified);
             verify.ExecuteNonQuery();
             conn.Close();
-         
 
         }
         
@@ -279,7 +278,7 @@ namespace CMPG223_POS
             try
             {
                 string sql_getamnt = "SELECT Quantity FROM Bought_Inv Where Inventory_ID = '" + iD + "'";
-                string sql_update = "UPDATE Bought_Inventory([Quantity]) WHERE Inventory_ID = '" + iD + "' AND VALUES(@qty)";
+                string sql_update = "UPDATE Bought_Inv SET [Quantity] = @qty WHERE Inventory_ID = '" + iD + "'";
                 conn.Open();
                 SqlCommand getamnt = new SqlCommand(sql_getamnt, conn);
                 SqlDataReader datread = getamnt.ExecuteReader();
