@@ -215,7 +215,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PaymentForm";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.PaymentForm_Load);
             this.buttonContainer.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -11,6 +11,7 @@ namespace CMPG223_POS
     {
 
         static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        //static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\CASH\Source\Repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
         SqlDataAdapter adap;
@@ -62,6 +63,42 @@ namespace CMPG223_POS
         {
             Button but = (Button)sender;
             but.FlatAppearance.BorderColor = Color.FromArgb(141, 51, 29);
+
+        }
+
+        public void buttonStyleItem(Control source)
+        {
+            foreach (Control con in source.Controls)
+            {
+                if (con is Button)
+                {
+                    Button but = con as Button;
+                    but.BackColor = Color.FromArgb(163, 58, 33);
+                    but.FlatAppearance.BorderColor = Color.FromArgb(141, 51, 29);
+                    but.MouseEnter += new EventHandler(this.allButton2_mouseEnter);
+                    but.MouseLeave += new EventHandler(this.allButton2_mouseLeave);
+                    but.FlatStyle = FlatStyle.Flat;
+                    but.Margin = new Padding(5, 5, 5, 0);
+                    but.Size = new Size(190, 40);
+                }
+                else
+                {
+                    buttonStyle(con);
+                }
+            }
+        }
+
+        private void allButton2_mouseEnter(object sender, System.EventArgs e)
+        {
+            Button but = (Button)sender;
+            but.FlatAppearance.MouseOverBackColor = Color.FromArgb(121, 63, 32);
+            but.FlatAppearance.BorderColor = Color.FromArgb(200, 102, 41);
+        }
+
+        private void allButton2_mouseLeave(object sender, System.EventArgs e)
+        {
+            Button but = (Button)sender;
+            but.FlatAppearance.BorderColor = Color.FromArgb(140, 73, 34);
 
         }
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -797,6 +834,17 @@ namespace CMPG223_POS
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_MouseEnter(object sender, EventArgs e)
+        {
+            btnSearch.FlatAppearance.BorderColor = Color.FromArgb(200,102,41);
+            btnSearch.FlatAppearance.MouseOverBackColor = Color.FromArgb(121, 63, 32);
+        }
+
+        private void btnSearch_MouseLeave(object sender, EventArgs e)
+        {
+            btnSearch.FlatAppearance.BorderColor = Color.FromArgb(140,73,34);
         }
     }
 }
