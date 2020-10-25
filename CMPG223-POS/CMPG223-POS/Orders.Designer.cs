@@ -157,6 +157,7 @@
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLastName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtLastName.Location = new System.Drawing.Point(798, 6);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.txtLastName.Name = "txtLastName";
@@ -166,13 +167,19 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(40)))), ((int)(((byte)(26)))));
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(73)))), ((int)(((byte)(34)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
             this.btnSearch.Location = new System.Drawing.Point(1097, 6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.MouseEnter += new System.EventHandler(this.btnSearch_MouseEnter);
+            this.btnSearch.MouseLeave += new System.EventHandler(this.btnSearch_MouseLeave);
             // 
             // textBox1
             // 
@@ -220,7 +227,10 @@
             // 
             // lbOrders
             // 
+            this.lbOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(86)))), ((int)(((byte)(37)))));
+            this.lbOrders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbOrders.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(24)))), ((int)(((byte)(22)))));
             this.lbOrders.FormattingEnabled = true;
             this.lbOrders.Location = new System.Drawing.Point(928, 32);
             this.lbOrders.Name = "lbOrders";
@@ -694,27 +704,35 @@
             // 
             // btnDrinks
             // 
+            this.btnDrinks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(40)))), ((int)(((byte)(26)))));
             this.btnDrinks.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDrinks.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(73)))), ((int)(((byte)(34)))));
+            this.btnDrinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDrinks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
             this.btnDrinks.Location = new System.Drawing.Point(0, 0);
             this.btnDrinks.Margin = new System.Windows.Forms.Padding(0);
             this.btnDrinks.Name = "btnDrinks";
             this.btnDrinks.Size = new System.Drawing.Size(250, 86);
             this.btnDrinks.TabIndex = 0;
             this.btnDrinks.Text = "Drinks";
-            this.btnDrinks.UseVisualStyleBackColor = true;
+            this.btnDrinks.UseVisualStyleBackColor = false;
             this.btnDrinks.Click += new System.EventHandler(this.btnDrinks_Click);
             // 
             // btnFood
             // 
+            this.btnFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(40)))), ((int)(((byte)(26)))));
             this.btnFood.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFood.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(73)))), ((int)(((byte)(34)))));
+            this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(102)))), ((int)(((byte)(41)))));
             this.btnFood.Location = new System.Drawing.Point(273, 0);
             this.btnFood.Name = "btnFood";
             this.btnFood.Size = new System.Drawing.Size(250, 86);
             this.btnFood.TabIndex = 1;
             this.btnFood.Text = "Food";
-            this.btnFood.UseVisualStyleBackColor = true;
+            this.btnFood.UseVisualStyleBackColor = false;
             this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
             // 
             // Orders

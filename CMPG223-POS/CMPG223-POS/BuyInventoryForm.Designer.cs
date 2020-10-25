@@ -141,7 +141,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonContainer);
             this.Controls.Add(this.dataGridViewItems);
+            this.MinimizeBox = false;
             this.Name = "BuyInventoryForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuyInventoryForm";
             this.Load += new System.EventHandler(this.BuyInventoryForm_Load);

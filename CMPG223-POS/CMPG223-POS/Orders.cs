@@ -10,7 +10,8 @@ namespace CMPG223_POS
     public partial class Orders : Form
     {
 
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\New\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        //static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\CASH\Source\Repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
         SqlDataAdapter adap;
@@ -62,6 +63,42 @@ namespace CMPG223_POS
         {
             Button but = (Button)sender;
             but.FlatAppearance.BorderColor = Color.FromArgb(141, 51, 29);
+
+        }
+
+        public void buttonStyleItem(Control source)
+        {
+            foreach (Control con in source.Controls)
+            {
+                if (con is Button)
+                {
+                    Button but = con as Button;
+                    but.BackColor = Color.FromArgb(163, 58, 33);
+                    but.FlatAppearance.BorderColor = Color.FromArgb(141, 51, 29);
+                    but.MouseEnter += new EventHandler(this.allButton2_mouseEnter);
+                    but.MouseLeave += new EventHandler(this.allButton2_mouseLeave);
+                    but.FlatStyle = FlatStyle.Flat;
+                    but.Margin = new Padding(5, 5, 5, 0);
+                    but.Size = new Size(190, 40);
+                }
+                else
+                {
+                    buttonStyle(con);
+                }
+            }
+        }
+
+        private void allButton2_mouseEnter(object sender, System.EventArgs e)
+        {
+            Button but = (Button)sender;
+            but.FlatAppearance.MouseOverBackColor = Color.FromArgb(121, 63, 32);
+            but.FlatAppearance.BorderColor = Color.FromArgb(200, 102, 41);
+        }
+
+        private void allButton2_mouseLeave(object sender, System.EventArgs e)
+        {
+            Button but = (Button)sender;
+            but.FlatAppearance.BorderColor = Color.FromArgb(140, 73, 34);
 
         }
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -763,25 +800,13 @@ namespace CMPG223_POS
 
         private void btnPayOrder_Click(object sender, EventArgs e)
         {
-            if (txtClientID.Text == "0" || txtClientID.Text == "")
-            {
-                MessageBox.Show("Please find a valid Customer first");
-
-            }
-            else if(cost == 0)
-            {
-                MessageBox.Show("You have not olrdered anything yet");
-            }
-            else
-            {
-                decimal tax = (decimal)0.15;
-                PaymentForm p1 = new PaymentForm();
-                p1.lblclient_id.Text = txtClientID.Text;
-                p1.lblPrice.Text = Math.Round(cost,2).ToString();
-                p1.lblTaxPayable.Text = Math.Round((cost * tax),2).ToString();
-                p1.Show();
-            }
-            
+            MessageBox.Show(cost.ToString());
+            decimal tax = (decimal)0.15;
+            PaymentForm p1 = new PaymentForm();
+            p1.lblclient_id.Text = txtClientID.Text;
+            p1.lblPrice.Text = cost.ToString();
+            p1.lblTaxPayable.Text = (cost * tax).ToString();
+            p1.Show();
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -808,42 +833,18 @@ namespace CMPG223_POS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            int clientID;
-            if(txtPhoneNumber.Text.Length != 10)
-            {
-                MessageBox.Show("Phone Numbers can only be 10 characters");
-            }
-            else if(textBox1.Text == "" || txtLastName.Text == "" || txtPhoneNumber.Text == "")
-            {
-                MessageBox.Show("Please Enter valid Values");
-            }
-            else
-            {
-                try
-                {
-                    funcClass f1 = new funcClass();
-                    clientID = f1.clientID_Search(textBox1.Text, txtLastName.Text, txtPhoneNumber.Text);
-                    if(clientID == 0)
-                    {
-                        MessageBox.Show("Client not  Found");
-                        txtClientID.Text = "0";
-                    }
-                    else
-                    {
-                        txtClientID.Text = clientID.ToString();
-                        MessageBox.Show("Client Found");
-                        
-                    }
 
-                }
-                catch
-                {
-                    MessageBox.Show("Client Not Found");
-                    txtClientID.Text = "0";
-                }
+        }
 
-            }
-            
+        private void btnSearch_MouseEnter(object sender, EventArgs e)
+        {
+            btnSearch.FlatAppearance.BorderColor = Color.FromArgb(200,102,41);
+            btnSearch.FlatAppearance.MouseOverBackColor = Color.FromArgb(121, 63, 32);
+        }
+
+        private void btnSearch_MouseLeave(object sender, EventArgs e)
+        {
+            btnSearch.FlatAppearance.BorderColor = Color.FromArgb(140,73,34);
         }
     }
 }
