@@ -55,7 +55,7 @@ namespace CMPG223_POS
                 f1.setAdmin(false);
                 mbox.ShowMessageBox("Welcome Waiter " + txtUserName.Text + "!", "Waiter Login Successful", "", "");
                 mbox.ShowDialog();
-                MainForm main = new MainForm(f1.getAdmin());
+                MainForm main = new MainForm(f1.getAdmin(),txtUserName.Text);
 
                 main.Show();
                 this.Close();
@@ -65,7 +65,7 @@ namespace CMPG223_POS
                 f1.setAdmin(true);
                 mbox.ShowMessageBox("Welcome Admin!", "Admin Login Successful", "", "");
                 mbox.ShowDialog();
-                MainForm main = new MainForm(f1.getAdmin());
+                MainForm main = new MainForm(f1.getAdmin(),txtUserName.Text);
 
                 main.Show();
                 this.Close();

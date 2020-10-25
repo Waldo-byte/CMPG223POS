@@ -15,8 +15,10 @@ namespace CMPG223_POS
     public partial class MainForm : Form
     {
         MyMessageBox mbox = new MyMessageBox();
+        public TimeSpan loginTime = DateTime.Now.TimeOfDay;
+        public string wait_ID = "Waiter ID: ";
 
-        public MainForm(bool Admin)
+        public MainForm(bool Admin, string w_ID)
         {
             InitializeComponent();
 
@@ -25,6 +27,7 @@ namespace CMPG223_POS
                 btnAddWaiter.Visible = false;
                 btnBuyInventory.Visible = false;
             }
+            wait_ID += w_ID;
         }
 
         [DllImport("user32.dll")]
@@ -289,10 +292,18 @@ namespace CMPG223_POS
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            funcClass f1 = new funcClass();
             LoginForm lf = new LoginForm();
             lf.Show();
             this.Hide();
 
+            TimeSpan logoutTime = DateTime.Now.TimeOfDay;
+            TimeSpan loggedIn = logoutTime - loginTime;
+            wait_ID += ", Day worked: " + DateTime.Today.ToString("dd-MM-yyyy");
+            f1.clockOut(wait_ID, loggedIn);
+
+            mbox.ShowMessageBox("Time logged in: " + loggedIn.ToString(), "Logout", "", "");
+            mbox.ShowDialog();
         }
     }
 }
