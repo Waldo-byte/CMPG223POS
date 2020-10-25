@@ -180,8 +180,8 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            this.btnSearch.MouseEnter += new System.EventHandler(this.btnSearch_MouseEnter);
-            this.btnSearch.MouseLeave += new System.EventHandler(this.btnSearch_MouseLeave);
+            //this.btnSearch.MouseEnter += new System.EventHandler(this.btnSearch_MouseEnter);
+            //this.btnSearch.MouseLeave += new System.EventHandler(this.btnSearch_MouseLeave);
             // 
             // textBox1
             // 
