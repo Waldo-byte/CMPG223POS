@@ -17,7 +17,7 @@ namespace CMPG223_POS
         {
             InitializeComponent();
         }
-
+        MyMessageBox mbox = new MyMessageBox();
         public void buttonStyle(Control source)
         {
             foreach (Control con in source.Controls)
@@ -58,19 +58,24 @@ namespace CMPG223_POS
         {
             if(textBox1.Text == "0" || textBox1.Text == "" || Convert.ToInt32(numUpDownItems.Value) == 0)
             {
-                MessageBox.Show("Please enter a correct value for item ID or amount");
+                mbox.ShowMessageBox("Please enter a correct value for item ID or amount", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else
             {
                 funcClass buystock = new funcClass();
                 buystock.buyStock(textBox1.Text, Convert.ToInt32(numUpDownItems.Value));
+                mbox.ShowMessageBox("Stock bought successfully.", "Success", "", "");
+                mbox.ShowDialog();
+                textBox1.Text = "";
+                numUpDownItems.Value = 0;
             }
             
         }
 
         public void populateBought()
         {
-            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\Main\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
             SqlConnection conn = new SqlConnection(constr);
             string sqlAll = "SELECT * FROM Bought_Inv";
             conn.Open();

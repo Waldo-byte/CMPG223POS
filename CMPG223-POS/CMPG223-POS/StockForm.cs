@@ -58,7 +58,7 @@ namespace CMPG223_POS
 
         public void populateBought()
         {
-            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\Main\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
             SqlConnection conn = new SqlConnection(constr);
             string sqlAll = "SELECT * FROM Bought_Inv";
             conn.Open();
@@ -80,17 +80,25 @@ namespace CMPG223_POS
         {
             if (txtItemID.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("E");
+                mbox.ShowMessageBox("Please enter a valid ID number to update.", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else if (Convert.ToInt32(numUpDownStock.Value) == 0)
             {
-                MessageBox.Show("E");
+                mbox.ShowMessageBox("Please enter the amount to increase by", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else
             {
                 funcClass f1 = new funcClass();
                 f1.updateStock(int.Parse(txtItemID.Text),Convert.ToInt32(numUpDownStock.Value));
                 populateBought();
+                mbox.ShowMessageBox("Stock successfully updated.", "Success", "", "");
+                mbox.ShowDialog();
+                txtDescription.Text = "";
+                txtItemID.Text = "";
+                txtStockPrice.Text = "";
+                numUpDownStock.Value = 0;
             }
         }
 
@@ -123,7 +131,7 @@ namespace CMPG223_POS
             }
             catch (Exception)
             {
-                mbox.ShowMessageBox("Please enter an integer value for ID", "Invalid Input", "", "Error");
+                mbox.ShowMessageBox("Please enter a valid integer value for ID", "Invalid Input", "", "Error");
                 mbox.ShowDialog();
             }
             
@@ -149,7 +157,7 @@ namespace CMPG223_POS
                     mbox.ShowMessageBox("Please ensure all text fields are filled", "Field filled error", "", "Error");
                     mbox.ShowDialog();
                 }
-                else if (Convert.ToInt32(txtStockPrice.Text) <= 0)
+                else if (Convert.ToDecimal(txtStockPrice.Text) <= 0)
                 {
                     mbox.ShowMessageBox("Price must be more than 0.", "Invalid Input", "", "Error");
                     mbox.ShowDialog();
@@ -174,7 +182,7 @@ namespace CMPG223_POS
             }
             catch (Exception)
             {
-                mbox.ShowMessageBox("Please enter an integer value for ID and Price", "Invalid Input", "", "Error");
+                mbox.ShowMessageBox("Please enter an integer value for ID and a decimal value Price", "Invalid Input", "", "Error");
                 mbox.ShowDialog();
             }
             

@@ -17,6 +17,7 @@ namespace CMPG223_POS
         DataSet ds;
         funcClass functions = new funcClass();
         decimal cost = 0.00m;
+        MyMessageBox mbox = new MyMessageBox();
 
         public Orders()
         {
@@ -766,18 +767,20 @@ namespace CMPG223_POS
         {
             if (txtClientID.Text == "0" || txtClientID.Text == "")
             {
-                MessageBox.Show("Please find a valid Customer first");
-
+                mbox.ShowMessageBox("Please find a valid Customer first", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else if(cost == 0)
             {
-                MessageBox.Show("You have not olrdered anything yet");
+                mbox.ShowMessageBox("Please order something", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else
             {
                 if(i == 0)
                 {
-                    MessageBox.Show("Please confirm order first");
+                    mbox.ShowMessageBox("Please confirm order first", "Invalid Input", "", "Error");
+                    mbox.ShowDialog();
                 }
                 else
                 {
@@ -804,16 +807,18 @@ namespace CMPG223_POS
             
             if(txtWaiterID.Text == "0" || txtWaiterID.Text == "")
             {
-                MessageBox.Show("Please enter a valid waiter ID");
+                mbox.ShowMessageBox("Please enter a valid waiter ID", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else if(txtClientID.Text == "0" || txtClientID.Text == "")
             {
-                MessageBox.Show("Please get a valid customer");
-
+                mbox.ShowMessageBox("Please enter a valid customer", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else if(lbOrders.Items.Count == -1)
             {
-                MessageBox.Show("Please add items to order");
+                mbox.ShowMessageBox("Please add items to order", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else
             {
@@ -824,10 +829,13 @@ namespace CMPG223_POS
                 {
                     t1 = f1.add_Order(txtWaiterID.Text, txtClientID.Text, cost, lbOrders);
                     i = 1;
+                    mbox.ShowMessageBox("Order confirmed successfully.", "Success", "", "");
+                    mbox.ShowDialog();
                 }
                 catch
                 {
-                    MessageBox.Show("Error adding to client order.\nCheck to see if all information are correct");
+                    mbox.ShowMessageBox("Error adding to client order.\nCheck to see if all information are correct", "Error", "", "Error");
+                    mbox.ShowDialog();
                 }
                 
             }
@@ -837,7 +845,8 @@ namespace CMPG223_POS
         {
             if (lbOrders.Items.Count - 1 == -1)
             {
-                MessageBox.Show("Order Empty");
+                mbox.ShowMessageBox("Order Empty", "Error", "", "Error");
+                mbox.ShowDialog();
             }
             else
             {
@@ -845,16 +854,27 @@ namespace CMPG223_POS
             }
         }
 
+        public void clearOrders()
+        {
+            txtClientID.Text = "";
+            txtLastName.Text = "";
+            txtPhoneNumber.Text = "";
+            txtWaiterID.Text = "";
+            lbOrders.Items.Clear();
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             int clientID;
             if(txtPhoneNumber.Text.Length != 10)
             {
-                MessageBox.Show("Phone Numbers can only be 10 characters");
+                mbox.ShowMessageBox("Phone Numbers can only be 10 characters", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else if(textBox1.Text == "" || txtLastName.Text == "" || txtPhoneNumber.Text == "")
             {
-                MessageBox.Show("Please Enter valid Values");
+                mbox.ShowMessageBox("Please Enter valid Values", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
             else
             {
@@ -864,20 +884,22 @@ namespace CMPG223_POS
                     clientID = f1.clientID_Search(textBox1.Text, txtLastName.Text, txtPhoneNumber.Text);
                     if(clientID == 0)
                     {
-                        MessageBox.Show("Client not  Found");
+                        mbox.ShowMessageBox("Client not  Found", "Error", "", "Error");
+                        mbox.ShowDialog();
                         txtClientID.Text = "0";
                     }
                     else
                     {
                         txtClientID.Text = clientID.ToString();
-                        MessageBox.Show("Client Found");
-                        
+                        mbox.ShowMessageBox("Client found", "Success", "", "");
+                        mbox.ShowDialog();
                     }
 
                 }
                 catch
                 {
-                    MessageBox.Show("Client Not Found");
+                    mbox.ShowMessageBox("Client not  Found", "Error", "", "Error");
+                    mbox.ShowDialog();
                     txtClientID.Text = "0";
                 }
 

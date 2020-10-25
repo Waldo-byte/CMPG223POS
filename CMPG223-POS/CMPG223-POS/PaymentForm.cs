@@ -19,6 +19,7 @@ namespace CMPG223_POS
             InitializeComponent();
         }
         public TimeSpan ordertime;
+        MyMessageBox mbox = new MyMessageBox();
 
         private void lbl_Client_ID_Click(object sender, EventArgs e)
         {
@@ -68,10 +69,17 @@ namespace CMPG223_POS
             {
                 funcClass f1 = new funcClass();
                 f1.payBill(int.Parse(lblclient_id.Text), ordertime);
+                mbox.ShowMessageBox("Order payment successful.", "Success", "", "");
+                mbox.ShowDialog();
+                this.Close();
+
+                Orders or = new Orders();
+                or.Close();
             }
             catch(Exception E)
             {
-                MessageBox.Show(E.Message);
+                mbox.ShowMessageBox(E.Message, "Error", "", "Error");
+                mbox.ShowDialog();
             }
             
         }
