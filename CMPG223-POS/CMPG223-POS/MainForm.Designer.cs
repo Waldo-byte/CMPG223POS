@@ -32,13 +32,13 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnSignUpCustomer = new System.Windows.Forms.Button();
             this.bntStock = new System.Windows.Forms.Button();
             this.btnAddWaiter = new System.Windows.Forms.Button();
             this.btnBuyInventory = new System.Windows.Forms.Button();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.panelSideBar.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,13 @@
             this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
             this.windowsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.windowsToolStripMenuItem.Text = "Windows";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // panelSideBar
             // 
@@ -150,12 +157,6 @@
             this.btnBuyInventory.Text = "Buy Inventory";
             this.btnBuyInventory.UseVisualStyleBackColor = true;
             this.btnBuyInventory.Click += new System.EventHandler(this.btnBuyInventory_Click);
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // MainForm
             // 
