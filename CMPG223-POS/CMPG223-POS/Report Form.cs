@@ -18,11 +18,11 @@ namespace CMPG223_POS
             InitializeComponent();
         }
 
-        public void populateOrders()
+        public void populateOrders(string txt)
         {
             string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security = True";
             SqlConnection conn = new SqlConnection(constr);
-            string sqlAll = "SELECT * FROM Client_Order";
+            string sqlAll = "SELECT* FROM Client_Order WHERE Waiter_ID = '" + int.Parse(txt) + "'";
             conn.Open();
             SqlCommand comm = new SqlCommand(sqlAll, conn);
             SqlDataAdapter adap = new SqlDataAdapter();
@@ -38,11 +38,11 @@ namespace CMPG223_POS
             conn.Close();
         }
 
-        public void populateClients()
+        public void populateClients(string txt)
         {
             string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security = True";
             SqlConnection conn = new SqlConnection(constr);
-            string sqlAll = "SELECT * FROM ClientTable";
+            string sqlAll = "SELECT * FROM ClientTable WHERE FirstName ='" + txt + "'";
             conn.Open();
             SqlCommand comm = new SqlCommand(sqlAll, conn);
             SqlDataAdapter adap = new SqlDataAdapter();
@@ -60,7 +60,21 @@ namespace CMPG223_POS
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            populateOrders();
+            int text = 0;
+            if(textBox1.Text == "")
+            {
+                MessageBox.Show("Please enter a search phrase");
+            }
+            else if(!int.TryParse(textBox1.Text,out text))
+            {
+                MessageBox.Show("Please enter a valid Waiter ID (integer)");
+            }
+            else
+            {
+                populateOrders(textBox1.Text);
+                textBox1.Clear();
+            }
+            
         }
 
         private void ReportForm_Load(object sender, EventArgs e)
@@ -75,7 +89,13 @@ namespace CMPG223_POS
 
         private void btClients_Click(object sender, EventArgs e)
         {
-            populateClients();
+            populateClients(textBox2.Text);
+            textBox2.Clear();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
