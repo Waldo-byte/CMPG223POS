@@ -75,16 +75,38 @@ namespace CMPG223_POS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(txtItemID.Text.Trim() == string.Empty)
+            try
             {
-                MessageBox.Show("E");
+                if (txtItemID.Text.Trim() == string.Empty)
+                {
+                    mbox.ShowMessageBox("Please Enter a valid ID to delete", "Field filled error", "", "Error");
+                    mbox.ShowDialog();
+                }
+                else if (Convert.ToInt32(txtItemID.Text) <= 0)
+                {
+                    mbox.ShowMessageBox("ID must be an integer value more than 0.", "Invalid Input", "", "Error");
+                    mbox.ShowDialog();
+                }
+                else
+                {
+                    funcClass f1 = new funcClass();
+                    f1.removeStock(int.Parse(txtItemID.Text));
+                    f1.populateBought();
+                    mbox.ShowMessageBox("Stock successfully deleted.", "Sucess!", "", "");
+                    mbox.ShowDialog();
+                    txtDescription.Text = "";
+                    txtItemID.Text = "";
+                    txtStockPrice.Text = "";
+                    numUpDownStock.Value = 0;
+                }
             }
-            else
+            catch (Exception)
             {
-                funcClass f1 = new funcClass();
-                f1.removeStock(int.Parse(txtItemID.Text));
-                f1.populateBought();
+                mbox.ShowMessageBox("Please enter an integer value for ID", "Invalid Input", "", "Error");
+                mbox.ShowDialog();
             }
+            
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
