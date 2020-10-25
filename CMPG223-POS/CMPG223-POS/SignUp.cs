@@ -62,52 +62,48 @@ namespace CMPG223_POS
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             MyMessageBox mbox = new MyMessageBox();
-            int k;
-            k = txtPhoneNumber.Text.Length;
-            Exception pNumEx = new Exception();
-            Exception txtFEX = new Exception();
             try
             {
                 string last, first, phone;
                 last = txtSurname.Text;
                 first = txtName.Text;
-                phone = txtPhoneNumber.Text;
-                k = phone.Length;
+                phone = txtPhoneNumber.Text;      
                 if (txtName.Text == "" || txtPhoneNumber.Text == "" || txtSurname.Text == "")
-                    throw txtFEX;
-                if (k < 10 || k > 10)
-                    throw pNumEx;
-                string sql_addClient = "INSERT ClientTable([LastName], [FirstName], [PhoneNumber]) VALUES(@LastName, @FirstName, @PhoneNumber)";
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sql_addClient, conn);
-                cmd.Parameters.AddWithValue("@LastName", last);
-                cmd.Parameters.AddWithValue("@FirstName", first);
-                cmd.Parameters.AddWithValue("@PhoneNumber", phone);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Client: " + first + " " + last + " added.");
+                    throw new ArgumentException("Invalid entry");
+                int k = phone.Length;
+                if (k != 10)
+                    throw new Exception("");
+                else
+                {
+                    string sql_addClient = "INSERT ClientTable([LastName], [FirstName], [PhoneNumber]) VALUES(@LastName, @FirstName, @PhoneNumber)";
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sql_addClient, conn);
+                    cmd.Parameters.AddWithValue("@LastName", last);
+                    cmd.Parameters.AddWithValue("@FirstName", first);
+                    cmd.Parameters.AddWithValue("@PhoneNumber", phone);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Client: " + first + " " + last + " added.");
 
-                this.Close();
+                    this.Close();
+                } 
+            }
+            catch (ArgumentException)
+            {
+                mbox.ShowMessageBox("Please ensure all fields are filled!", "Incorrect input", "", "Error");
+                mbox.ShowDialog();
             }
             catch (Exception)
             {
-                if (k < 10 || k > 10)
-                {
-                    mbox.ShowMessageBox("Please ensure phone number is 10 digits!", "Incorrect input", "", "Error");
-                    mbox.ShowDialog();
-                    txtPhoneNumber.Text = "";
-                }
-                else
-                {
-                    mbox.ShowMessageBox("Please ensure all fields are filled!", "Incorrect input", "", "Error");
-                    mbox.ShowDialog();
-                }
-                
+                mbox.ShowMessageBox("Please ensure phone number is 10 digits!", "Incorrect input", "", "Error");
+                mbox.ShowDialog();
+                txtPhoneNumber.Text = "";
             }
 
-            
         }
+        
 
+            
         private void SignUp_Load(object sender, EventArgs e)
         {
 
