@@ -151,7 +151,7 @@ namespace CMPG223_POS
         {
             string item = "Swartkat Lager";
             
-            decimal ammount;
+            decimal ammount = 0;
             string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Swartkat Lager'";
             lbOrders.Items.Add("Swartkat Lager");
             conn.Open();
@@ -177,7 +177,7 @@ namespace CMPG223_POS
                 }
             }
             
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -209,7 +209,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -241,7 +241,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+           // cost += ammount;
             conn.Close();
         }
 
@@ -272,7 +272,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -303,7 +303,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -334,7 +334,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -365,7 +365,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+           // cost += ammount;
             conn.Close();
         }
 
@@ -397,7 +397,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+           // cost += ammount;
             conn.Close();
         }
 
@@ -428,7 +428,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+           // cost += ammount;
             conn.Close();
         }
 
@@ -459,7 +459,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+           // cost += ammount;
             conn.Close();
         }
 
@@ -490,7 +490,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -521,7 +521,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+           // cost += ammount;
             conn.Close();
         }
 
@@ -552,7 +552,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -583,7 +583,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -614,7 +614,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+           // cost += ammount;
             conn.Close();
         }
 
@@ -645,7 +645,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -676,7 +676,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 
@@ -707,7 +707,7 @@ namespace CMPG223_POS
                     ammount = reader.GetDecimal(0);
                 }
             }
-            cost += ammount;
+            //cost += ammount;
             conn.Close();
         }
 

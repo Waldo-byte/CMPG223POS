@@ -14,7 +14,7 @@ namespace CMPG223_POS
     public partial class SignUp : Form
     {
 
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Desktop\Studies\2020\CMPG223\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
         SqlDataAdapter adap;
@@ -71,9 +71,8 @@ namespace CMPG223_POS
                 if (txtName.Text == "" || txtPhoneNumber.Text == "" || txtSurname.Text == "")
                     throw new ArgumentException("Invalid entry");
                 int k = phone.Length;
-                if (k != 10)
-                    throw new Exception("");
-                else
+                MessageBox.Show(k.ToString());
+                if(txtPhoneNumber.Text.Length == 10)
                 {
                     string sql_addClient = "INSERT ClientTable([LastName], [FirstName], [PhoneNumber]) VALUES(@LastName, @FirstName, @PhoneNumber)";
                     conn.Open();
@@ -86,7 +85,12 @@ namespace CMPG223_POS
                     MessageBox.Show("Client: " + first + " " + last + " added.");
 
                     this.Close();
-                } 
+                }    
+                else
+                {
+                     throw new Exception("");
+                }
+                
             }
             catch (ArgumentException)
             {
