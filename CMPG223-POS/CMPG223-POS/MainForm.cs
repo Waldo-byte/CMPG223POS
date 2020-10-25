@@ -286,5 +286,13 @@ namespace CMPG223_POS
             BuyInventoryForm buy = new BuyInventoryForm();
             buy.Show();
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginForm lf = new LoginForm();
+            lf.Show();
+            this.Hide();
+
+        }
     }
 }
