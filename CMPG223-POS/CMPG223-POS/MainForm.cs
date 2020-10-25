@@ -305,5 +305,11 @@ namespace CMPG223_POS
             mbox.ShowMessageBox("Time logged in: " + loggedIn.ToString(), "Logout", "", "");
             mbox.ShowDialog();
         }
+
+        private void btnReportClientOrder_Click(object sender, EventArgs e)
+        {
+            ReportForm r1 = new ReportForm();
+            r1.Show();
+        }
     }
 }

@@ -71,6 +71,7 @@
             this.btnClearPreviousItemFood = new System.Windows.Forms.Button();
             this.panelOderHome = new System.Windows.Forms.Panel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnCancelOrder = new System.Windows.Forms.Button();
             this.btnConfirmOrder = new System.Windows.Forms.Button();
             this.btnPayOrder = new System.Windows.Forms.Button();
@@ -79,7 +80,6 @@
             this.btnFood = new System.Windows.Forms.Button();
             this.txtWaiterID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
             this.panelDrinks.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
@@ -663,6 +663,16 @@
             this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 133);
             this.flowLayoutPanel5.TabIndex = 3;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(3, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // btnCancelOrder
             // 
             this.btnCancelOrder.Location = new System.Drawing.Point(1, 30);
@@ -757,15 +767,6 @@
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Waiter ID:";
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(3, 3);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
             // 
             // Orders
             // 

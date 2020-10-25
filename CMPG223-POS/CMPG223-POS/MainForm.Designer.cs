@@ -164,10 +164,11 @@
             // 
             this.btnReportClientOrder.Location = new System.Drawing.Point(3, 208);
             this.btnReportClientOrder.Name = "btnReportClientOrder";
-            this.btnReportClientOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnReportClientOrder.Size = new System.Drawing.Size(196, 34);
             this.btnReportClientOrder.TabIndex = 6;
             this.btnReportClientOrder.Text = "Report Client Order";
             this.btnReportClientOrder.UseVisualStyleBackColor = true;
+            this.btnReportClientOrder.Click += new System.EventHandler(this.btnReportClientOrder_Click);
             // 
             // MainForm
             // 

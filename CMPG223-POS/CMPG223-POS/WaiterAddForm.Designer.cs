@@ -165,6 +165,7 @@
             this.MinimizeBox = false;
             this.Name = "WaiterAddForm";
             this.Text = "WaiterAddForm";
+            this.Load += new System.EventHandler(this.WaiterAddForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

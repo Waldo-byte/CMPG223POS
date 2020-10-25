@@ -88,5 +88,10 @@ namespace CMPG223_POS
         {
             this.Close();
         }
+
+        private void WaiterAddForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

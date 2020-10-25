@@ -1,0 +1,81 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace CMPG223_POS
+{
+    public partial class ReportForm : Form
+    {
+        public ReportForm()
+        {
+            InitializeComponent();
+        }
+
+        public void populateOrders()
+        {
+            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security = True";
+            SqlConnection conn = new SqlConnection(constr);
+            string sqlAll = "SELECT * FROM Client_Order";
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sqlAll, conn);
+            SqlDataAdapter adap = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            adap.SelectCommand = comm;
+            adap.Fill(ds, "All");
+
+            BuyInventoryForm dgview = new BuyInventoryForm();
+            dataGridView1.DataSource = ds;
+            dataGridView1.DataMember = "All";
+
+            conn.Close();
+        }
+
+        public void populateClients()
+        {
+            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reyem\source\repos\Waldo-byte\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security = True";
+            SqlConnection conn = new SqlConnection(constr);
+            string sqlAll = "SELECT * FROM ClientTable";
+            conn.Open();
+            SqlCommand comm = new SqlCommand(sqlAll, conn);
+            SqlDataAdapter adap = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            adap.SelectCommand = comm;
+            adap.Fill(ds, "All");
+
+            BuyInventoryForm dgview = new BuyInventoryForm();
+            dataGridView1.DataSource = ds;
+            dataGridView1.DataMember = "All";
+
+            conn.Close();
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            populateOrders();
+        }
+
+        private void ReportForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btClients_Click(object sender, EventArgs e)
+        {
+            populateClients();
+        }
+    }
+}
