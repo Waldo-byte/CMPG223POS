@@ -10,7 +10,7 @@ namespace CMPG223_POS
     public partial class Orders : Form
     {
 
-        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Jaden\Desktop\CMPG223 _PROJECT\Main Project\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
+        static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Desktop\Studies\2020\CMPG223\CMPG223-POS\CMPG223-POS\CMPG223-POS\Route96.mdf;Integrated Security=True";
         SqlConnection conn = new SqlConnection(constr);
         SqlCommand comm;
         SqlDataAdapter adap;
@@ -149,9 +149,12 @@ namespace CMPG223_POS
 
         private void btnSwartkatLager_Click(object sender, EventArgs e)
         {
-            functions.addItem("Swartkat Lager");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Swarttkat Lager";
+            string item = "Swartkat Lager";
+            
+            decimal ammount;
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Swartkat Lager'";
+            lbOrders.Items.Add("Swartkat Lager");
+            conn.Open();
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -160,20 +163,24 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                ammount = Convert.ToDecimal((string)reader[0]);
+                //decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnAfricaPilsner_Click(object sender, EventArgs e)
         {
-            functions.addItem("Africa Pilsner");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Africa Pilsner";
+            
+            decimal ammount;
+            lbOrders.Items.Add("Africa Pilsner");
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Africa Pilsner'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -182,21 +189,23 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnWeisbeer_Click(object sender, EventArgs e)
         {
-            functions.addItem("Weissbeer");
+            lbOrders.Items.Add("Weissbeer");
 
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Weissbeer";
+            decimal ammount;
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Weissbeer'";
+            conn.Open();
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -205,20 +214,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnRedAle_Click(object sender, EventArgs e)
         {
-            functions.addItem("Red Ale");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Red Ale";
+            lbOrders.Items.Add("Red Ale");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Red Ale'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -227,20 +238,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnGRTAle_Click(object sender, EventArgs e)
         {
-            functions.addItem("GRT Ale");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = GRT Ale";
+            lbOrders.Items.Add("GRT Ale");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'GRT Ale'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -249,20 +262,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnStout_Click(object sender, EventArgs e)
         {
-            functions.addItem("Stout");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Stout";
+            lbOrders.Items.Add("Stout");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Stout'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -271,20 +286,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnCraftGin_Click(object sender, EventArgs e)
         {
-            functions.addItem("Craft Gin");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Craft Gin";
+            lbOrders.Items.Add("Craft Gin");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Craft Gin'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -293,20 +310,23 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnRum_Click(object sender, EventArgs e)
         {
-            functions.addItem("Rum");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Rum";
+
+            lbOrders.Items.Add("Rum");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Rum'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -315,20 +335,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnBeefBurger_Click(object sender, EventArgs e)
         {
-            functions.addItem("Beef Burger");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Beef Burger";
+            lbOrders.Items.Add("Beef Burger");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Beef Burger'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -337,20 +359,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnChickenBurger_Click(object sender, EventArgs e)
         {
-            functions.addItem("Chicken Burger");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Chicken Burger";
+            lbOrders.Items.Add("Chicken Burger");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Chicken Burger'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -359,20 +383,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnCheeseBurger_Click(object sender, EventArgs e)
         {
-            functions.addItem("Cheese Burger");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Cheese Burger";
+            lbOrders.Items.Add("Cheese Burger");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Cheese Burger'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -381,20 +407,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnChickenSnitzel_Click(object sender, EventArgs e)
         {
-            functions.addItem("Chicken Schnitzel");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Chicken Schnitzel";
+            lbOrders.Items.Add("Chicken Schnitzel");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Chicken Schnitzel'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -403,20 +431,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnSmallChips_Click(object sender, EventArgs e)
         {
-            functions.addItem("Small Chips");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Small Chips";
+            lbOrders.Items.Add("Small Chips");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Small Chips'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -425,20 +455,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnMediumChips_Click(object sender, EventArgs e)
         {
-            functions.addItem("Medium Chips");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Medium Chips";
+            lbOrders.Items.Add("Medium Chips");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Medium Chips'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -447,20 +479,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnLargeChips_Click(object sender, EventArgs e)
         {
-            functions.addItem("Large Chips");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Large Chips";
+            lbOrders.Items.Add("Large Chips");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Large Chips'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -469,20 +503,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnRegularWings_Click(object sender, EventArgs e)
         {
-            functions.addItem("Regular Wings");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Regular Wings";
+            lbOrders.Items.Add("Regular Wings");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Regular Wings'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -491,20 +527,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnHotWings_Click(object sender, EventArgs e)
         {
-            functions.addItem("Hot Wings");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Hot Wings";
+            lbOrders.Items.Add("Hot Wings");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Hot Wings'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -513,20 +551,22 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnMildWings_Click(object sender, EventArgs e)
         {
-            functions.addItem("Mild Wings");
-            int ammount;
-            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = Mild Wings";
+            lbOrders.Items.Add("Mild Wings");
+            decimal ammount;
+            conn.Open();
+            string sqlGet = "SELECT Price FROM Menu_Item WHERE Description = 'Mild Wings'";
             comm = new SqlCommand(sqlGet, conn);
             adap = new SqlDataAdapter();
             ds = new DataSet();
@@ -535,13 +575,14 @@ namespace CMPG223_POS
             SqlDataReader reader = comm.ExecuteReader();
             if (reader.Read())
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             else
             {
-                int.TryParse((string)reader[0], out ammount);
+                decimal.TryParse((string)reader[0], out ammount);
             }
             cost += ammount;
+            conn.Close();
         }
 
         private void btnConfirmOrder_Click(object sender, EventArgs e)
