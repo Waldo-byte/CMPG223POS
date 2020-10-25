@@ -198,6 +198,16 @@
     <None Include="Resources\alert.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\info.png" />
+    <None Include="Resources\Beef Burger.png" />
+    <None Include="Resources\Cheese Burger.png" />
+    <None Include="Resources\Chicken Burger.png" />
+    <None Include="Resources\Chicken Schnitzel.png" />
+    <None Include="Resources\Hot Wings.png" />
+    <None Include="Resources\Large Chips.png" />
+    <None Include="Resources\Medium Chips.png" />
+    <None Include="Resources\Mild Wings.png" />
+    <None Include="Resources\Regular Wings.png" />
+    <None Include="Resources\Small Chips.png" />
     <Content Include="Route96.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
