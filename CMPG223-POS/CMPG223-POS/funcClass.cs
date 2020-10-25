@@ -24,7 +24,7 @@ namespace CMPG223_POS
         public void addItem(string item)
         {
             Orders orderForm = new Orders();
-            orderForm.lbOrders.Items.Add(item);``
+            orderForm.lbOrders.Items.Add(item);
         }
 
         public void backupdb()
