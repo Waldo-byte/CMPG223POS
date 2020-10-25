@@ -48,6 +48,7 @@ namespace CMPG223_POS
                             f1.addWaiter(pass, DateTime.Now.TimeOfDay, name, txtSurname.Text, 1);
                             mbox.ShowMessageBox("New waiter added (admin)", "Success!", "", "");
                             mbox.ShowDialog();
+                            
                         }
                         catch (Exception es)
                         {
@@ -68,6 +69,10 @@ namespace CMPG223_POS
                             MessageBox.Show(es.Message);
                         }
                     }
+                    txtName.Text = "";
+                    txtPassword.Text = "";
+                    txtSurname.Text = "";
+                    txtConfirmPassword.Text = "";
 
                 }
             }
@@ -77,6 +82,11 @@ namespace CMPG223_POS
         private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
