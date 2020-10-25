@@ -162,8 +162,8 @@ namespace CMPG223_POS
             }
             else if (buttons == "Yes/No")
             {
-                buttonContainer.Controls.Add(btnYes);
                 buttonContainer.Controls.Add(btnNo);
+                buttonContainer.Controls.Add(btnYes);
                 btnYes.Text = "Yes";
                 btnNo.Text = "No";
 

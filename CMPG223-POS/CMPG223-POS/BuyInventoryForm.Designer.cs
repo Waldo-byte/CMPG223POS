@@ -45,8 +45,8 @@
             // 
             // btnBuy
             // 
-            this.btnBuy.Location = new System.Drawing.Point(89, 6);
-            this.btnBuy.Margin = new System.Windows.Forms.Padding(0, 6, 6, 0);
+            this.btnBuy.Location = new System.Drawing.Point(6, 6);
+            this.btnBuy.Margin = new System.Windows.Forms.Padding(6, 6, 6, 0);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(77, 35);
             this.btnBuy.TabIndex = 0;
@@ -56,8 +56,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(6, 6);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 0);
+            this.btnCancel.Location = new System.Drawing.Point(89, 6);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(0, 6, 6, 0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(77, 35);
             this.btnCancel.TabIndex = 1;
@@ -112,8 +112,8 @@
             // 
             // buttonContainer
             // 
-            this.buttonContainer.Controls.Add(this.btnCancel);
             this.buttonContainer.Controls.Add(this.btnBuy);
+            this.buttonContainer.Controls.Add(this.btnCancel);
             this.buttonContainer.Location = new System.Drawing.Point(0, 100);
             this.buttonContainer.Margin = new System.Windows.Forms.Padding(0);
             this.buttonContainer.Name = "buttonContainer";
