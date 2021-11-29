@@ -1,2 +1,2 @@
 # CMPG223-POS
-CMPG-223 POS
+Point of Sale System
